@@ -1,0 +1,164 @@
+/* GENERALES */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* INICIO DE CABECERA */
+
+header {
+    width: 100%;
+    height: 150px;
+    border-bottom: 2px solid orangered;
+}
+
+.wrap {
+    width: 1920px;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(2 15 31);
+}
+
+.logotipo {
+    float: left;
+}
+
+.logotipo img {
+    width: 150px;
+}
+
+.menu {
+    display: flex;
+    float: right;
+    flex-direction: row;
+}
+
+.nav li {
+    display: inline-block;
+    
+}
+
+.nav li a {
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.nav li a:hover{
+    color: orangered;
+    background-color: white;
+    font-size: 20px;
+    transform: scale(1.4, 1.4);
+}
+
+/* FIN DE CABECERA */
+
+/* INCIO DE SECCIÓN */
+
+.portada {
+    width: 100%;
+    display: block;
+}
+
+.title {
+    position: relative;
+    left: 45%;
+}
+
+.galery {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content:center
+
+}
+
+.card {
+    border-radius: 4px;
+    background: linear-gradient(45deg, #8d8b8a, transparent);
+    margin: 5px;
+    padding: 2px 1px 4px 1px;
+    height: 60%;
+    width: 15%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img {
+    width: 97%;
+    min-height: 250px;
+    max-height: 250px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.content {
+    opacity: 0;
+    text-align: center;
+}
+
+.card:hover .content{
+    opacity: 1;
+    transition: 1s linear;
+}
+
+/* FIN DE PORTADA */
+
+/* INICIO DE OFERTAS */
+
+.main-oferts {
+    background-color: lightgrey;
+}
+
+.oferts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-products img {
+    width: 250px;
+}
+
+/* FIN DE OFERTAS */
+
+/* INCIO DE PREGUNTAS FRECUENTES */
+
+.preguntas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preguntas h3 {
+    margin-right: 20px;
+}
+
+.scroll {
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FIN DE SCROLL */
+
+/* INICIO DE FOOTER */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.apart {
+    margin: 50px;
+}
+
+/* FIN DE FOOTER */
