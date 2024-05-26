@@ -1,0 +1,382 @@
+/* GENERALES */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins';
+}
+
+
+@font-face {
+    font-family: 'JetBrains';
+    src: url(fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(fonts/Poppins/Poppins-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* INICIO DE CABECERA */
+
+header {
+    width: 100%;
+    height: 150px;
+    border-bottom: 2px solid orangered;
+}
+
+.wrap {
+    width: 1920px;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(2 15 31);
+}
+
+.logotipo {
+    float: left;
+}
+
+.logotipo img {
+    width: 150px;
+}
+
+.menu {
+    display: flex;
+    float: right;
+    flex-direction: row;
+}
+
+.nav li {
+    display: inline-block;
+
+}
+
+.nav li a {
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    color: orangered;
+    background-color: white;
+    font-size: 20px;
+    transform: scale(1.4, 1.4);
+}
+
+.social-icon {
+    filter: invert(1);
+    width: 25px;
+}
+
+#login:hover .social-icon {
+    filter: invert(0);
+}
+
+/* FIN DE CABECERA */
+
+/* INCIO DE SECCIÓN */
+
+
+.portada {
+    width: 100%;
+    display: block;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title h1 {
+    font-family: 'JetBrains';
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.title p {
+    font-family: 'Poppins';
+    font-size: 20px;
+    margin: 15px;
+}
+
+.galery {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.card {
+    border-radius: 4px;
+    background: linear-gradient(45deg, #8d8b8a, transparent);
+    margin: 5px;
+    padding: 2px 1px 4px 1px;
+    height: 64%;
+    width: 15%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img {
+    width: 97%;
+    min-height: 250px;
+    max-height: 250px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.content {
+    opacity: 0;
+    text-align: center;
+}
+
+.card:hover .content {
+    opacity: 1;
+    transition: 1s linear;
+}
+
+/* FIN DE PORTADA */
+
+/* TEXTO INTRO */
+
+.description {
+    margin-top: 8%;
+}
+
+.text{
+    background-color: #8d8b8a;
+    position: relative;
+    left: 15%;
+}
+
+.description-img {
+    background-color: antiquewhite;
+    position: absolute;
+    top: 90%;
+    left: 60%;
+}
+
+.description-img  img{
+    width: 450px;
+}
+
+/* INICIO DE OFERTAS */
+
+.oferts {
+    margin-top: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-products {
+    height: 50%;
+    margin: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.face1 {
+    transition: 0.5s;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.card-products:hover .face1{
+    transform: translateY(0);
+}
+
+.card-products img {
+    width: 250px;
+    filter: invert(1);
+}
+
+.face2 {
+    background-color: orangered;
+}
+.ofert-content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.card:hover .face1 {
+    opacity: 1;
+}
+
+.card-products button {
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 45px;
+    border: none;
+    transition: 0.5s;
+    margin: 12px;
+}
+
+#click:hover {
+    transform: translateY(-10px);
+    color: orangered;
+}
+
+.card-products button a {
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* FIN DE OFERTAS */
+
+/* INCIO DE PREGUNTAS FRECUENTES */
+
+.preguntas {
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.title-questions {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    background: transparent;
+    width: 17rem;
+    height: auto;
+}
+
+.circle {
+    transition: all 0.45s
+    cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: orangered;
+    border-radius: 1.625rem;
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: all 0.45s
+    cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+.arrow-icon::before {
+    position: absolute;
+    content: "";
+    top:  -0.25rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    border-top: 0.125rem solid black;
+    border-right: 0.125rem solid black;
+    transform: rotate(45deg); 
+}
+
+.button-text {
+    transition: all 0.45s
+    cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    inset: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.title-questions:hover .circle {
+    width: 100%;
+}
+
+.title-questions:hover .arrow-icon {
+    background: black;
+    transform: translate(1rem, 0);
+}
+
+.scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 2%;
+    right: -10%;
+}
+
+.scroll a svg {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    line-height: 30px;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 1px 1px 4px black;
+    color: white;
+    background-color: orangered;
+    text-decoration: none;
+}
+/*
+.scroll a:hover {
+    transition: 0.10s;
+    transform: translateY(-10px);
+}*/
+
+/* FIN DE SCROLL */
+
+
+/* INICIO DE FOOTER */
+
+footer {
+    width: 1920px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: rgb(2 15 31);
+}
+
+.apart {
+    margin-left: 15%;
+}
+
+.apart ul li {
+    list-style: none;
+}
+
+.apart a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.social-media {
+    margin-left: 15%;
+}
+
+/* FIN DE FOOTER */

@@ -1,0 +1,46 @@
+h4 {
+    font-family: 'JetBrains';
+    font-size: 30px;
+    margin-top: 3%;
+    margin-left: 20%;
+}
+
+section {
+    margin-top: 2%;
+    margin-left: 15%;
+    
+}
+
+.btn-primary {
+    max-width: 150px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+    font-size: 20px;
+    background-color: orangered;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.btn-primary:hover {
+    color: white;
+}
+
+.table {
+    border: 2px solid lightgray;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid lightgray;
+    padding: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    position: absolute;
+    bottom: 0%;
+}

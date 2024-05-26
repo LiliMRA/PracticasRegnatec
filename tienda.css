@@ -1,0 +1,96 @@
+/* GENERALES */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins';
+}
+
+
+@font-face {
+    font-family: 'JetBrains';
+    src: url(fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(fonts/Poppins/Poppins-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* INICIO MENÚ PRODUCTOS */
+
+.products-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-menu {
+    height: 50%;
+    margin: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.face1 {
+    transition: 0.5s;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.card-menu:hover .face1{
+    transform: translateY(0);
+}
+
+.card-menu img {
+    width: 250px;
+    /*filter: invert(1);*/
+}
+
+.face2 {
+    background-color: orangered;
+}
+.ofert-content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.card:hover .face1 {
+    opacity: 1;
+}
+
+.card-menu button {
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 45px;
+    border: none;
+    transition: 0.5s;
+    margin: 12px;
+}
+
+#click:hover {
+    transform: translateY(-10px);
+    color: orangered;
+}
+
+.card-menu button a {
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* FIN MENÚ PRODUCTOS */
+
+/* FOOTER */
+footer   {
+    position: absolute;
+    bottom: 0%;
+}
+/* FIN DE FOOTER */
