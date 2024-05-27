@@ -6,6 +6,10 @@
     font-family: 'Poppins';
 }
 
+html {
+    max-width: 100%;
+}
+
 
 @font-face {
     font-family: 'JetBrains';
@@ -30,7 +34,7 @@ header {
 }
 
 .wrap {
-    width: 1920px;
+    width: 100%;
     height: 150px;
     display: flex;
     justify-content: space-around;
@@ -153,6 +157,7 @@ header {
 
 .description {
     margin-top: 8%;
+    max-width: 80%;
 }
 
 .text{
@@ -353,8 +358,8 @@ header {
 /* INICIO DE FOOTER */
 
 footer {
-    width: 1920px;
-    padding: 20px;
+    width: 100%;
+    height: 160px;
     display: flex;
     align-items: center;
     color: white;

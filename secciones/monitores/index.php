@@ -1,5 +1,7 @@
 <?php
 include ('../../bd.php');
+
+$url_base = "http://localhost:3000/";
 ?>
 
 <?php
@@ -21,15 +23,13 @@ if (isset($_GET['txtID'])) {
 
 
     #Sentencia para eliminar un registro
-    if (isset($_GET['txtID'])) {
-        $txtID = (isset($_GET['$txtID'])) ? $_GET['txtID'] : "";
 
-        $sentencia = $conexion->prepare("DELETE FROM monitores WHERE id=:id");
-        $sentencia->bindParam(":id", $txtID);
-        $sentencia->execute();
-        header("Location:index.php");
-    }
+    $sentencia = $conexion->prepare("DELETE FROM monitores WHERE id=:id");
+    $sentencia->bindParam(":id", $txtID);
+    $sentencia->execute();
+    header("Location:index.php");
 }
+
 
 #Llamamos tabla de BBDD
 
@@ -45,7 +45,7 @@ $lista_monitores = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByteStore</title>
-    <link rel="icon" href="img\logotipo.png">
+    <link rel="icon" href="../../img/logotipo.png">
     <link rel="stylesheet" href="../../index.css">
     <link rel="stylesheet" href="index.css">
 </head>
@@ -55,18 +55,18 @@ $lista_monitores = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     <header>
         <div class="wrap">
             <div class="logotipo" id="logotipo">
-                <a href="index.html">
-                    <img src="img/logotipo.png" alt="logotipo">
+                <a href="../../index.html">
+                    <img src="../../img/logotipo.png" alt="logotipo">
                 </a>
             </div>
 
             <nav class="nav">
                 <ul class="menu">
                     <li>
-                        <a href="#">Inicio</a>
+                        <a href="<?php echo $url_base; ?>../../index.html">Inicio</a>
                     </li>
                     <li>
-                        <a href="tienda.php">Tienda</a>
+                        <a href="../../tienda.php">Tienda</a>
                     </li>
                     <li>
                         <a href="#">Contacto</a>
@@ -76,7 +76,7 @@ $lista_monitores = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                     </li>
                     <li>
                         <a href="#" id="login">
-                            <img class="social-icon" src="img/user.png" alt="Icono-social">
+                            <img class="social-icon" src="../../img/user.png" alt="Icono-social">
                             Inicia sesión
                         </a>
                     </li>
@@ -117,7 +117,9 @@ $lista_monitores = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <tr>
                                     <td> <?php echo $registro['id']; ?> </td>
                                     <td> <?php echo $registro['nombre']; ?> </td>
-                                    <td> <?php echo $registro['foto']; ?> </td>
+                                    <td> 
+                                        <img width="50" src="<?php echo $registro['foto']; ?>" alt="Imagen-producto">
+                                    </td>
                                     <td> <?php echo $registro['procesador']; ?> </td>
                                     <td> <?php echo $registro['memoria']; ?> </td>
                                     <td> <?php echo $registro['disco']; ?> </td>
