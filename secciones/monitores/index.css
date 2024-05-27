@@ -38,6 +38,32 @@ section {
     padding: 15px;
 }
 
+.btn-info {
+        margin: 15px;
+        padding: 10px;
+        color: black;
+        font-family: 'JetBrains';
+        font-size: 18px;
+        background-color: rgb(183, 249, 112);
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .btn-danger {
+        padding: 10px;
+        color: black;
+        font-family: 'JetBrains';
+        font-size: 18px;
+        background-color: rgb(255, 179, 0);
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+
 /* FOOTER */
 
 footer {

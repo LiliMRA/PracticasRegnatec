@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'JetBrains';
+    src: url(fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(fonts/Poppins/Poppins-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+h4 {
+    font-family: 'JetBrains';
+    font-size: 30px;
+    margin-top: 3%;
+    margin-left: 20%;
+}
+
+.card-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    padding: 20px;
+}
+
+.line {
+    padding: 20px;
+    margin: 5px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+}
+
+.form-label {
+    font-family: 'Poppins';
+    font-size: 18px;
+}
+
+.form-control {
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgba(255, 68, 0, 0.381);
+}
+
+.btn-success {
+    margin-left: 80px;
+    padding: 10px;
+    color: black;
+    font-family: 'JetBrains';
+    font-size: 18px;
+    background-color: rgb(0, 251, 255);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.btn-danger {
+    min-width: 166px;
+    margin: 15px;
+    padding: 10px;
+    color: black;
+    font-family: 'JetBrains';
+    font-size: 18px;
+    background-color: rgb(249, 112, 112);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-danger a:hover {
+    transform: scale(1.2, 1.2);
+}

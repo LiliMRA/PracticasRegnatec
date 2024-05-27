@@ -1,5 +1,5 @@
 <?php
-include ('../../bd.php');
+include('../../bd.php');
 ?>
 
 <?php
@@ -11,7 +11,7 @@ if ($_POST) {
     $memoria = (isset($_POST["memoria"]) ? $_POST["memoria"] : "");
     $disco = (isset($_POST["disco"]) ? $_POST["disco"] : "");
     $pantalla = (isset($POST["pantalla"]) ? $_POST["pantalla"] : "");
-    
+
     $foto = (isset($_FILES["foto"]) ? $_FILES["foto"] : "");
 
     # Insertamos los datos
@@ -47,41 +47,55 @@ if ($_POST) {
 
 ?>
 
-<h4>Datos del monitor</h4>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="card-form">
-    <form action="" method="post" enctype="multipart/form-data">
-        <div class="line">
-            <label for="foto" class="form-label">Foto</label>
-            <input type="file" class="form-control" name="foto" id="foto" placeholder="Foto">
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear monitor</title>
+    <link rel="stylesheet" href="crear.css">
+</head>
 
-        <div class="line">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
-        </div>
+<body>
+    <h4>Datos del monitor</h4>
 
-        <div class="line">
-            <label for="procesador" class="form-label">Procesador</label>
-            <input type="text" class="form-control" name="procesador" id="procesador" placeholder="Procesador">
-        </div>
+    <div class="card-form">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="line">
+                <label for="foto" class="form-label">Foto</label>
+                <input type="file" class="form-control" name="foto" id="foto" placeholder="Foto">
+            </div>
 
-        <div class="line">
-            <label for="memoria" class="form-label">Memoria</label>
-            <input type="text" class="form-control" name="memoria" id="memoria" placeholder="Memoria">
-        </div>
+            <div class="line">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+            </div>
 
-        <div class="line">
-            <label for="disco" class="form-label">Disco</label>
-            <input type="text" class="form-control" name="disco" id="disco" placeholder="Disco">
-        </div>
+            <div class="line">
+                <label for="procesador" class="form-label">Procesador</label>
+                <input type="text" class="form-control" name="procesador" id="procesador" placeholder="Procesador">
+            </div>
 
-        <div class="line">
-            <label for="pantalla" class="form-label">Pantalla</label>
-            <input type="text" class="form-control" name="pantalla" id="pantalla" placeholder="Pantalla">
-        </div>
+            <div class="line">
+                <label for="memoria" class="form-label">Memoria</label>
+                <input type="text" class="form-control" name="memoria" id="memoria" placeholder="Memoria">
+            </div>
 
-        <button type="submit" class="btn-success">Agregar registro</button>
-        <a href="index.php" class="btn-danger">Cancelar</a>
-    </form>
-</div>
+            <div class="line">
+                <label for="disco" class="form-label">Disco</label>
+                <input type="text" class="form-control" name="disco" id="disco" placeholder="Disco">
+            </div>
+
+            <div class="line">
+                <label for="pantalla" class="form-label">Pantalla</label>
+                <input type="text" class="form-control" name="pantalla" id="pantalla" placeholder="Pantalla">
+            </div>
+
+            <button type="submit" class="btn-success">Agregar registro</button>
+            <a href="index.php" class="btn-danger">Cancelar</a>
+        </form>
+    </div>
+</body>
+
+</html>
