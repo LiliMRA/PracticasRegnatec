@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: start;
+    margin-top: 90px;
 }
 
 h3 {
@@ -20,13 +21,14 @@ h3 {
 }
 
 .tarjeta-contacto .content-contact {
-    height: 208px;
-    width: 22.4vw;
-    margin: 15px;
+    height: 212px;
+    width: 345px;
     box-shadow: 6px 9px 14px black;
     position: relative;
-    rotate: -1.5deg;
+    rotate: -1.8deg;
+    border-radius: 5px;
     top: 18%;
+    left: 10%;
 }
 
 .content-contact span {
@@ -35,7 +37,7 @@ h3 {
 
 .content-contact {
     height: 330px;
-    width: 22.4vw;
+    width: 350px;
     margin: 15px;
     box-shadow: 6px 9px 14px black;
 }

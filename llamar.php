@@ -46,9 +46,10 @@
     </header>
 
     <div class="main-container">
-        <div class="description-call">
+        <div class="description-img">
             <img src="img/call-center.jpg">
-            <h3>Solicita una cita rellenando el formulario<br> con tus datos y nos pondremos en contacto <br>contigo</h3>
+            <h3>Solicita una cita rellenando el formulario<br> con tus datos y nos pondremos en contacto <br>contigo
+            </h3>
         </div>
     </div>
 
@@ -82,17 +83,19 @@
             <div class="cell" id="date-div">
                 <div class="cell-content">
                     <label for="fecha" class="label-control">Fecha*</label> <br>
-                    <input type="date" id="fecha" name="fecha" value="2024-05-03" min="2024-05-03" max="2024-07-31" required />
+                    <input type="date" id="fecha" name="fecha" value="2024-05-03" min="2024-05-03" max="2024-07-31"
+                        required />
                 </div>
 
-                <div class="cell-content" >
+                <div class="cell-content">
                     <label for="hora">Hora:*</label> <br>
                     <input type="time" id="hora" name="hora" min="08:00" max="16:30" required />
-                    <small>Horario de oficina de 08:00 a 16:30</small>
                 </div>
             </div>
+            <br>
+            <small>Horario de oficina de 08:00 a 16:30</small>
 
-    
+
         </form>
     </div>
 
