@@ -1,0 +1,52 @@
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+h3 {
+    font-family: 'JetBrains';
+    font-size: 23px;
+    background-color: orangered;
+    padding: 10px;
+}
+
+.tarjeta-contacto {
+    height: 330px;
+    width: 50vw;
+    margin-top: 15px;
+    background-image: url('img/tarjeta-contacto.jpg');
+    background-position: center;
+}
+
+.tarjeta-contacto .content-contact {
+    height: 208px;
+    width: 22.4vw;
+    margin: 15px;
+    box-shadow: 6px 9px 14px black;
+    position: relative;
+    rotate: -1.5deg;
+    top: 18%;
+}
+
+.content-contact span {
+    content: "⚙️";
+}
+
+.content-contact {
+    height: 330px;
+    width: 22.4vw;
+    margin: 15px;
+    box-shadow: 6px 9px 14px black;
+}
+
+.content-contact p {
+    padding: 10px;
+    font-family: 'Poppins';
+    font-size: 18px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}

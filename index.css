@@ -161,20 +161,19 @@ header {
 }
 
 .text{
-    background-color: #8d8b8a;
     position: relative;
     left: 15%;
 }
 
 .description-img {
-    background-color: antiquewhite;
     position: absolute;
-    top: 90%;
-    left: 60%;
+    top: 100%;
+    left: 55%;
 }
 
 .description-img  img{
     width: 450px;
+    border-radius: 5px;
 }
 
 /* INICIO DE OFERTAS */

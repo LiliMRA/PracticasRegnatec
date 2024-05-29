@@ -1,5 +1,5 @@
 <?php
-include ('../../bd.php');
+include('../../bd.php');
 
 $url_base = "http://localhost:3000/";
 ?>
@@ -69,10 +69,10 @@ $lista_escaner = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <a href="../../tienda.php">Tienda</a>
                     </li>
                     <li>
-                        <a href="#">Contacto</a>
+                        <a href="../../contacto.html">Contacto</a>
                     </li>
                     <li>
-                        <a href="#">Te llamamos</a>
+                        <a href="../../llamar.php">Te llamamos</a>
                     </li>
                     <li>
                         <a href="#" id="login">
@@ -85,7 +85,19 @@ $lista_escaner = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </header>
 
+    <div class="second-menu">
+        <div class="second-nav">
+            <ul class="second-menu">
+                <li><a href="../escaner/index.php" class="btn-secondMenu">Escaner</a></li>
+                <li><a href="../impresora_termica/index.php" class="btn-secondMenu">Impresoras térmicas</a></li>
+                <li><a href="../monitores/index.php" class="btn-secondMenu">Monitores</a></li>
+                <li><a href="../portamonedas/index.php" class="btn-secondMenu">Portamonedas</a></li>
+            </ul>
+        </div>
+    </div>
+
     <h4>Escaner</h4>
+
     <section>
         <div class="card-table">
             <div class="card-header">
@@ -115,11 +127,11 @@ $lista_escaner = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <tbody>
                             <?php
                             foreach ($lista_escaner as $registro) {
-                                ?>
+                            ?>
                                 <tr>
                                     <td> <?php echo $registro['id']; ?> </td>
                                     <td> <?php echo $registro['nombre']; ?> </td>
-                                    <td> 
+                                    <td>
                                         <img width="50" src="<?php echo $registro['foto']; ?>" alt="Imagen-producto">
                                     </td>
                                     <td> <?php echo $registro['lectura']; ?> </td>
@@ -129,10 +141,8 @@ $lista_escaner = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                     <td> <?php echo $registro['tecnologia']; ?> </td>
                                     <td> <?php echo $registro['soporte']; ?> </td>
                                     <td>
-                                        <a class="btn-info"
-                                            href="editar.php?txtID=<?php echo $registro['id']; ?>">Editar</a>
-                                        <a class="btn-danger"
-                                            href="index.php?txtID=<?php echo $registro['id']; ?>">Eliminar</a>
+                                        <a class="btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>">Editar</a>
+                                        <a class="btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php } ?>

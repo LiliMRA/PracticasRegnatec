@@ -1,0 +1,57 @@
+.description-call {
+    width: 1005;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.description-call img {
+    width: 450px;
+    height: 500px;
+}
+
+.description-call h3 {
+    font-family: 'JetBrains';
+    font-size: 23px;
+    margin-left: 35px;
+}
+
+.main-form {
+    margin-top: 20px;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cell {
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cell-content {
+    display: block;
+}
+
+.label-control {
+    font-family: 'JetBrains';
+    font-size: 20px;
+}
+
+.input-control {
+    width: 250px;
+    height: 25px;
+}
+
+#date-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between   ;
+}
+
+input[type="table"] 

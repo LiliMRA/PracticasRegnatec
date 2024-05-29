@@ -33,10 +33,10 @@ include ('bd.php');
                         <a href="tienda.php">Tienda</a>
                     </li>
                     <li>
-                        <a href="#">Contacto</a>
+                        <a href="contacto.html">Contacto</a>
                     </li>
                     <li>
-                        <a href="#">Te llamamos</a>
+                        <a href="llamar.php">Te llamamos</a>
                     </li>
                     <li>
                         <a href="#" id="login">
@@ -50,10 +50,13 @@ include ('bd.php');
     </header>
 
     <section class="main-section">
+
+    
+    </div>
         <div class="products-menu">
             <div class="card-menu">
                 <div class="face1">
-                    <img src="img/27002.jpg" alt="">
+                    <img src="https://www.electroprecio.com/media/catalog/product/cache/1/thumbnail/600x400/9df78eab33525d08d6e5fb8d27136e95/a/r/art_prm-monitor_20tm-170_20led_1.jpg.jpg" alt="">
                 </div>
                 <div class="face2">
                     <div class="ofert-content">
@@ -69,7 +72,7 @@ include ('bd.php');
 
             <div class="card-menu">
                 <div class="face1">
-                    <img src="img/27002.jpg" alt="">
+                    <img src="https://www.papeleria-andromeda.es/8113-large_default/impresora-termica-tpv-epson-tm-t20ii-007-red.jpg" alt="">
                 </div>
                 <div class="face2">
                     <div class="ofert-content">
@@ -85,7 +88,7 @@ include ('bd.php');
 
             <div class="card-menu">
                 <div class="face1">
-                    <img src="img/27002.jpg" alt="">
+                    <img src="https://ultimainformatica.com/1414108-thickbox_default/tpv-cajon-portamonedas-negro-41x41-electrico.jpg" alt="">
                 </div>
                 <div class="face2">
                     <div class="ofert-content">
@@ -101,7 +104,7 @@ include ('bd.php');
 
             <div class="card-menu">
                 <div class="face1">
-                    <img src="img/27002.jpg" alt="">
+                    <img src="https://tienda.eprodisa.com/img/p/6/3/2/632-medium_default.jpg" alt="">
                 </div>
                 <div class="face2">
                     <div class="ofert-content">

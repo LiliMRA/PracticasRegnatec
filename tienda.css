@@ -50,6 +50,8 @@
 
 .card-menu img {
     width: 250px;
+    max-height: 180px;
+    border: 1px solid lightgrey;
     /*filter: invert(1);*/
 }
 

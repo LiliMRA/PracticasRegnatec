@@ -69,10 +69,10 @@ $lista_monitores = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <a href="../../tienda.php">Tienda</a>
                     </li>
                     <li>
-                        <a href="#">Contacto</a>
+                        <a href="../../contacto.html">Contacto</a>
                     </li>
                     <li>
-                        <a href="#">Te llamamos</a>
+                        <a href="../../llamar.php">Te llamamos</a>
                     </li>
                     <li>
                         <a href="#" id="login">
@@ -85,7 +85,19 @@ $lista_monitores = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </header>
 
+    <div class="second-menu">
+        <div class="second-nav">
+            <ul class="second-menu">
+                <li><a href="../escaner/index.php" class="btn-secondMenu">Escaner</a></li>
+                <li><a href="../impresora_termica/index.php" class="btn-secondMenu">Impresoras térmicas</a></li>
+                <li><a href="../monitores/index.php" class="btn-secondMenu">Monitores</a></li>
+                <li><a href="../portamonedas/index.php" class="btn-secondMenu">Portamonedas</a></li>
+            </ul>
+        </div>
+    </div>
+
     <h4>Monitores</h4>
+
     <section>
         <div class="card-table">
             <div class="card-header">

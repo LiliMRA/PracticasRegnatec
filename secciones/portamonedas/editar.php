@@ -127,10 +127,10 @@ if ($_POST) {
                         <a href="../../tienda.php">Tienda</a>
                     </li>
                     <li>
-                        <a href="#">Contacto</a>
+                        <a href="../../contacto.html">Contacto</a>
                     </li>
                     <li>
-                        <a href="#">Te llamamos</a>
+                        <a href="../../llamar.php">Te llamamos</a>
                     </li>
                     <li>
                         <a href="#" id="login">
