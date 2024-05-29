@@ -54,6 +54,7 @@ if ($_POST) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear monitor</title>
+    <link rel="icon" href="../../img/logotipo.png">
     <link rel="stylesheet" href="../../index.css">
     <link rel="stylesheet" href="crear.css">
 </head>

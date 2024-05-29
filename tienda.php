@@ -76,7 +76,7 @@ include ('bd.php');
                         <p>Impresoras térmicas</p>
                         <div class="boton">
                             <button name="click" id="click">
-                                <a href="#">Ir a productos</a>
+                                <a href="secciones/impresora_termica/index.php">Ir a productos</a>
                             </button>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ include ('bd.php');
                         <p>Portamonedas</p>
                         <div class="boton">
                             <button name="click" id="click">
-                                <a href="#">Ir a productos</a>
+                                <a href="secciones/portamonedas/index.php">Ir a productos</a>
                             </button>
                         </div>
                     </div>
@@ -108,7 +108,7 @@ include ('bd.php');
                         <p>Escaner</p>
                         <div class="boton">
                             <button name="click" id="click">
-                                <a href="#">Ir a productos</a>
+                                <a href="secciones/escaner/index.php">Ir a productos</a>
                             </button>
                         </div>
                     </div>
