@@ -94,8 +94,8 @@
 /* FIN MENÚ PRODUCTOS */
 
 /* FOOTER */
-footer   {
+
+footer {
     position: absolute;
-    bottom: 0%;
+    bottom: 0;
 }
-/* FIN DE FOOTER */

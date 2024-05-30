@@ -21,9 +21,10 @@
     margin-left: 20px;
 }
 
-.main-form h3 {
+.callback {
     font-family: 'JetBrains';
     font-size: 23px;
+    background-color: transparent;
 }
 
 .form {
@@ -59,3 +60,24 @@
     align-items: center;
     justify-content: center;
 }
+
+.cell-check {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cell-check input[type="checkbox"] {
+    width: 45px;
+}
+
+.cell-check .label-control {
+    font-size: 14px;
+}
+
+.label-control a {
+    text-decoration: underline;
+    color: blue;
+}
+
+

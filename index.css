@@ -6,10 +6,6 @@
     font-family: 'Poppins';
 }
 
-html {
-    max-width: 100%;
-}
-
 
 @font-face {
     font-family: 'JetBrains';
@@ -83,15 +79,18 @@ header {
 #login:hover .social-icon {
     filter: invert(0);
 }
+/*
+#control {
+    display: none;
+}*/
 
 /* FIN DE CABECERA */
 
 /* INCIO DE SECCIÓN */
 
-
 .portada {
-    width: 100%;
     display: block;
+    margin-top: 15px;
 }
 
 .title {
@@ -126,8 +125,8 @@ header {
     background: linear-gradient(45deg, #8d8b8a, transparent);
     margin: 5px;
     padding: 2px 1px 4px 1px;
-    height: 64%;
-    width: 15%;
+    height: 280px;
+    width: 250px;
     display: block;
     align-items: center;
     justify-content: center;
@@ -156,19 +155,14 @@ header {
 /* TEXTO INTRO */
 
 .description {
-    margin-top: 8%;
-    max-width: 80%;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.text{
-    position: relative;
-    left: 15%;
-}
-
-.description-img {
-    position: absolute;
-    top: 100%;
-    left: 55%;
+.text {
+    margin-right: 30px;
 }
 
 .description-img  img{
@@ -179,7 +173,7 @@ header {
 /* INICIO DE OFERTAS */
 
 .oferts {
-    margin-top: 12%;
+    margin-top: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -363,6 +357,8 @@ footer {
     align-items: center;
     color: white;
     background-color: rgb(2 15 31);
+    position: absolute;
+    bottom: 0%;
 }
 
 .apart {
