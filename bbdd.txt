@@ -1,0 +1,39 @@
+CREATE TABLE `cesta` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `Codigo` double DEFAULT '1' COMMENT 'Id de producto',
+  `Descripcion` varchar(255) DEFAULT NULL COMMENT 'Nombre y descripcción del producto comprado',
+  `Precio` double DEFAULT NULL COMMENT 'Precio final de compra',
+  `unidades` double DEFAULT NULL COMMENT 'Unidades compradas',
+  `email` varchar(255) DEFAULT NULL COMMENT 'Dirección de correo electrónico',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `name` varchar(255) DEFAULT NULL,
+  `Cif` varchar(50) DEFAULT NULL,
+  `Direccion_Envio` varchar(50) DEFAULT NULL COMMENT 'Domicilio Envío',
+  `Poblacion` varchar(50) DEFAULT NULL COMMENT 'Población',
+  `Provincia` varchar(50) DEFAULT NULL COMMENT 'Provincia',
+  `cp` varchar(50) DEFAULT NULL COMMENT 'Codigo Postal',
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='Tabla de Clientes'
+
+CREATE TABLE `familias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `name` varchar(255) DEFAULT NULL,
+  `Imagen` varchar(255) DEFAULT NULL COMMENT 'Imagen',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='Tabla de familias'
+
+CREATE TABLE `productos` (
+  `idId` int(11) NOT NULL,
+  `Nombre` varchar(25) DEFAULT NULL,
+  `Descripccion` varchar(255) DEFAULT NULL,
+  `Precio` double DEFAULT NULL,
+  `Imagen1` varchar(255) DEFAULT NULL,
+  `Imagen2` varchar(255) DEFAULT NULL,
+  `Imagen3` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tabla de Productos'
