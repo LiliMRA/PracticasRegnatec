@@ -56,14 +56,14 @@ include ('bd.php');
         <div class="products-menu">
             <div class="card-menu">
                 <div class="face1">
-                    <img src="https://www.electroprecio.com/media/catalog/product/cache/1/thumbnail/600x400/9df78eab33525d08d6e5fb8d27136e95/a/r/art_prm-monitor_20tm-170_20led_1.jpg.jpg" alt="">
+                    <img src="img/hardware.png" alt="Imagen-hardware">
                 </div>
                 <div class="face2">
                     <div class="ofert-content">
-                        <p>Monitores</p>
+                        <p class="title-ofert">Hardware</p>
                         <div class="boton">
                             <button name="click" id="click">
-                                <a href="secciones/monitores/index.php">Ir a productos</a>
+                                <a href="productos/index.php">Ir a hardware</a>
                             </button>
                         </div>
                     </div>
@@ -72,11 +72,11 @@ include ('bd.php');
 
             <div class="card-menu">
                 <div class="face1">
-                    <img src="https://www.papeleria-andromeda.es/8113-large_default/impresora-termica-tpv-epson-tm-t20ii-007-red.jpg" alt="">
+                    <img src="https://newsbook.es/wp-content/uploads/2020/10/Software-AG-Newsbook-partners-768x512.jpg" alt="">
                 </div>
                 <div class="face2">
                     <div class="ofert-content">
-                        <p>Impresoras térmicas</p>
+                        <p>Software</p>
                         <div class="boton">
                             <button name="click" id="click">
                                 <a href="secciones/impresora_termica/index.php">Ir a productos</a>
@@ -88,11 +88,11 @@ include ('bd.php');
 
             <div class="card-menu">
                 <div class="face1">
-                    <img src="https://ultimainformatica.com/1414108-thickbox_default/tpv-cajon-portamonedas-negro-41x41-electrico.jpg" alt="">
+                    <img src="https://miracomohacerlo.com/wp-content/uploads/2021/01/monitor-parlantes-proyector-1.jpg" alt="">
                 </div>
                 <div class="face2">
                     <div class="ofert-content">
-                        <p>Portamonedas</p>
+                        <p>Periféricos</p>
                         <div class="boton">
                             <button name="click" id="click">
                                 <a href="secciones/portamonedas/index.php">Ir a productos</a>

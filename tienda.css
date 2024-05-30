@@ -3,7 +3,6 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: 'Poppins';
 }
 
 
@@ -61,6 +60,10 @@
 .ofert-content {
     opacity: 1;
     transition: 0.5s;
+}
+
+.ofert-content .title-ofert {
+    font-family: 'JetBrains';
 }
 
 .card:hover .face1 {

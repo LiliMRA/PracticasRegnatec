@@ -1,29 +1,29 @@
-.main-container {
+.main-contact {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    margin-top: 15px;
 }
 
-.description-call {
+.description-img {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    position:static;
 }
 
-.description-call img {
+.description-img img {
     width: 450px;
     height: 500px;
 }
 
-.description-call h3 {
-    font-family: 'JetBrains';
-    font-size: 23px;
-    margin-left: 35px;
+.main-form {
+    margin-left: 20px;
 }
 
-.main-form {
-    margin-top: 20px;
+.main-form h3 {
+    font-family: 'JetBrains';
+    font-size: 23px;
 }
 
 .form {
