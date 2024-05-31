@@ -1,20 +1,19 @@
-<?php include ('../bd.php');
+<?php include ('../../bd.php');
 
 #$url_base = "http://localhost:3000/"; ?>
+<?php include ('../../templates/header.php'); ?>
 
 <?php
 if (isset($_GET['txtID'])) {
     $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
 
     //Buscamos la imagen relacionado con el producto
-    $sentencia = $conexion->prepare("SELECT Imagen1 FROM productos WHERE idId=:idId");
-    $sentencia = $conexion->prepare("SELECT Imagen2 FROM productos WHERE idId=:idId");
-    $sentencia = $conexion->prepare("SELECT Imagen3 FROM productos WHERE idId=:idId");
+    $sentencia = $conexion->prepare("SELECT Imagen1, Imagen2, Imagen3 FROM productos WHERE idId=:idId");
     $sentencia->bindParam(":idId", $txtID);
     $sentencia->execute();
     $registro_recuperado = $sentencia->fetch(PDO::FETCH_LAZY);
 
-    //Si existe el archivo Imagen1, lo borramos
+    //Seleccionamos el archivo que se va a borrar
     if (isset($registro_recuperado["Imagen1"]) && $registro_recuperado["Imagen1"] != "") {
         if (file_exists("./" . $registro_recuperado["Imagen1"])) {
             unlink("./" . $registro_recuperado["Imagen1"]);
@@ -35,21 +34,19 @@ if (isset($_GET['txtID'])) {
 
 
     #Sentencia para eliminar un registro
-
     $sentencia = $conexion->prepare("DELETE FROM productos WHERE idId=:idId");
     $sentencia->bindParam(":idId", $txtID);
     $sentencia->execute();
     header("Location:index.php");
 }
 
-#Llamamos tabla de BBDD
-
-$sentencia = $conexion->prepare("SELECT * FROM productos");
+#Llamamos tabla prodcutos, asociada con la de familias de la BBDD
+$sentencia = $conexion->prepare("SELECT * ,(SELECT name FROM familias WHERE familias.id = productos.idId LIMIT 1)AS Categoría FROM productos");
 $sentencia->execute();
 $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php include ('../templates/header.php'); ?>
+
 
 <div class="second-menu">
     <div class="second-nav">
@@ -62,7 +59,7 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </div>
 
-<h4>Hardware</h4>
+<h4>Productos</h4>
 
 <section>
     <div class="card-table">
@@ -118,4 +115,4 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
 
-        <?php include ('../templates/footer.php'); ?>
+        <?php include ('../../templates/footer.php'); ?>

@@ -1,7 +1,7 @@
 <?php
 include ('../../bd.php');
 
-$url_base = "http://localhost:3000/";
+
 ?>
 
 <?php

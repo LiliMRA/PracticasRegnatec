@@ -1,0 +1,65 @@
+
+.subtitle {
+    font-family: 'JetBrains';
+    font-size: 30px;
+    margin-top: 3%;
+    margin-left: 20%;
+}
+
+.card-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    padding: 20px;
+}
+
+.line {
+    width: 96%;
+    padding: 4px;
+    margin: 5px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+.form-label {
+    font-family: 'JetBrains';
+    font-size: 18px;
+}
+
+.form-control {
+    width: 94%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(211, 211, 211, 0.552);
+}
+
+.btn-success {
+    margin-left: 25px;
+    padding: 10px;
+    color: black;
+    font-family: 'JetBrains';
+    font-size: 18px;
+    background-color: rgb(4, 148, 192);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'JetBrains';
+}
+
+.btn-danger {
+    min-width: 166px;
+    margin: 15px;
+    padding: 10px;
+    color: black;
+    font-family: 'JetBrains';
+    font-size: 18px;
+    background-color: rgb(249, 112, 112);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}

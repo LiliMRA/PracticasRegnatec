@@ -1,4 +1,6 @@
-<?php include ('templates/header.php'); ?>
+<?php include ('templates/header.php'); 
+
+$url_base = "http://localhost/practicasregnatec/";?>
 
 <section class="">
 

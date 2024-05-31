@@ -26,8 +26,8 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         <ul class="second-menu">
             <li><a href="index.php" class="btn-secondMenu">Familias</a></li>
             <li><a href="../productos/index.php" class="btn-secondMenu">Productos</a></li>
-            <li><a href="../monitores/index.php" class="btn-secondMenu">Monitores</a></li>
-            <li><a href="../portamonedas/index.php" class="btn-secondMenu">Portamonedas</a></li>
+            <li><a href="../../secciones/monitores/index.php" class="btn-secondMenu">Monitores</a></li>
+            <li><a href="../../secciones/portamonedas/index.php" class="btn-secondMenu">Portamonedas</a></li>
         </ul>
     </div>
 </div>
@@ -38,7 +38,7 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     <div class="card-table">
         <div class="card-header">
             <a href="crear.php" class="btn-primary">
-                Añadir producto
+                Añadir familia
             </a>
         </div>
 
@@ -49,37 +49,22 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Categoría</th>
-                            <th>Precio</th>
-                            <th>Imagen 1</th>
-                            <th>Imagen 2</th>
-                            <th>Imagen 3</th>
+                            <th>Imagen</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <?php
-                        foreach ($lista_productos as $registro) {
+                        foreach ($lista_familias as $registro) {
                             ?>
                             <tr>
-                                <td> <?php echo $registro['idId']; ?> </td>
-                                <td> <?php echo $registro['Nombre']; ?> </td>
-                                <td> <?php echo $registro['Descripccion']; ?> </td>
-                                <td> <?php echo $registro['Familia']; ?> </td>
-                                <td> <?php echo $registro['Precio']; ?> </td>
+                                <td> <?php echo $registro['id']; ?> </td>
+                                <td> <?php echo $registro['name']; ?> </td>
+                                <td> <?php echo $registro['Imagen']; ?> </td>
                                 <td>
-                                    <img width="50" src="<?php echo $registro['Imagen1']; ?>" alt="Imagen-producto1">
-                                <td>
-                                    <img width="50" src="<?php echo $registro['Imagen2']; ?>" alt="Imagen-producto2">
-                                </td>
-                                <td>
-                                    <img width="50" src="<?php echo $registro['Imagen3']; ?>" alt="Imagen-producto3">
-                                </td>
-                                <td>
-                                    <a class="btn-info" href="editar.php?txtID=<?php echo $registro['idId']; ?>">Editar</a>
+                                    <a class="btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>">Editar</a>
                                     <a class="btn-danger"
-                                        href="index.php?txtID=<?php echo $registro['idId']; ?>">Eliminar</a>
+                                        href="index.php?txtID=<?php echo $registro['id']; ?>">Eliminar</a>
                                 </td>
                             </tr>
                         <?php } ?>
