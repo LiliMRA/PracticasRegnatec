@@ -5,21 +5,6 @@
     padding: 0px;
 }
 
-
-@font-face {
-    font-family: 'JetBrains';
-    src: url(fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url(fonts/Poppins/Poppins-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
 /* INICIO MENÚ PRODUCTOS */
 
 .products-menu {
@@ -92,10 +77,3 @@
 }
 
 /* FIN MENÚ PRODUCTOS */
-
-/* FOOTER */
-
-footer {
-    position: absolute;
-    bottom: 0;
-}

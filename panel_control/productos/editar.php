@@ -1,4 +1,5 @@
-<?php include ("../bd.php"); ?>
+<?php include ("../../bd.php"); 
+include('../../templates/header.php'); ?>
 
 <?php
 
@@ -144,7 +145,7 @@ if ($_POST) {
 }
 ?>
 
-<?php include('../templates/header.php'); ?>
+
 
     <h4 class="subtitle">Datos del prodcuto</h4>
 
@@ -195,4 +196,4 @@ if ($_POST) {
         </form>
     </div>
     
-    <?php include('../templates/footer.php'); ?>
+    <?php include('../../templates/footer.php'); ?>

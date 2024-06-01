@@ -3,7 +3,7 @@
 
 <div class="main-contact">
     <div class="description-img">
-        <img src="img/call-center.jpg">
+        <img src="assets/img/call-center.jpg">
     </div>
 
 

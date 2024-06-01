@@ -10,7 +10,7 @@ include ('templates/header.php');
     <div class="products-menu">
         <div class="card-menu">
             <div class="face1">
-                <img src="img/hardware.png" alt="Imagen-hardware">
+                <img src="assets/img/hardware.png" alt="Imagen-hardware">
             </div>
             <div class="face2">
                 <div class="ofert-content">

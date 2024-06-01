@@ -14,7 +14,7 @@ $url_base = "http://localhost/practicasregnatec/";?>
         <div class="galery">
             <div class="card">
                 <div class="img-box">
-                    <img src="img/tienda-bytestore.jpg" alt="">
+                    <img src="assets/img/tienda-bytestore.jpg" alt="">
                 </div>
                 <div class="content">
                     <p>Visita nuestras instalaciones </p>
@@ -23,7 +23,7 @@ $url_base = "http://localhost/practicasregnatec/";?>
             </div>
             <div class="card">
                 <div class="img-box">
-                    <img src="img/tienda3.jpg" alt="">
+                    <img src="assets/img/tienda3.jpg" alt="">
                 </div>
                 <div class="content">
                     <p>Cuenta con atención personalizada en todo momento</p>
@@ -31,7 +31,7 @@ $url_base = "http://localhost/practicasregnatec/";?>
             </div>
             <div class="card">
                 <div class="img-box">
-                    <img src="img/tienda2.jpg" alt="">
+                    <img src="assets/img/tienda2.jpg" alt="">
                 </div>
                 <div class="content">
                     <p>Encontrarás los productos más acertados a tus necesidades</p>
@@ -49,7 +49,7 @@ $url_base = "http://localhost/practicasregnatec/";?>
 
         </div>
         <div class="description-img">
-            <img src="img/working.jpg" alt="">
+            <img src="assets/img/working.jpg" alt="">
         </div>
     </div>
 
@@ -58,7 +58,7 @@ $url_base = "http://localhost/practicasregnatec/";?>
             <div class="card-products">
 
                 <div class="face1">
-                    <img src="img/27002.jpg" alt="">
+                    <img src="assets/img/27002.jpg" alt="">
                 </div>
                 <div class="face2">
                     <div class="ofert-content">
@@ -77,7 +77,7 @@ $url_base = "http://localhost/practicasregnatec/";?>
             <div class="card-products">
 
                 <div class="face1">
-                    <img src="img/27002.jpg" alt="">
+                    <img src="assets/img/27002.jpg" alt="">
                 </div>
                 <div class="face2">
                     <p>Lorem ipsu dolor sit amet <br>consectetur adipisicing elit.</p>
@@ -90,7 +90,7 @@ $url_base = "http://localhost/practicasregnatec/";?>
             <div class="card-products">
 
                 <div class="face1">
-                    <img src="img/27002.jpg" alt="">
+                    <img src="assets/img/27002.jpg" alt="">
                 </div>
                 <div class="face2">
                     <p>Lorem ipsum dolor sit amet <br>consectetur adipisicing elit.</p>

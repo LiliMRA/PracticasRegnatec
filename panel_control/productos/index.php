@@ -1,7 +1,7 @@
-<?php include ('../../bd.php');
+<?php include('../../bd.php');
 
 #$url_base = "http://localhost:3000/"; ?>
-<?php include ('../../templates/header.php'); ?>
+
 
 <?php
 if (isset($_GET['txtID'])) {
@@ -45,6 +45,8 @@ $sentencia = $conexion->prepare("SELECT * ,(SELECT name FROM familias WHERE fami
 $sentencia->execute();
 $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
+<?php include('../../templates/header.php'); ?>
 
 
 
@@ -115,4 +117,4 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
 
-        <?php include ('../../templates/footer.php'); ?>
+        <?php include('../../templates/footer.php'); ?>

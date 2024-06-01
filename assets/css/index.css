@@ -9,14 +9,14 @@
 
 @font-face {
     font-family: 'JetBrains';
-    src: url(fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
+    src: url(/assets/fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url(fonts/Poppins/Poppins-Regular.ttf);
+    src: url(/assets/fonts/Poppins/Poppins-Regular.ttf);
     font-weight: normal;
     font-style: normal;
 }
@@ -321,8 +321,9 @@ header {
     align-items: center;
     justify-content: center;
     position: fixed;
-    bottom: 2%;
-    right: -10%;
+    bottom: 5%;
+    right: -12%;
+    z-index: 3;
 }
 
 .scroll a svg {
@@ -357,8 +358,9 @@ footer {
     align-items: center;
     color: white;
     background-color: rgb(2 15 31);
-    position: absolute;
+    position: static;
     bottom: 0%;
+    z-index: 2;
 }
 
 .apart {
@@ -380,3 +382,4 @@ footer {
 }
 
 /* FIN DE FOOTER */
+

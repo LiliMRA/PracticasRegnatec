@@ -1,6 +1,6 @@
-<?php include ('../../templates/header.php');
+<?php include('../../templates/header.php');
 
-include ('../../bd.php'); ?>
+include('../../bd.php'); ?>
 
 <?php
 #Código para eliminar una familia
@@ -31,6 +31,8 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         </ul>
     </div>
 </div>
+
+
 
 <h4>Familias</h4>
 
@@ -72,3 +74,5 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </table>
             </div>
         </div>
+
+        <?php include('../../templates/footer.php'); ?>

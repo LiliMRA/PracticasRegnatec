@@ -1,0 +1,28 @@
+/* GENERALES */
+@font-face {
+    font-family: 'JetBrains';
+    src: url(/assets/fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(/assets/fonts/Poppins/Poppins-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.title-control {
+    font-family: 'JetBrains';
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: orangered;
+}
+
+.img-control {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}

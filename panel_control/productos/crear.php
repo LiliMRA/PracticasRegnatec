@@ -1,7 +1,7 @@
 <?php
-include('../../bd.php'); ?>
+include ('../../bd.php');
 
-<?php include('../../templates/header.php'); ?>
+include ('../../templates/header.php'); ?>
 
 <?php
 
@@ -60,12 +60,12 @@ if ($_POST) {
 
     $sentencia->execute();
     header("Location:index.php");
-    
+
 }
 
-$sentencia = $conexion -> prepare("SELECT * FROM familias");
-$sentencia -> execute();
-$lista_familias = $sentencia -> fetchAll((PDO::FETCH_ASSOC));
+$sentencia = $conexion->prepare("SELECT * FROM familias");
+$sentencia->execute();
+$lista_familias = $sentencia->fetchAll((PDO::FETCH_ASSOC));
 
 ?>
 
@@ -93,7 +93,7 @@ $lista_familias = $sentencia -> fetchAll((PDO::FETCH_ASSOC));
             <select name="familia" id="familia">
                 <?php
                 foreach ($lista_familias as $registro) {
-                ?>
+                    ?>
                     <option value="<?php echo $registro['id']; ?>">
                         <?php echo $registro['name']; ?>
                     </option>
@@ -130,4 +130,4 @@ $lista_familias = $sentencia -> fetchAll((PDO::FETCH_ASSOC));
     </form>
 </div>
 
-<?php include('../../templates/footer.php'); ?>
+<?php include ('../../templates/footer.php'); ?>
