@@ -358,6 +358,7 @@ footer {
     align-items: center;
     color: white;
     background-color: rgb(2 15 31);
+    margin-top: 20px;
     position: static;
     bottom: 0%;
     z-index: 2;

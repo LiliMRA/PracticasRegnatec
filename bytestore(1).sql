@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-05-2024 a las 23:17:03
+-- Tiempo de generación: 03-06-2024 a las 09:04:59
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -83,6 +83,14 @@ CREATE TABLE `familias` (
   `Imagen` varchar(255) DEFAULT NULL COMMENT 'Imagen'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Tabla de familias';
 
+--
+-- Volcado de datos para la tabla `familias`
+--
+
+INSERT INTO `familias` (`id`, `name`, `Imagen`) VALUES
+(8, 'Hardware', ''),
+(9, 'sofware', '');
+
 -- --------------------------------------------------------
 
 --
@@ -153,11 +161,11 @@ CREATE TABLE `productos` (
   `idId` int(11) NOT NULL,
   `Nombre` varchar(25) DEFAULT NULL,
   `Descripccion` varchar(255) DEFAULT NULL,
+  `id_Familias` int(11) NOT NULL,
   `Precio` double DEFAULT NULL,
   `Imagen1` varchar(255) DEFAULT NULL,
   `Imagen2` varchar(255) DEFAULT NULL,
-  `Imagen3` varchar(255) DEFAULT NULL,
-  `familias_id` int(11) NOT NULL
+  `Imagen3` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Tabla de Productos';
 
 -- --------------------------------------------------------
@@ -223,7 +231,7 @@ ALTER TABLE `portamonedas`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`idId`),
-  ADD KEY `fk_productos_familias_idx` (`familias_id`);
+  ADD KEY `id_familias` (`id_Familias`) USING BTREE;
 
 --
 -- Indices de la tabla `users`
@@ -257,7 +265,7 @@ ALTER TABLE `escaner`
 -- AUTO_INCREMENT de la tabla `familias`
 --
 ALTER TABLE `familias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `impresora_termica`
@@ -281,7 +289,7 @@ ALTER TABLE `portamonedas`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
@@ -294,16 +302,10 @@ ALTER TABLE `users`
 --
 
 --
--- Filtros para la tabla `familias`
---
-ALTER TABLE `familias`
-  ADD CONSTRAINT `familias_ibfk_1` FOREIGN KEY (`id`) REFERENCES `productos` (`familias_id`);
-
---
 -- Filtros para la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD CONSTRAINT `fk_productos_familias` FOREIGN KEY (`familias_id`) REFERENCES `familias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`id_Familias`) REFERENCES `familias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -166,8 +166,15 @@ if ($_POST) {
             
             <div class="line">
                 <label for="Familia" class="form-label">Categoría</label>
-                <input type="text" value="<?php echo $Familia; ?>" class="form-control" name="Familia" id="Familia"
-                placeholder="Familia">
+                <select name="familia" id="familia">
+                <?php
+                foreach ($lista_familias as $registro) {
+                    ?>
+                    <option value="<?php echo $registro['id']; ?>">
+                        <?php echo $registro['name']; ?>
+                    </option>
+                <?php } ?>
+            </select>
             </div>
             
             <div class="line">

@@ -9,22 +9,20 @@ if ($_POST) {
     # Recogemos los datos del $_POST
     $Nombre = (isset($_POST["Nombre"]) ? $_POST["Nombre"] : "");
     $Descripccion = (isset($_POST["Descripccion"]) ? $_POST["Descripccion"] : "");
-    $Familia = (isset($_POST["Familia"]) ? $_POST["Familia"] : "");
     $Precio = (isset($_POST["Precio"]) ? $_POST["Precio"] : "");
-    $familias_id = (isset($_POST["familias_id"]) ? $_POST["familias_id"] : "");
+    $familias_id = (isset($_POST["id_Familias"]) ? $_POST["id_Familias"] : "");
     $Imagen1 = (isset($POST["Imagen1"]) ? $_POST["Imagen1"] : "");
     $Imagen2 = (isset($POST["Imagen2"]) ? $_POST["Imagen2"] : "");
     $Imagen3 = (isset($POST["Imagen3"]) ? $_POST["Imagen3"] : "");
 
     # Insertamos los datos
     $sentencia = $conexion->prepare("INSERT INTO productos
-(idId, Nombre, Descripccion, Familia, familias_id, Precio, Imagen1, Imagen2, Imagen3) VALUES
-(NULL, :Nombre, :Descripccion, :Familia, :familias_id, :Precio, :Imagen1, :Imagen2, :Imagen3);");
+(idId, Nombre, Descripccion, familias_id, Precio, Imagen1, Imagen2, Imagen3) VALUES
+(NULL, :Nombre, :Descripccion, :familias_id, :Precio, :Imagen1, :Imagen2, :Imagen3);");
 
     # Asignamos los valores
     $sentencia->bindParam(":Nombre", $Nombre);
     $sentencia->bindParam(":Descripccion", $Descripccion);
-    $sentencia->bindParam(":Familia", $Familia);
     $sentencia->bindParam(":Precio", $Precio);
     $sentencia->bindParam(":familias_id", $familias_id);
 
@@ -88,9 +86,9 @@ $lista_familias = $sentencia->fetchAll((PDO::FETCH_ASSOC));
         </div>
 
         <div class="line">
-            <label for="Familia" class="form-label">Categoría</label>
+            <label for="familias_id" class="form-label">Categoría</label>
             <br>
-            <select name="familia" id="familia">
+            <select name="familias_id" id="familias_id">
                 <?php
                 foreach ($lista_familias as $registro) {
                     ?>

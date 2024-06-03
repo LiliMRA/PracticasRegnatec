@@ -6,7 +6,7 @@ if (isset($_SESSION['user_id'])) {
     header('Location: login.php');
 }
 
-require '../db.php';
+require ('../bd.php');
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $records = $conexion -> prepare('SELECT id, email, password FROM users WHERE email = :email');

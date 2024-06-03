@@ -1,23 +1,24 @@
-<?php 
+<?php
 session_start();
-require '../bd.php';
+require('../bd.php');
 
 if (isset($_SESSION['user_id'])) {
-    $records = $conexion -> prepare('SELECT id, email, password FROM users WHERE id = :id');
-    $records -> bindParam(':id', $_SESSION['user_id']);
-    $records -> execute();
-    $results = $records -> fetch(PDO::FETCH_ASSOC);
+    $records = $conexion->prepare('SELECT id, email, password FROM users WHERE id = :id');
+    $records->bindParam(':id', $_SESSION['user_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
 
     $user = null;
 
     if (count($results) > 0) {
-$user = $results;
+        $user = $results;
     }
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,26 +26,34 @@ $user = $results;
     <link rel="icon" href="img/logotipo.png">
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
-<header>
-    <a href="../index.html">ByteStore</a>
-</header>
+    <div class="main-login">
 
-<?php if (!empty($user)) : ?>
-    <br> Bienvenido. <?= $user['email'] ?>
-    <br> Sesión iniciada
-    <a href="logout.php"> Cerrar sesión</a>
+        <header>
+            <a href="../index.php">ByteStore</a>
 
-    <?php else : ?>
-<h1>
-    Inicia sesión o Registrate
-</h1>
+            <a href="../index.php">Volver</a>
+        </header>
 
-<a href="login.php"> Iniciar sesión</a>
-<a href="signup.php"> Regístrate </a>
+        <?php if (!empty($user)) : ?>
+            <br> Bienvenido. <?= $user['email'] ?>
+            <br> Sesión iniciada
+            <a href="logout.php"> Cerrar sesión</a>
 
-<?php endif; ?>
-    
+        <?php else : ?>
+            <h1>
+                Inicia sesión o Registrate
+            </h1>
+
+            <a href="login.php"> Iniciar sesión</a>
+            <a href="signup.php"> Regístrate </a>
+
+        <?php endif; ?>
+    </div>
+
+
 </body>
+
 </html>

@@ -2,12 +2,9 @@
 
 include('../../bd.php'); ?>
 
-<?php
-#Código para eliminar una familia
-
+<?php #Código para eliminar una familia 
 if (isset($_GET['txtID'])) {
     $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
-
     $sentencia = $conexion->prepare("DELETE FROM familias WHERE id = :id");
     $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
@@ -36,7 +33,7 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 <h4>Familias</h4>
 
-<section>
+<section class="main-Tablas">
     <div class="card-table">
         <div class="card-header">
             <a href="crear.php" class="btn-primary">
@@ -58,15 +55,14 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <tbody>
                         <?php
                         foreach ($lista_familias as $registro) {
-                            ?>
+                        ?>
                             <tr>
                                 <td> <?php echo $registro['id']; ?> </td>
                                 <td> <?php echo $registro['name']; ?> </td>
                                 <td> <?php echo $registro['Imagen']; ?> </td>
                                 <td>
                                     <a class="btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>">Editar</a>
-                                    <a class="btn-danger"
-                                        href="index.php?txtID=<?php echo $registro['id']; ?>">Eliminar</a>
+                                    <a class="btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>">Eliminar</a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -74,5 +70,6 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </table>
             </div>
         </div>
+</section>
 
-        <?php include('../../templates/footer.php'); ?>
+<?php include('../../templates/footer.php'); ?>

@@ -7,10 +7,15 @@
 
 /* INICIO MENÚ PRODUCTOS */
 
+.main-tienda     {
+    margin-bottom: 20px;
+}
+
 .products-menu {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .card-menu {

@@ -1,12 +1,11 @@
 <?php
-include ('bd.php');
+include('bd.php');
 
-include ('templates/header.php');
+include('templates/header.php');
 ?>
 
-<section class="main-section">
+<section class="main-tienda">
 
-    </div>
     <div class="products-menu">
         <div class="card-menu">
             <div class="face1">
@@ -26,8 +25,7 @@ include ('templates/header.php');
 
         <div class="card-menu">
             <div class="face1">
-                <img src="https://newsbook.es/wp-content/uploads/2020/10/Software-AG-Newsbook-partners-768x512.jpg"
-                    alt="">
+                <img src="https://newsbook.es/wp-content/uploads/2020/10/Software-AG-Newsbook-partners-768x512.jpg" alt="">
             </div>
             <div class="face2">
                 <div class="ofert-content">
@@ -43,8 +41,7 @@ include ('templates/header.php');
 
         <div class="card-menu">
             <div class="face1">
-                <img src="https://miracomohacerlo.com/wp-content/uploads/2021/01/monitor-parlantes-proyector-1.jpg"
-                    alt="">
+                <img src="https://miracomohacerlo.com/wp-content/uploads/2021/01/monitor-parlantes-proyector-1.jpg" alt="">
             </div>
             <div class="face2">
                 <div class="ofert-content">
