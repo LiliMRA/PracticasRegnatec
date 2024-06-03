@@ -9,14 +9,14 @@
 
 @font-face {
     font-family: 'JetBrains';
-    src: url(/assets/fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
+    src: url(../fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url(/assets/fonts/Poppins/Poppins-Regular.ttf);
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
     font-weight: normal;
     font-style: normal;
 }
@@ -87,6 +87,11 @@ header {
 /* FIN DE CABECERA */
 
 /* INCIO DE SECCIÓN */
+
+.main-Index {
+    position: relative;
+    min-height: 100vh;
+}
 
 .portada {
     display: block;
@@ -359,8 +364,8 @@ footer {
     color: white;
     background-color: rgb(2 15 31);
     margin-top: 20px;
-    position: static;
-    bottom: 0%;
+    position: absolute;
+    bottom: 0;
     z-index: 2;
 }
 

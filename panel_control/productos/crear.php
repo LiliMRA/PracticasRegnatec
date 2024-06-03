@@ -11,14 +11,14 @@ if ($_POST) {
     $Descripccion = (isset($_POST["Descripccion"]) ? $_POST["Descripccion"] : "");
     $Precio = (isset($_POST["Precio"]) ? $_POST["Precio"] : "");
     $familias_id = (isset($_POST["id_Familias"]) ? $_POST["id_Familias"] : "");
-    $Imagen1 = (isset($POST["Imagen1"]) ? $_POST["Imagen1"] : "");
-    $Imagen2 = (isset($POST["Imagen2"]) ? $_POST["Imagen2"] : "");
-    $Imagen3 = (isset($POST["Imagen3"]) ? $_POST["Imagen3"] : "");
+    $Imagen1 = (isset($_POST["Imagen1"]) ? $_POST["Imagen1"] : "");
+    $Imagen2 = (isset($_POST["Imagen2"]) ? $_POST["Imagen2"] : "");
+    $Imagen3 = (isset($_POST["Imagen3"]) ? $_POST["Imagen3"] : "");
 
     # Insertamos los datos
     $sentencia = $conexion->prepare("INSERT INTO productos
-(idId, Nombre, Descripccion, familias_id, Precio, Imagen1, Imagen2, Imagen3) VALUES
-(NULL, :Nombre, :Descripccion, :familias_id, :Precio, :Imagen1, :Imagen2, :Imagen3);");
+(Nombre, Descripccion, familias_id, Precio, Imagen1, Imagen2, Imagen3) VALUES
+(:Nombre, :Descripccion, :familias_id, :Precio, :Imagen1, :Imagen2, :Imagen3);");
 
     # Asignamos los valores
     $sentencia->bindParam(":Nombre", $Nombre);

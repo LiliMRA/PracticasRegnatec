@@ -1,8 +1,8 @@
-<?php include ('templates/header.php'); 
+<?php include('templates/header.php');
 
-$url_base = "http://localhost/practicasregnatec/";?>
+$url_base = "http://localhost/practicasregnatec/"; ?>
 
-<section class="">
+<section class="main-Index">
 
 
     <section class="portada">
@@ -130,13 +130,12 @@ $url_base = "http://localhost/practicasregnatec/";?>
 
     <div class="scroll">
         <a href="#logotipo">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-                stroke="currentColor" className="size-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
             </svg>
         </a>
     </div>
-</section>
 
-<?php include ('templates/footer.php'); ?>
+    <?php include('templates/footer.php'); ?>
+</section>

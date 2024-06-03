@@ -1,6 +1,3 @@
-
-</body>
-
 <footer>
     <div class="apart">
         <ul>
@@ -19,5 +16,6 @@
         </ul>
     </div>
 </footer>
+</body>
 
 </html>

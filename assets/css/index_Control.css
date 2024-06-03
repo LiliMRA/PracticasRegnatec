@@ -1,16 +1,21 @@
 /* GENERALES */
 @font-face {
     font-family: 'JetBrains';
-    src: url(/assets/fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
+    src: url(../fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url(/assets/fonts/Poppins/Poppins-Regular.ttf);
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
     font-weight: normal;
     font-style: normal;
+}
+
+.main-control {
+    position: relative;
+    min-height: 100vh;
 }
 
 .title-control {

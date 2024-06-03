@@ -2,6 +2,8 @@
 
 session_start();
 
+$url_base = "http://localhost/practicasregnatec/";
+
 if (isset($_SESSION['user_id'])) {
     header('Location: login.php');
 }
@@ -33,13 +35,13 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByteStore - Inicio sesión</title>
     <link rel="icon" href="img/logotipo.png">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index_Login.css">
 </head>
 
 <body>
 
     <header>
-        <a href="../index.html">ByteStore</a>
+        <a href="../index.php">Volver a ByteStore</a>
     </header>
 
     <h1>

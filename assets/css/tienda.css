@@ -7,8 +7,9 @@
 
 /* INICIO MENÚ PRODUCTOS */
 
-.main-tienda     {
-    margin-bottom: 20px;
+.main-tienda {
+    position: relative;
+    min-height: 62vh;
 }
 
 .products-menu {

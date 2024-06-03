@@ -1,4 +1,5 @@
 <?php include('../../bd.php');
+include('../../templates/header.php');
 
 #$url_base = "http://localhost:3000/"; 
 ?>
@@ -44,7 +45,7 @@ $sentencia->execute();
 $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php include('../../templates/header.php'); ?>
+
 
 
 

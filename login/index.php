@@ -2,6 +2,8 @@
 session_start();
 require('../bd.php');
 
+$url_base = "http://localhost/practicasregnatec/";
+
 if (isset($_SESSION['user_id'])) {
     $records = $conexion->prepare('SELECT id, email, password FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
@@ -32,9 +34,7 @@ if (isset($_SESSION['user_id'])) {
     <div class="main-login">
 
         <header>
-            <a href="../index.php">ByteStore</a>
-
-            <a href="../index.php">Volver</a>
+            <a href="../index.php">Volver a ByteStore</a>
         </header>
 
         <?php if (!empty($user)) : ?>
