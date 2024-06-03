@@ -27,7 +27,9 @@ body {
 .main-login {
     width: 100%;
     margin: auto;
-    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 header {
@@ -36,10 +38,16 @@ header {
     border-radius: 10px;
     padding: 5px 15px;
     font-family: 'JetBrains';
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
     box-shadow: 2px 2px 10px 2px #ff3e35;
+}
+
+header a svg  {
+    width: 20px;
 }
 
 header a {
@@ -49,6 +57,17 @@ header a {
 
 header a:hover {
     color: white;
+}
+
+.verifyUser {
+    height: 50px;
+    text-align: center;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.verifyUser p {
+    font-family: 'JetBrains';
 }
 
 .signup {
@@ -71,6 +90,7 @@ header a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 100px;
     margin-bottom: 15px;
 }
 
@@ -91,6 +111,39 @@ header a:hover {
 
 .login-Title span a {
     color: rgb(255 140 75);
+}
+
+.shortcutContent {
+    display: flex;
+    border: 2px solid rgb(255 140 75);
+}
+
+.shortcutContent a {
+    display: block;
+    padding: 15px;
+    font-family: 'JetBrains';
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    background-color: orangered;
+}
+
+.shortcutContent a:hover {
+    margin-right: 15px;
+    margin-left: 15px;
+    color: orangered;
+    background-color: white;
+    transform: scale(1.2, 1.2);
+}
+
+.loginImg img {
+    width: 800px;
+    margin-top: 30px;
+}
+
+.confirmUser {
+    background-color: white;
+    font-family: 'JetBrains';
 }
 
 .signupCard-Box {
@@ -161,8 +214,9 @@ form {
     height: 45px;
     border: none;
     outline: none;
-    background: linear-gradient(to top left, #ffbe07, #ff3707);
+    background: #ff3707;
     border-radius: 5px;
+    border: 1px solid #f8a35e;
     font-family: 'JetBrains';
     width: 85px;
     cursor: pointer;

@@ -7,7 +7,7 @@ include("../../templates/header.php");
 
 if ($_POST) { #Si se envía el formulario...
 
-    #Recogemos datoas del $_POST
+    #Recogemos datos del $_POST
     $name = (isset($_POST["name"]) ? $_POST["name"] : "");
     $Imagen = (isset($_FILE["Imagen"]) ? $_FILE["Imagen"] : "");
     #Adjuntamos Imagen
