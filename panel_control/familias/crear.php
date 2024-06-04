@@ -11,7 +11,7 @@ if ($_POST) { #Si se envía el formulario...
     $fecha_ = new DateTime();
 
     $nombreArchivo_Imagen = ($Imagen && $Imagen['name' != '']) ? $fecha_->getTimestamp() . "_" . $Imagen['name'] : "";
-    $tmp_Imagen = $Imagen['tmp_name'];
+    $tmp_Imagen = $_FILES["Imagen"]['tmp_name'];
 
     #Insertamos los datos
     $sentencia = $conexion -> prepare("INSERT INTO familias
@@ -20,12 +20,12 @@ if ($_POST) { #Si se envía el formulario...
 
     #Asignamos los valores
     $sentencia->bindParam(":name", $name);
-    $sentencia->bindParam(":Imagen", $nombreArchivo_Imagen);
+    $sentencia->bindParam(":Imagen", $Imagen);
 
     #Ejecutamos
     $sentencia->execute();
-    #header("Location:index.php");
-    exit();
+    header("Location:index.php");
+    die();
 }
 ?>
 

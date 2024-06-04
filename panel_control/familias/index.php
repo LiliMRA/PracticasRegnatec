@@ -26,7 +26,7 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         <ul class="second-menu">
             <li><a href="index.php" class="btn-secondMenu">Familias</a></li>
             <li><a href="../productos/index.php" class="btn-secondMenu">Productos</a></li>
-            <li><a href="../../secciones/monitores/index.php" class="btn-secondMenu">Monitores</a></li>
+            <li><a href="../usuarios/index.php" class="btn-secondMenu">Usuarios</a></li>
             <li><a href="../../secciones/portamonedas/index.php" class="btn-secondMenu">Portamonedas</a></li>
         </ul>
     </div>

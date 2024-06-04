@@ -5,7 +5,7 @@ require('../bd.php');
 $url_base = "http://localhost/practicasregnatec/";
 
 if (isset($_SESSION['user_id'])) {
-    $records = $conexion->prepare('SELECT id, usuario, email, password FROM users WHERE id = :id');
+    $records = $conexion->prepare('SELECT id, usuario, email, password, tipo FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
