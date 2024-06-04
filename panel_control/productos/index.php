@@ -36,7 +36,7 @@ include('../../templates/header.php');
     $sentencia = $conexion->prepare("DELETE FROM productos WHERE idId=:idId");
     $sentencia->bindParam(":idId", $txtID);
     $sentencia->execute();
-    header("Location:index.php");
+    #header("Location:index.php");
 }
 
 #Llamamos tabla prodcutos, asociada con la de familias de la BBDD
@@ -94,7 +94,7 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <td> <?php echo $registro['idId']; ?> </td>
                                 <td> <?php echo $registro['Nombre']; ?> </td>
                                 <td> <?php echo $registro['Descripccion']; ?> </td>
-                                <td> <?php echo $registro['Familia']; ?> </td>
+                                <td> <?php echo $registro['familias_id']; ?> </td>
                                 <td> <?php echo $registro['Precio']; ?> </td>
                                 <td>
                                     <img width="50" src="<?php echo $registro['Imagen1']; ?>" alt="Imagen-producto1">

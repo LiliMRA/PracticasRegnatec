@@ -1,9 +1,6 @@
 <?php
 include("../../bd.php");
 include("../../templates/header.php");
-?>
-
-<?php
 
 if ($_POST) { #Si se envía el formulario...
 
@@ -13,8 +10,8 @@ if ($_POST) { #Si se envía el formulario...
     #Adjuntamos Imagen
     $fecha_ = new DateTime();
 
-    $nombreArchivo_Imagen = ($Imagen != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen"]['name'] : "";
-    $tmp_Imagen = $_FILES["Imagen"]['tmp_name'];
+    $nombreArchivo_Imagen = ($Imagen && $Imagen['name' != '']) ? $fecha_->getTimestamp() . "_" . $Imagen['name'] : "";
+    $tmp_Imagen = $Imagen['tmp_name'];
 
     #Insertamos los datos
     $sentencia = $conexion -> prepare("INSERT INTO familias
@@ -23,12 +20,12 @@ if ($_POST) { #Si se envía el formulario...
 
     #Asignamos los valores
     $sentencia->bindParam(":name", $name);
-    $sentencia->bindParam(":Imagen", $Imagen);
+    $sentencia->bindParam(":Imagen", $nombreArchivo_Imagen);
 
     #Ejecutamos
     $sentencia->execute();
-    header("Location:index.php");
-    die();
+    #header("Location:index.php");
+    exit();
 }
 ?>
 

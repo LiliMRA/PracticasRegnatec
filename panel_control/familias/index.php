@@ -1,8 +1,10 @@
 <?php include('../../templates/header.php');
 
-include('../../bd.php'); ?>
+include('../../bd.php');
+?>
 
-<?php #Código para eliminar una familia 
+<?php
+#Código para eliminar una familia 
 if (isset($_GET['txtID'])) {
     $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
     $sentencia = $conexion->prepare("DELETE FROM familias WHERE id = :id");
@@ -16,6 +18,7 @@ if (isset($_GET['txtID'])) {
 $sentencia = $conexion->prepare("SELECT * FROM familias");
 $sentencia->execute();
 $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <div class="second-menu">
@@ -72,4 +75,6 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         </div>
 </section>
 
-<?php include('../../templates/footer.php'); ?>
+<?php
+include('../../templates/footer.php');
+?>

@@ -1,7 +1,8 @@
 <?php
-include ('../../bd.php');
+include('../../bd.php');
 
-include ('../../templates/header.php'); ?>
+include('../../templates/header.php'); 
+?>
 
 <?php
 
@@ -10,7 +11,7 @@ if ($_POST) {
     $Nombre = (isset($_POST["Nombre"]) ? $_POST["Nombre"] : "");
     $Descripccion = (isset($_POST["Descripccion"]) ? $_POST["Descripccion"] : "");
     $Precio = (isset($_POST["Precio"]) ? $_POST["Precio"] : "");
-    $familias_id = (isset($_POST["id_Familias"]) ? $_POST["id_Familias"] : "");
+    $familias_id = (isset($_POST["familias_id"]) ? $_POST["familias_id"] : "");
     $Imagen1 = (isset($_POST["Imagen1"]) ? $_POST["Imagen1"] : "");
     $Imagen2 = (isset($_POST["Imagen2"]) ? $_POST["Imagen2"] : "");
     $Imagen3 = (isset($_POST["Imagen3"]) ? $_POST["Imagen3"] : "");
@@ -55,10 +56,9 @@ if ($_POST) {
     $sentencia->bindParam(":Imagen3", $nombreArchivo_Imagen3);
 
     # Ejecutamos
-
     $sentencia->execute();
     header("Location:index.php");
-
+    die();
 }
 
 $sentencia = $conexion->prepare("SELECT * FROM familias");
@@ -67,65 +67,67 @@ $lista_familias = $sentencia->fetchAll((PDO::FETCH_ASSOC));
 
 ?>
 
+<section class="mainTablas">
+    <h4 class="subtitle">Datos del producto</h4>
 
-<h4 class="subtitle">Datos del producto</h4>
+    <div class="card-form">
+        <form action="" method="post" enctype="multipart/form-data">
 
-<div class="card-form">
-    <form action="" method="post" enctype="multipart/form-data">
+            <div class="line">
+                <label for="Nombre" class="form-label">Nombre</label>
+                <br>
+                <input type="text" class="form-control" name="Nombre" id="Nombre" placeholder="Nombre">
+            </div>
 
-        <div class="line">
-            <label for="Nombre" class="form-label">Nombre</label>
-            <br>
-            <input type="text" class="form-control" name="Nombre" id="Nombre" placeholder="Nombre">
-        </div>
+            <div class="line">
+                <label for="descripccion" class="form-label">Descripción</label>
+                <br>
+                <input type="text" class="form-control" name="descripccion" id="descripccion" placeholder="Descripción">
+            </div>
 
-        <div class="line">
-            <label for="descripccion" class="form-label">Descripción</label>
-            <br>
-            <input type="text" class="form-control" name="descripccion" id="descripccion" placeholder="Descripción">
-        </div>
-
-        <div class="line">
-            <label for="familias_id" class="form-label">Categoría</label>
-            <br>
-            <select name="familias_id" id="familias_id">
-                <?php
-                foreach ($lista_familias as $registro) {
+            <div class="line">
+                <label for="familias_id" class="form-label">Categoría</label>
+                <br>
+                <select name="familias_id" id="familias_id">
+                    <?php
+                    foreach ($lista_familias as $registro) {
                     ?>
-                    <option value="<?php echo $registro['id']; ?>">
-                        <?php echo $registro['name']; ?>
-                    </option>
-                <?php } ?>
-            </select>
-        </div>
+                        <option value="<?php echo $registro['id']; ?>">
+                            <?php echo $registro['name']; ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </div>
 
-        <div class="line">
-            <label for="Precio" class="form-label">Precio</label>
-            <br>
-            <input type="text" class="form-control" name="Precio" id="Precio" placeholder="Precio">
-        </div>
+            <div class="line">
+                <label for="Precio" class="form-label">Precio</label>
+                <br>
+                <input type="text" class="form-control" name="Precio" id="Precio" placeholder="Precio">
+            </div>
 
-        <div class="line">
-            <label for="Imagen1" class="form-label">Imagen 1</label>
-            <br>
-            <input type="file" class="form-control" name="Imagen1" id="Imagen1" placeholder="Imagen1">
-        </div>
+            <div class="line">
+                <label for="Imagen1" class="form-label">Imagen 1</label>
+                <br>
+                <input type="file" class="form-control" name="Imagen1" id="Imagen1" placeholder="Imagen1">
+            </div>
 
-        <div class="line">
-            <label for="Imagen2" class="form-label">Imagen 2</label>
-            <br>
-            <input type="file" class="form-control" name="Imagen2" id="Imagen2" placeholder="Imagen2">
-        </div>
+            <div class="line">
+                <label for="Imagen2" class="form-label">Imagen 2</label>
+                <br>
+                <input type="file" class="form-control" name="Imagen2" id="Imagen2" placeholder="Imagen2">
+            </div>
 
-        <div class="line">
-            <label for="Imagen3" class="form-label">Imagen 3</label>
-            <br>
-            <input type="file" class="form-control" name="Imagen3" id="Imagen3" placeholder="Imagen3">
-        </div>
+            <div class="line">
+                <label for="Imagen3" class="form-label">Imagen 3</label>
+                <br>
+                <input type="file" class="form-control" name="Imagen3" id="Imagen3" placeholder="Imagen3">
+            </div>
 
-        <button type="submit" class="btn-success">Agregar registro</button>
-        <a href="index.php" class="btn-danger">Cancelar</a>
-    </form>
-</div>
+            <button type="submit" class="btn-success">Agregar registro</button>
+            <a href="index.php" class="btn-danger">Cancelar</a>
+        </form>
+    </div>
+</section>
 
-<?php include ('../../templates/footer.php'); ?>
+
+<?php include('../../templates/footer.php'); ?>

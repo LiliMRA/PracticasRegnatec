@@ -48,3 +48,10 @@
     font-family: 'Poppins';
     font-size: 18px;
 }
+
+/* FOOTER */
+footer {
+    position: absolute;
+    bottom: 0;
+}
+

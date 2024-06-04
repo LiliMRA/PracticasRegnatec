@@ -1,11 +1,11 @@
 <?php
 session_start();
-require ('../bd.php');
+require('../bd.php');
 
 $url_base = "http://localhost/practicasregnatec/";
 
 if (isset($_SESSION['user_id'])) {
-    $records = $conexion->prepare('SELECT id, email, password FROM users WHERE id = :id');
+    $records = $conexion->prepare('SELECT id, usuario, email, password FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -34,15 +34,22 @@ if (isset($_SESSION['user_id'])) {
     <div class="main-login">
 
         <header>
-            <a href="../index.php">Volver a ByteStore</a>
+            <a href="../index.php">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                </svg>Volver a ByteStore
+            </a>
         </header>
 
-        <?php if (!empty($user)): ?>
-            <br> Bienvenido. <?= $user['email'] ?>
-            <br> Sesión iniciada
-            <a href="logout.php"> Cerrar sesión</a>
-
-        <?php else: ?>
+        <div class="alertContainer">
+            <?php if (!empty($user)) : ?>
+            <br> <p>Bienvenido  <span class="userName"><?= $user['usuario'] ?> </span> </p>
+            Sesión iniciada
+            <br>
+            <a class="logoutButton" href="logout.php"> Cerrar sesión</a>
+        </div>
+        
+        <?php else : ?>
 
             <div class="signup">
                 <div class="login-Title">

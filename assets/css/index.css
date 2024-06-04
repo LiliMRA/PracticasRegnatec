@@ -79,6 +79,10 @@ header {
 #login:hover .social-icon {
     filter: invert(0);
 }
+
+.shoppingCart {
+    width: 25px;
+}
 /*
 #control {
     display: none;
@@ -367,6 +371,7 @@ footer {
     position: absolute;
     bottom: 0;
     z-index: 2;
+    display: none;
 }
 
 .apart {

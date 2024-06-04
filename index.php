@@ -1,4 +1,5 @@
 <?php include('templates/header.php');
+include('bd.php');
 
 $url_base = "http://localhost/practicasregnatec/"; ?>
 

@@ -14,7 +14,7 @@ if (isset($_GET['txtID'])) {
 
     $Nombre = $registro['Nombre'];
     $Descripccion = $registro['Descripccion'];
-    $Familia = $registro['Familia'];
+    $familias_id = $registro['familias_id'];
     $Precio = $registro['Precio'];
     $Imagen1 = $registro['Imagen1'];
     $Imagen2 = $registro['Imagen2'];
@@ -29,7 +29,7 @@ if ($_POST) {
     #$txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
     $Nombre = (isset($_POST["Nombre"]) ? $_POST["Nombre"] : "");
     $Descripccion = (isset($_POST["Descripccion"]) ? $_POST["Descripccion"] : "");
-    $Familia = (isset($_POST["Familia"]) ? $_POST["Familia"] : "");
+    $familias_id = (isset($_POST["familias_id"]) ? $_POST["familias_id"] : "");
     $Precio = (isset($_POST["Precio"]) ? $_POST["Precio"] : "");
     $Imagen1 = (isset($_POST["Imagen1"]) ? $_POST["Imagen1"] : "");
     $Imagen2 = (isset($_POST["Imagen2"]) ? $_POST["Imagen2"] : "");
@@ -39,7 +39,7 @@ if ($_POST) {
     $sentencia = $conexion->prepare("UPDATE productos SET
     Nombre = :Nombre,
     Descripccion = :Descripccion,
-    Familia = :Familia,
+    familias_id = :familias_id,
     Precio = :Precio,
     Imagen1 = :Imagen1,
     Imagen2 = :Imagen2,
@@ -49,7 +49,7 @@ if ($_POST) {
     # Asignamos parámetros
     $sentencia->bindParam(":Nombre", $Nombre);
     $sentencia->bindParam(":Descripccion", $Descripccion);
-    $sentencia->bindParam(":Familia", $Familia);
+    $sentencia->bindParam(":familias_id", $familias_id);
     $sentencia->bindParam(":Precio", $Precio);
     $sentencia->bindParam(":Imagen1", $Imagen1);
     $sentencia->bindParam(":Imagen2", $Imagen2);
@@ -165,8 +165,8 @@ if ($_POST) {
             </div>
             
             <div class="line">
-                <label for="Familia" class="form-label">Categoría</label>
-                <select name="familia" id="familia">
+                <label for="familia_id" class="form-label">Categoría</label>
+                <select name="familia_id" id="familia_id">
                 <?php
                 foreach ($lista_familias as $registro) {
                     ?>
