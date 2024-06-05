@@ -1,7 +1,9 @@
-<?php 
-include('../../templates/headerAdmin.php');
+<?php
+ob_start();
 
-include('../../bd.php');
+include ('../../templates/headerAdmin.php');
+
+include ('../../bd.php');
 ?>
 
 <?php
@@ -12,6 +14,7 @@ if (isset($_GET['txtID'])) {
     $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
     header("Location:index.php");
+    exit();
 }
 
 #Llamamos a la BBDD
@@ -59,7 +62,7 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <tbody>
                         <?php
                         foreach ($lista_familias as $registro) {
-                        ?>
+                            ?>
                             <tr>
                                 <td> <?php echo $registro['id']; ?> </td>
                                 <td> <?php echo $registro['name']; ?> </td>
@@ -77,5 +80,7 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 </section>
 
 <?php
-include('../../templates/footer.php');
+
+ob_end_flush();
+include ('../../templates/footer.php');
 ?>

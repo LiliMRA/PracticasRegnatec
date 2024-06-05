@@ -13,16 +13,18 @@ if ($_POST) {
     $usuario = (isset($_POST["usuario"]) ? $_POST["usuario"] : "");
     $email = (isset($_POST["email"]) ? $_POST["email"] : "");
     $password = (isset($_POST["password"]) ? $_POST["password"] : "");
+    $rol = (isset($_POST["rol"]) ? $_POST["rol"] : "");
 
     #Insertamos datos
     $sentencia = $conexion -> prepare("INSERT INTO users
-    (usuario, email, password) VALUES
-    (:usuario, :email, :password);");
+    (usuario, email, password, rol) VALUES
+    (:usuario, :email, :password, :rol);");
 
     #Asignamos parámetros 
     $sentencia -> bindParam(":usuario", $usuario);
     $sentencia -> bindParam(":email", $email);
     $sentencia -> bindParam(":password", $password);
+    $sentencia -> bindParam(":rol", $rol);
 
     #Ejecutamos
     $sentencia -> execute();
@@ -34,7 +36,7 @@ if ($_POST) {
 <h4 class="subtitle"> Datos del usuario </h4>
 
 <div class="card-form">
-    <form action="" method="post" enctype="text/plain">
+    <form action="" method="post">
 
     <div class="line">
         <label for="name" class="form-label"> Usuario </label>
@@ -43,12 +45,17 @@ if ($_POST) {
 
     <div class="line">
         <label for="email" class="form-label"> Email </label>
-        <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Email">
+        <input type="text" class="form-control" name="email" id="email" placeholder="Email">
     </div>
 
     <div class="line">
         <label for="password" class="form-label"> Contraseña </label>
         <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña">
+    </div>
+
+    <div class="line">
+        <label for="rol" class="form-label"> Rol </label>
+        <input type="text" class="form-control" name="rol" id="rol" placeholder="Administrador | Usuario">
     </div>
 
     <button type="submit" class="btn-success"> Agregar usuario </button>

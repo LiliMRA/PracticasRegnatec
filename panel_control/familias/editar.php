@@ -21,9 +21,6 @@ if (isset($_GET['txtID'])) {
     $registro = $sentencia->fetch(PDO::FETCH_LAZY);
 
     $name = $registro['name'];
-
-    $sentencia = $conexion -> prepare("SELECT * FROM familias");
-    $sentencia -> execute();
 }
 
 if ($_POST) { #Si se envía el formulario...
@@ -38,6 +35,7 @@ if ($_POST) { #Si se envía el formulario...
 
     #Asignamos los parámetros
     $sentencia->bindParam(":name", $name);
+    $sentencia->bindParam(":id", $txtID);
     $sentencia -> execute();
 
     #IMGANEN..

@@ -54,7 +54,7 @@ $lista_usuarios = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
                             <th>Usuario</th>
                             <th>Email</th>
                             <th>Contraseña</th>
-                            <th>Tipo usuario</th>
+                            <th>Rol</th>
                         </tr>
                     </thead>
 
@@ -67,14 +67,7 @@ $lista_usuarios = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
                                 <td> <?php echo $registro['usuario']; ?> </td>
                                 <td> <?php echo $registro['email']; ?> </td>
                                 <td> <?php echo $registro['password']; ?> </td>
-                                <td>
-                                    <form id="tipoForm<?php echo $registro['id']; ?>" action=""
-                                        method="post">
-                                        <input type="hidden" name="usuario_id" value="<?php echo $registro['id']; ?>">
-                                        <input class="switch" type="checkbox"
-                                            id="tipoCheckbox<?php echo $registro['id']; ?>" name="tipo" <?php echo ($registro['tipo'] == 'usuario') ? 'checked' : ''; ?>>
-                                    </form>
-                                </td>
+                                <td> <?php echo $registro['rol']; ?> </td>
                                 <td>
                                     <a class="btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>">Editar</a>
                                     <a class="btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>">Eliminar</a>

@@ -5,7 +5,7 @@ require('../bd.php');
 $url_base = "http://localhost/practicasregnatec/";
 
 if (isset($_SESSION['user_id'])) {
-    $records = $conexion->prepare('SELECT id, usuario, email, password, tipo FROM users WHERE id = :id');
+    $records = $conexion->prepare('SELECT id, usuario, email, password, rol FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
     $records->execute();
     $result = $records->fetch(PDO::FETCH_ASSOC);
@@ -65,7 +65,7 @@ if (isset($_SESSION['user_id'])) {
             </div>
 
             <div class="shortcutContent">
-                <a href="<?php echo $url_base; ?>login/login.php"> Iniciar sesión</a>
+                <a href="/login/login.php"> Iniciar sesión</a>
                 |
                 <a href="signup.php"> Regístrate </a>
             </div>
