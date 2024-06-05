@@ -1,5 +1,5 @@
 <?php include('../../bd.php');
-include('../../templates/header.php');
+include('../../templates/headerAdmin.php');
 
 #$url_base = "http://localhost:3000/"; 
 ?>
@@ -54,8 +54,8 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         <ul class="second-menu">
             <li><a href="../familias/index.php" class="btn-secondMenu">Familias</a></li>
             <li><a href="index.php" class="btn-secondMenu">Productos</a></li>
-            <li><a href="../monitores/index.php" class="btn-secondMenu">Monitores</a></li>
-            <li><a href="../portamonedas/index.php" class="btn-secondMenu">Portamonedas</a></li>
+            <li><a href="../usuarios/index.php" class="btn-secondMenu">Usuarios</a></li>
+            <li><a href="#" class="btn-secondMenu">#####</a></li>
         </ul>
     </div>
 </div>
@@ -114,6 +114,9 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </table>
             </div>
         </div>
-</section>
+    
+    </section>
 
-<?php include('../../templates/footer.php'); ?>
+<?php
+include('../../templates/footer.php');
+?>

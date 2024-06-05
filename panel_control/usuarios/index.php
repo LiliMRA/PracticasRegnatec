@@ -1,4 +1,7 @@
-<?php include ('../../templates/header.php');
+<?php 
+ob_start(); #Inicia el almacenamiento en el búfer de salida
+
+include ('../../templates/headerAdmin.php');
 
 include ('../../bd.php');
 ?>
@@ -11,22 +14,23 @@ if (isset($_GET['txtID'])) {
     $sentencia = $conexion->prepare("DELETE FROM users WHERE id = :id");
     $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
+    #Redirigimos a la pág principal
     header("Location:index.php");
+    exit(); #Asegura que el script se detiene después del redireccionamiento
 }
 
-#Llamamos a la BBDD
-$sentencia = $conexion->prepare("SELECT * FROM users");
-$sentencia->execute();
-$lista_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+$sentencia = $conexion -> prepare("SELECT * FROM users");
+$sentencia -> execute();
+$lista_usuarios = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="second-menu">
     <div class="second-nav">
         <ul class="second-menu">
-            <li><a href="index.php" class="btn-secondMenu">Familias</a></li>
+            <li><a href="../familias/index.php" class="btn-secondMenu">Familias</a></li>
             <li><a href="../productos/index.php" class="btn-secondMenu">Productos</a></li>
-            <li><a href="../usuarios/index.php" class="btn-secondMenu">Usuarios</a></li>
-            <li><a href="../../secciones/portamonedas/index.php" class="btn-secondMenu">Portamonedas</a></li>
+            <li><a href="index.php" class="btn-secondMenu">Usuarios</a></li>
+            <li><a href="#" class="btn-secondMenu">#####</a></li>
         </ul>
     </div>
 </div>
@@ -81,7 +85,15 @@ $lista_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </table>
             </div>
         </div>
+        
+        
+
 </section>
+<?php 
+ob_end_flush(); #Envía el contenido almacenado en el búfer y desactiva el almacenamiento en el búfer de salida
+include('../../templates/footer.php');
+?>
+
 
 <script>
     //Asigna la función al evento click del checkbox

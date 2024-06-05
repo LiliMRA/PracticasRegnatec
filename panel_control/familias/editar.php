@@ -1,5 +1,10 @@
-<?php include('../../bd.php'); ?>
-<?php include('../../templates/header.php'); ?>
+<?php
+ob_start(); #Inicia el almacenamiento en el búfer de salida
+
+include('../../bd.php');
+
+include('../../templates/headerAdmin.php');
+?>
 
 <?php
 
@@ -14,13 +19,17 @@ if (isset($_GET['txtID'])) {
     $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
     $registro = $sentencia->fetch(PDO::FETCH_LAZY);
+
     $name = $registro['name'];
+
+    $sentencia = $conexion -> prepare("SELECT * FROM familias");
+    $sentencia -> execute();
 }
 
 if ($_POST) { #Si se envía el formulario...
 
     #Recogemos los datos
-    $txtID = (isset($_POST['name']) ? $_POST['name'] : "");
+    $name = (isset($_POST['name']) ? $_POST['name'] : "");
 
     #Insertamos los datos
     $sentencia = $conexion->prepare("UPDATE familias SET 
@@ -29,12 +38,13 @@ if ($_POST) { #Si se envía el formulario...
 
     #Asignamos los parámetros
     $sentencia->bindParam(":name", $name);
+    $sentencia -> execute();
 
     #IMGANEN..
     $Imagen = (isset($_FILES["Imagen"]['name']) ? $_FILES["Imagen"]['name'] : "");
 
     $fecha_ = new DateTime();
-    $nombreArchivo_Imagen = ($Imagen1 != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen"]['name'] : "";
+    $nombreArchivo_Imagen = ($Imagen != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen"]['name'] : "";
 
     $tmp_Imagen = $_FILES["Imagen"]['tmp_name'];
 
@@ -61,7 +71,8 @@ if ($_POST) { #Si se envía el formulario...
         $sentecia->execute();
     }
 
-    header("Location:index.php");
+    header("Location:index.php"); #Redirigimos a la pág pricipal
+    exit(); #Asegura que el script se detiene después del redireccionamiento
 }
 ?>
 
@@ -85,4 +96,7 @@ if ($_POST) { #Si se envía el formulario...
     </form>
 </div>
 
-<?php include('../../templates/footer.php');
+<?php
+ob_end_flush(); #Envía el contenido almacenado en el búfer y desactiva el almacenamient en el búfer de salida
+include('../../templates/footer.php');
+?>

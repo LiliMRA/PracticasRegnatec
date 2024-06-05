@@ -1,5 +1,10 @@
-<?php include ("../../bd.php"); 
-include('../../templates/header.php'); ?>
+<?php 
+ob_start(); #Inicia el almacenamiento en el búfer de salida
+
+include ("../../bd.php"); 
+
+include('../../templates/headerAdmin.php'); 
+?>
 
 <?php
 
@@ -138,16 +143,19 @@ if ($_POST) {
         $sentencia->bindParam(":idId", $txtID);
         $sentencia->execute();
     }
-
-
-
+    
     header("Location:index.php");
+    exit(); //Asegura que el script se detiene después del redireccionamiento
 }
 ?>
 
+<?php
+$sentencia = $conexion->prepare("SELECT * FROM familias");
+$sentencia->execute();
+$lista_familias = $sentencia->fetchAll((PDO::FETCH_ASSOC));
+?>
 
-
-    <h4 class="subtitle">Datos del prodcuto</h4>
+<h4 class="subtitle">Datos del prodcuto</h4>
 
     <div class="card-form">
         <form action="" method="post" enctype="multipart/form-data">
@@ -165,8 +173,8 @@ if ($_POST) {
             </div>
             
             <div class="line">
-                <label for="familia_id" class="form-label">Categoría</label>
-                <select name="familia_id" id="familia_id">
+                <label for="familias_id" class="form-label">Categoría</label>
+                <select name="familias_id" id="familias_id">
                 <?php
                 foreach ($lista_familias as $registro) {
                     ?>
@@ -203,4 +211,7 @@ if ($_POST) {
         </form>
     </div>
     
-    <?php include('../../templates/footer.php'); ?>
+    <?php 
+    ob_end_flush(); //Envía el contenido almacenado en el búfer y desactiva el almacenamiento en el búfer de salida
+    include('../../templates/footer.php'); 
+    ?>

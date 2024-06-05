@@ -8,13 +8,18 @@ if (isset($_SESSION['user_id'])) {
     $records = $conexion->prepare('SELECT id, usuario, email, password, tipo FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
     $records->execute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
+    $result = $records->fetch(PDO::FETCH_ASSOC);
 
     $user = null;
 
-    if (count($results) > 0) {
-        $user = $results;
+    #Verificamos si $results no es false antes de usar count()
+    if ($result !== false && count($result) > 0) {
+        $user = $result;
     }
+//} else {
+    #Si el usuario no está logeado, lo redirigimos a la pág para iniciar sesión
+   // header('Location:index.php');
+   // exit(); #Aeguramos que el script se detenga después de hacer la redirección
 }
 ?>
 
@@ -43,37 +48,38 @@ if (isset($_SESSION['user_id'])) {
 
         <div class="alertContainer">
             <?php if (!empty($user)) : ?>
-            <br> <p>Bienvenido  <span class="userName"><?= $user['usuario'] ?> </span> </p>
-            Sesión iniciada
-            <br>
-            <a class="logoutButton" href="logout.php"> Cerrar sesión</a>
+                <br>
+                <p>Bienvenido <span class="userName"><?= $user['usuario'] ?> </span> </p>
+                Sesión iniciada
+                <br>
+                <a class="logoutButton" href="logout.php"> Cerrar sesión</a>
         </div>
-        
-        <?php else : ?>
 
-            <div class="signup">
-                <div class="login-Title">
-                    <h2>
-                        Inicia sesión o Registrate
-                    </h2>
-                </div>
+    <?php else : ?>
 
-                <div class="shortcutContent">
-                    <a href="login.php"> Iniciar sesión</a>
-                    |
-                    <a href="signup.php"> Regístrate </a>
-                </div>
-
-                <div class="loginImg">
-                    <img src="../assets/img/MacBook.png" alt="Imagen-portátil">
-                </div>
+        <div class="signup">
+            <div class="login-Title">
+                <h2>
+                    Inicia sesión o Registrate
+                </h2>
             </div>
 
+            <div class="shortcutContent">
+                <a href="<?php echo $url_base; ?>login/login.php"> Iniciar sesión</a>
+                |
+                <a href="signup.php"> Regístrate </a>
+            </div>
+
+            <div class="loginImg">
+                <img src="../assets/img/MacBook.png" alt="Imagen-portátil">
+            </div>
+        </div>
 
 
 
 
-        <?php endif; ?>
+
+    <?php endif; ?>
     </div>
 
 

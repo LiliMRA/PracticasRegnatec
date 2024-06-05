@@ -1,6 +1,12 @@
 <?php
+ob_start(); //Inicia el almacenamiento en el búfer de salida
+
 include("../../bd.php");
-include("../../templates/header.php");
+
+include("../../templates/headerAdmin.php");
+?>
+
+<?php
 
 if ($_POST) { #Si se envía el formulario...
 
@@ -25,7 +31,7 @@ if ($_POST) { #Si se envía el formulario...
     #Ejecutamos
     $sentencia->execute();
     header("Location:index.php");
-    die();
+    exit(); //Asegura que el script se detiene después del redireccionamiento 
 }
 ?>
 
@@ -51,4 +57,7 @@ if ($_POST) { #Si se envía el formulario...
     </form>
 </div>
 
-<?php include("../../templates/footer.php");
+<?php 
+ob_end_flush(); //Envía el contenido almacenado en el búfer y desactiva el almacenamiento en el búfer de salida
+include("../../templates/footer.php");
+?>

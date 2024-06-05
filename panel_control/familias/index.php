@@ -1,4 +1,5 @@
-<?php include('../../templates/header.php');
+<?php 
+include('../../templates/headerAdmin.php');
 
 include('../../bd.php');
 ?>
@@ -27,7 +28,7 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             <li><a href="index.php" class="btn-secondMenu">Familias</a></li>
             <li><a href="../productos/index.php" class="btn-secondMenu">Productos</a></li>
             <li><a href="../usuarios/index.php" class="btn-secondMenu">Usuarios</a></li>
-            <li><a href="../../secciones/portamonedas/index.php" class="btn-secondMenu">Portamonedas</a></li>
+            <li><a href="#" class="btn-secondMenu">#####</a></li>
         </ul>
     </div>
 </div>

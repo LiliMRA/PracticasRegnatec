@@ -138,5 +138,7 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
         </a>
     </div>
 
-    <?php include('templates/footer.php'); ?>
+    <?php 
+    include('templates/footer.php'); 
+    ?>
 </section>
