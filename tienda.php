@@ -2,81 +2,59 @@
 
 session_start();
 
-include('bd.php');
+include ('bd.php');
 
-include('templates/header.php');
+include ('templates/header.php');
+
+include ('carrito.php');
+
+include ('config.php');
+
+$stmt = $conexion->prepare("SELECT * FROM `productos`");
+$stmt->execute();
+$lista_productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <section class="main-tienda">
 
+<div>
+    <?php echo $mensaje; ?>
+</div>
+
     <div class="products-menu">
-        <div class="card-menu">
-            <div class="face1">
-                <img src="assets/img/hardware.png" alt="Imagen-hardware">
-            </div>
-            <div class="face2">
-                <div class="ofert-content">
-                    <p class="title-ofert">Hardware</p>
-                    <div class="boton">
-                        <button name="click" id="click">
-                            <a href="#">Ir a hardware</a>
-                        </button>
+        <?php if (!empty($lista_productos)) { ?>
+            <?php foreach ($lista_productos as $registro) { ?>
+                <div class="card-menu">
+                    <div class="face1">
+                        <img src="<?php echo htmlspecialchars($registro['Imagen1']); ?>"
+                            alt="<?php echo $registro['Nombre'] ?>">
+                    </div>
+                    <div class="face2">
+                        <div class="ofert-content">
+                            <h5 class="title-ofert"><?php echo htmlspecialchars($registro['Nombre']); ?></h5>
+                            <p><?php echo htmlspecialchars($registro['Descripccion']); ?></p>
+                            <div class="boton">
+                                <form action="" method="post">
+                                    <input type="hidden" name="idId" id="idId" value="<?php echo openssl_encrypt($registro['idId'], COD, KEY); ?>">
+                                    <input type="hidden" name="Nombre" id="Nombre" value="<?php echo openssl_encrypt($registro['Nombre'], COD, KEY); ?>">
+                                    <input type="hidden" name="Precio" id="Precio" value="<?php echo openssl_encrypt($registro['Precio'], COD, KEY); ?>">
+                                    <input type="hidden" name="Cantidad" id="Cantidad" value="<?php echo openssl_encrypt(1, COD, KEY);1; ?>">
+                                </form>
+                                <button name="btnAccion" id="click" value="Agregar" type="submit">
+                                    Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="card-menu">
-            <div class="face1">
-                <img src="https://newsbook.es/wp-content/uploads/2020/10/Software-AG-Newsbook-partners-768x512.jpg" alt="">
-            </div>
-            <div class="face2">
-                <div class="ofert-content">
-                    <p>Software</p>
-                    <div class="boton">
-                        <button name="click" id="click">
-                            <a href="#">Ir a software</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-menu">
-            <div class="face1">
-                <img src="https://miracomohacerlo.com/wp-content/uploads/2021/01/monitor-parlantes-proyector-1.jpg" alt="">
-            </div>
-            <div class="face2">
-                <div class="ofert-content">
-                    <p>Periféricos</p>
-                    <div class="boton">
-                        <button name="click" id="click">
-                            <a href="secciones/portamonedas/index.php">Ir a periféricos</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-menu">
-            <div class="face1">
-                <img src="https://tienda.eprodisa.com/img/p/6/3/2/632-medium_default.jpg" alt="">
-            </div>
-            <div class="face2">
-                <div class="ofert-content">
-                    <p>Escaner</p>
-                    <div class="boton">
-                        <button name="click" id="click">
-                            <a href="secciones/escaner/index.php">Ir a productos</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <?php } ?>
+        <?php } else { ?>
+            <p> No hay productos disponibles en este momento. </p>
+        <?php } ?>
     </div>
 
-    
+
 
 </section>
 
-<?php include('templates/footer.php'); ?>
+<?php include ('templates/footer.php'); ?>

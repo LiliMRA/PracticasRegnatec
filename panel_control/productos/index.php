@@ -1,15 +1,17 @@
 <?php
 session_start();
 
-include('../../bd.php');
+include ('../../bd.php');
 
-include('../../templates/header.php');
+include ('../../templates/header.php');
 
 #$url_base = "http://localhost:3000/"; 
 ?>
 
 
-<?php if (isset($_GET['txtID'])) {
+<?php
+
+if (isset($_GET['txtID'])) {
     $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : ""; //Buscamos la imagen relacionado con el producto
     $sentencia = $conexion->prepare("SELECT Imagen1, Imagen2, Imagen3 FROM productos WHERE idId=:idId");
     $sentencia->bindParam(":idId", $txtID);
@@ -40,11 +42,12 @@ include('../../templates/header.php');
     $sentencia = $conexion->prepare("DELETE FROM productos WHERE idId=:idId");
     $sentencia->bindParam(":idId", $txtID);
     $sentencia->execute();
-    #header("Location:index.php");
+    header("Location:index.php");
+    exit();
 }
 
 #Llamamos tabla prodcutos, asociada con la de familias de la BBDD
-$sentencia = $conexion->prepare("SELECT * ,(SELECT name FROM familias WHERE familias.id = productos.idId LIMIT 1)AS Categoría FROM productos");
+$sentencia = $conexion->prepare("SELECT * ,(SELECT name FROM familias WHERE familias.id = productos.familias_id LIMIT 1)AS Categoría FROM productos");
 $sentencia->execute();
 $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -93,12 +96,12 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <tbody>
                         <?php
                         foreach ($lista_productos as $registro) {
-                        ?>
+                            ?>
                             <tr>
                                 <td> <?php echo $registro['idId']; ?> </td>
                                 <td> <?php echo $registro['Nombre']; ?> </td>
                                 <td> <?php echo $registro['Descripccion']; ?> </td>
-                                <td> <?php echo $registro['familias_id']; ?> </td>
+                                <td> <?php echo $registro['Categoría']; ?> </td>
                                 <td> <?php echo $registro['Precio']; ?> </td>
                                 <td>
                                     <img width="50" src="<?php echo $registro['Imagen1']; ?>" alt="Imagen-producto1">
@@ -110,7 +113,8 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 </td>
                                 <td>
                                     <a class="btn-info" href="editar.php?txtID=<?php echo $registro['idId']; ?>">Editar</a>
-                                    <a class="btn-danger" href="index.php?txtID=<?php echo $registro['idId']; ?>">Eliminar</a>
+                                    <a class="btn-danger"
+                                        href="index.php?txtID=<?php echo $registro['idId']; ?>">Eliminar</a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -122,5 +126,5 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 </section>
 
 <?php
-include('../../templates/footer.php');
+include ('../../templates/footer.php');
 ?>

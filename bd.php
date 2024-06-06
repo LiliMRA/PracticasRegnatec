@@ -5,7 +5,7 @@
 $servidor= "127.0.0.1";
 $baseDeDatos = "bytestore";
 $usuario = "root";
-$contrasenia = "0790";
+$contrasenia = "";
 #0790
 
 try {

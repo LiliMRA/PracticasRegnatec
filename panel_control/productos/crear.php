@@ -4,9 +4,9 @@ session_start();
 
 ob_start(); #Inicia el almacenamiento en el búfer de salida
 
-include('../../bd.php');
+include ('../../bd.php');
 
-include('../../templates/header.php'); 
+include ('../../templates/header.php');
 ?>
 
 <?php
@@ -17,9 +17,6 @@ if ($_POST) {
     $Descripccion = (isset($_POST["Descripccion"]) ? $_POST["Descripccion"] : "");
     $Precio = (isset($_POST["Precio"]) ? $_POST["Precio"] : "");
     $familias_id = (isset($_POST["familias_id"]) ? $_POST["familias_id"] : "");
-    $Imagen1 = (isset($_POST["Imagen1"]) ? $_POST["Imagen1"] : "");
-    $Imagen2 = (isset($_POST["Imagen2"]) ? $_POST["Imagen2"] : "");
-    $Imagen3 = (isset($_POST["Imagen3"]) ? $_POST["Imagen3"] : "");
 
     # Insertamos los datos
     $sentencia = $conexion->prepare("INSERT INTO productos
@@ -35,27 +32,31 @@ if ($_POST) {
     # Adjuntamos foto
     $fecha_ = new DateTime();
 
-    $nombreArchivo_Imagen1 = ($Imagen1 != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen1"]['name'] : "";
+    #IMAGEN 1
+    $nombreArchivo_Imagen1 = (isset($_FILES["$Imagen1"]) && $_FILES["Imagen1"]["name"] != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen1"]['name'] : "";
     $tmp_Imagen1 = $_FILES["Imagen1"]['tmp_name'];
-    /*
+
     if ($tmp_Imagen1 != '') {
         move_uploaded_file($tmp_Imagen1, "./" . $nombreArchivo_Imagen1);
     }
 
-    $nombreArchivo_Imagen2 = ($Imagen2 != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen2"]['name'] : "";
+    #IMAGEN 2
+    $nombreArchivo_Imagen2 = (isset($_FILES["$Imagen2"]) && $_FILES["Imagen2"]["name"] != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen2"]['name'] : "";
     $tmp_Imagen2 = $_FILES["Imagen2"]['tmp_name'];
 
     if ($tmp_Imagen2 != '') {
         move_uploaded_file($tmp_Imagen2, "./" . $nombreArchivo_Imagen2);
     }
 
-    $nombreArchivo_Imagen3 = ($Imagen3 != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen3"]['name'] : "";
+    #IMAGEN 3
+    $nombreArchivo_Imagen3 = (isset($_FILES["$Imagen3"]) && $_FILES["Imagen3"]["name"] != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen3"]['name'] : "";
     $tmp_Imagen3 = $_FILES["Imagen3"]['tmp_name'];
 
     if ($tmp_Imagen3 != '') {
         move_uploaded_file($tmp_Imagen3, "./" . $nombreArchivo_Imagen3);
-    }*/
+    }
 
+    # Asignamos parámetros
     $sentencia->bindParam(":Imagen1", $nombreArchivo_Imagen1);
     $sentencia->bindParam(":Imagen2", $nombreArchivo_Imagen2);
     $sentencia->bindParam(":Imagen3", $nombreArchivo_Imagen3);
@@ -87,9 +88,9 @@ $lista_familias = $sentencia->fetchAll((PDO::FETCH_ASSOC));
             </div>
 
             <div class="line">
-                <label for="descripccion" class="form-label">Descripción</label>
+                <label for="Descripccion" class="form-label">Descripción</label>
                 <br>
-                <input type="text" class="form-control" name="descripccion" id="descripccion" placeholder="Descripción">
+                <input type="text" class="form-control" name="Descripccion" id="Descripccion" placeholder="Descripción">
             </div>
 
             <div class="line">
@@ -98,7 +99,7 @@ $lista_familias = $sentencia->fetchAll((PDO::FETCH_ASSOC));
                 <select name="familias_id" id="familias_id">
                     <?php
                     foreach ($lista_familias as $registro) {
-                    ?>
+                        ?>
                         <option value="<?php echo $registro['id']; ?>">
                             <?php echo $registro['name']; ?>
                         </option>
@@ -137,7 +138,7 @@ $lista_familias = $sentencia->fetchAll((PDO::FETCH_ASSOC));
 </section>
 
 
-<?php 
+<?php
 ob_end_flush(); //Envía el contenido almacenado en el búfer y desactiva el almacenamiento en el búfer de salida 
-include('../../templates/footer.php'); 
+include ('../../templates/footer.php');
 ?>
