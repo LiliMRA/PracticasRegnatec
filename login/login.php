@@ -2,6 +2,8 @@
 
 session_start();
 
+
+
 if (isset($_SESSION['user_id'])) {
     header('Location: index.php');
     exit();
@@ -12,7 +14,7 @@ require('../bd.php');
 $url_base = "http://localhost/practicasregnatec/";
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
-    $records = $conexion->prepare('SELECT id, email, password FROM users WHERE email = :email');
+    $records = $conexion->prepare('SELECT id, email, password, rol FROM users WHERE email = :email');
     $records->bindParam(':email', $_POST['email']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -21,7 +23,10 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
     if ($results && password_verify($_POST['password'], $results['password'])) {
         $_SESSION['user_id'] = $results['id'];
+        $_SESSION['rol'] = $results['rol'];
+
         header('Location: index.php');
+        exit();
     } else {
         $message = 'Lo siento, los datos no coinciden';
     }
@@ -86,9 +91,9 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
             <form action="login.php" method="post">
                 <div class="formContent">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Email">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
                     <label for="password">Contraseña</label>
-                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                    <input type="password" name="password" id="password" placeholder="Contraseña" required>
                     <button type="submit" id="signup-Button" value="Enviar">Enviar</button>
                 </div>
 

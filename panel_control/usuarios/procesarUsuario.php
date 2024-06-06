@@ -1,11 +1,14 @@
 <?php
-include('../../bd.php');
+
 session_start();
+
+include('../../bd.php');
+
 
 $usuario_id = $_POST['usuario'];
 $nuevo_rol = ($_POST['rol'] == 'Usuario') ? 'Usuario' : 'Administrador';
 
-$sql = $conexion -> prepare("UPDATE users SET tipo = '$nuevo_tipo' WHERE id = $usuario'");
+$sql = $conexion -> prepare("UPDATE users SET rol = '$nuevo_rol' WHERE id = $usuario_id'");
 
 #Redirigimos
 header('Location:index.php');

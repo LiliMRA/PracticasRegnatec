@@ -1,5 +1,9 @@
-<?php include('../../bd.php');
-include('../../templates/headerAdmin.php');
+<?php
+session_start();
+
+include('../../bd.php');
+
+include('../../templates/header.php');
 
 #$url_base = "http://localhost:3000/"; 
 ?>
@@ -114,8 +118,8 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </table>
             </div>
         </div>
-    
-    </section>
+
+</section>
 
 <?php
 include('../../templates/footer.php');

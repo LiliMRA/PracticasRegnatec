@@ -1,9 +1,12 @@
 <?php 
+
+session_start();
+
 ob_start(); #Inicia el almacenamiento en el búfer de salida
 
 include ("../../bd.php"); 
 
-include('../../templates/headerAdmin.php'); 
+include('../../templates/header.php'); 
 ?>
 
 <?php

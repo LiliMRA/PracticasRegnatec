@@ -1,4 +1,8 @@
-<?php include('templates/header.php');
+<?php
+
+session_start();
+
+include('templates/header.php');
 include('bd.php');
 
 $url_base = "http://localhost/practicasregnatec/"; ?>
@@ -14,17 +18,17 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
         </div>
         <div class="galery">
             <div class="card">
-                <div class="img-box">
-                    <img src="assets/img/tienda-bytestore.jpg" alt="">
-                </div>
-                <div class="content">
-                    <p>Visita nuestras instalaciones </p>
-                </div>
-
+                <figure class="card_thumb">
+                    <img class="img-box" src="assets/img/tienda-bytestore.jpg" alt="">
+                    <figurecaption class="content">
+                        <p class="card_snippet">Visita nuestras instalaciones </p>
+                    </figurecaption>
+                </figure>
             </div>
+            
             <div class="card">
                 <div class="img-box">
-                    <img src="assets/img/tienda3.jpg" alt="">
+                    <img  src="assets/img/tienda3.jpg" alt="">
                 </div>
                 <div class="content">
                     <p>Cuenta con atención personalizada en todo momento</p>
@@ -138,7 +142,7 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
         </a>
     </div>
 
-    <?php 
-    include('templates/footer.php'); 
+    <?php
+    include('templates/footer.php');
     ?>
 </section>

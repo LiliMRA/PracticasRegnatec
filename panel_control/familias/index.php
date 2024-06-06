@@ -1,7 +1,10 @@
 <?php
+
+session_start();
+
 ob_start();
 
-include ('../../templates/headerAdmin.php');
+include ('../../templates/header.php');
 
 include ('../../bd.php');
 ?>

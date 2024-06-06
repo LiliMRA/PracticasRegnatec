@@ -1,4 +1,8 @@
-<?php include('templates/header.php'); ?>
+<?php 
+session_start();
+
+include('templates/header.php'); 
+?>
 
 <section class="main-section">
     <div class="tarjeta-contacto">

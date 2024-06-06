@@ -1,4 +1,8 @@
-<?php include ('templates/header.php'); ?>
+<?php 
+session_start();
+
+include ('templates/header.php'); 
+?>
 
 
 <div class="main-contact">
