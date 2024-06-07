@@ -46,10 +46,18 @@ header {
     width: 150px;
 }
 
+/* Menú de navegación */
+
+.nav {
+    transition: max-height .5s ease-out;
+}
+
 .menu {
     display: flex;
-    float: right;
-    flex-direction: row;
+    /*float: right;*/
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-100%);
 }
 
 .nav li {
@@ -83,10 +91,96 @@ header {
 .shoppingCart {
     width: 25px;
 }
-/*
-#control {
+
+/* Menú hamburguesa */
+
+.menu--show {
+    transform: translateY(125px);
+}
+
+.hamb {
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+    float: right;
+    margin: 20px 20px;
+    padding: 30px 20px;
+    border-radius: 5px;
+    background-color: orangered;
+    box-shadow: 2px 2px 2px 1px;
+    z-index: 3;
+}
+
+.hamb-line {
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+    background: black;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before {
+    top: 5px;
+}
+
+.hamb-line::after {
+    top: -5px;
+}
+
+.side-menu {
     display: none;
-}*/
+}
+
+.side-menu:checked~nav {
+    max-height: 100%;
+}
+
+.side-menu:checked.hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked~.hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.side-menu:checked~.hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+@media screen and (min-width: 770px) {
+    .wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu {
+        flex-direction: row;
+        transform: translateY(0);
+    }
+
+    .nav ul li {
+        padding: 0;
+        margin: 0px 2px;
+    }
+
+    .hamb {
+        display: none;
+    }
+}
 
 /* FIN DE CABECERA */
 
@@ -129,6 +223,7 @@ header {
     justify-content: center
 }
 
+/* Galreía principal */
 .card {
     width: 300px;
     margin: 10px;
@@ -160,7 +255,7 @@ header {
         position: relative;
         max-height: 400px;
         overflow: hidden;
-/*
+        /*
         @include breakpoint(desktop) {
             max-height: 500px;
         }*/
@@ -173,7 +268,7 @@ header {
         content: '';
         width: 100%;
         height: 100%;
-        background: linear-gradient(0deg, rgba(0, 0, 0, .5) 40%, rgba(255, 255, 255, 0) 100%);
+        /*background: linear-gradient(0deg, rgba(0, 0, 0, .5) 40%, rgba(255, 255, 255, 0) 100%);*/
         transition: .3s;
 
         /*
@@ -211,7 +306,7 @@ header {
     overflow: hidden;
     font-family: 'JetBrains';
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 20px;
     text-overflow: ellipsis;
     transition: .5s ease-in-out;
@@ -256,6 +351,8 @@ header {
     transition: 1s linear;
 }
 
+/* Fin de galería principal */
+
 /* FIN DE PORTADA */
 
 /* TEXTO INTRO */
@@ -271,7 +368,7 @@ header {
     margin-right: 30px;
 }
 
-.description-img  img{
+.description-img img {
     width: 450px;
     border-radius: 5px;
 }
@@ -300,7 +397,7 @@ header {
     transform: translateY(100px);
 }
 
-.card-products:hover .face1{
+.card-products:hover .face1 {
     transform: translateY(0);
 }
 
@@ -312,6 +409,7 @@ header {
 .face2 {
     background-color: orangered;
 }
+
 .ofert-content {
     opacity: 1;
     transition: 0.5s;
@@ -365,8 +463,7 @@ header {
 }
 
 .circle {
-    transition: all 0.45s
-    cubic-bezier(0.65, 0, 0.076, 1);
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: relative;
     display: block;
     margin: 0;
@@ -381,8 +478,7 @@ header {
     top: 0;
     bottom: 0;
     margin: auto;
-    transition: all 0.45s
-    cubic-bezier(0.65, 0, 0.076, 1);
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     left: 0.625rem;
     width: 1.125rem;
     height: 0.125rem;
@@ -392,17 +488,16 @@ header {
 .arrow-icon::before {
     position: absolute;
     content: "";
-    top:  -0.25rem;
+    top: -0.25rem;
     right: 0.0625rem;
     width: 0.625rem;
     border-top: 0.125rem solid black;
     border-right: 0.125rem solid black;
-    transform: rotate(45deg); 
+    transform: rotate(45deg);
 }
 
 .button-text {
-    transition: all 0.45s
-    cubic-bezier(0.65, 0, 0.076, 1);
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: absolute;
     inset: 0;
     padding: 0.75rem 0;
@@ -426,13 +521,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    bottom: 5%;
-    right: -12%;
-    z-index: 3;
+    overflow: hidden;
+    margin: 20px;
 }
 
-.scroll a svg {
+.scroll a {
     margin: 0px;
     display: flex;
     align-items: center;
@@ -446,6 +539,7 @@ header {
     background-color: orangered;
     text-decoration: none;
 }
+
 /*
 .scroll a:hover {
     transition: 0.10s;
@@ -467,11 +561,7 @@ footer {
     margin-top: 20px;
     position: absolute;
     bottom: 0;
-    z-index: 2;
-}
-
-.apart {
-    margin-left: 15%;
+    justify-content: space-around;
 }
 
 .apart ul li {
@@ -484,9 +574,81 @@ footer {
     text-decoration: none;
 }
 
+.credits {
+    color: white;
+    text-align: center;
+    font-family: 'JetBrains';
+    font-size: 18px;
+    text-decoration: none;
+}
+
 .social-media {
-    margin-left: 15%;
+    width: 200px;
+}
+
+.social-media ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.social-media ul img {
+    max-width: 48px;
+    max-height: 48px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
 }
 
 /* FIN DE FOOTER */
 
+/* MEDIA QUERYS PERSONSIVE */
+
+@media (max-width: 1112px) {
+
+    .description {
+        flex-direction: column;
+    }
+
+    .text {
+        margin-right: none;
+        font-size: 25px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    .logotipo {
+        display: none;
+    }
+
+    .nav {
+        margin-left: 100px;
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    .oferts {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-products img {
+        width: 300px;}
+}
+
+@media (max-width: 885px) {
+    .nav ul {
+        transform: none;
+    }
+}
+
+@media (max-width: 801px) {
+    .nav li a {
+        font-size: 15px;
+    }
+}

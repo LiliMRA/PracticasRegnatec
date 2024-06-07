@@ -1,7 +1,7 @@
-<?php 
+<?php
 session_start();
 
-include ('templates/header.php'); 
+include('templates/header.php');
 ?>
 
 
@@ -44,8 +44,7 @@ include ('templates/header.php');
             <div class="cell" id="date-div">
                 <div class="cell-content">
                     <label for="fecha" class="label-control">Fecha*</label> <br>
-                    <input type="date" id="fecha" name="fecha" value="2024-05-03" min="2024-05-03" max="2024-07-31"
-                        required />
+                    <input type="date" id="fecha" name="fecha" value="2024-05-03" min="2024-05-03" max="2024-07-31" required />
                 </div>
 
                 <div class="cell-content">
@@ -67,4 +66,6 @@ include ('templates/header.php');
     </div>
 </div>
 
-<?php include ('templates/footer.php'); ?>
+<?php 
+include('templates/footer.php'); 
+?>

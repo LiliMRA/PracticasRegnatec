@@ -63,10 +63,3 @@ if (isset($_POST['btnAccion'])) {
             break;
     }
 }
-?>
-
-<section class="mainCarrito">
-
-
-
-</section>

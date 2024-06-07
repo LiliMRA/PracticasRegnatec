@@ -66,9 +66,9 @@ if (isset($_SESSION['user_id'])) {
             </div>
 
             <div class="shortcutContent">
-                <a href="/login/login.php"> Iniciar sesión</a>
+                <a href="<?php echo $url_base; ?>/login/login.php"> Iniciar sesión</a>
                 |
-                <a href="/login/signup.php"> Regístrate </a>
+                <a href="<?php echo $url_base; ?>/login/signup.php"> Regístrate </a>
             </div>
 
             <div class="loginImg">

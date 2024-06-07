@@ -2,52 +2,71 @@
 
 session_start();
 
-include ('templates/header.php');
+include('templates/header.php');
 
-include ('carrito.php');
+include('carrito.php');
 
-include ('config.php');
+include('config.php');
 
 ?>
 
-<br>
-<h3>Lista del carrito</h3>
-<!--<?php #if (!empty($_SESSION['CARRITO'])) { ?>-->
+<div class="main-mostrarCarrito">
 
-<table style="border: 1px solid black">
-    <tbody>
-        <tr>
-            <th>Descripción</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
-            <th>Total</th>
-            <th>--</th>
-        </tr>
+    <br>
+    <h3 class="title">Tu carrito</h3>
+    <?php if (!empty($_SESSION['CARRITO'])) { 
+        ?>
 
-        <tr>
-            <td>Descripción</td>
-            <td>Cantidad</td>
-            <td>Precio</td>
-            <td>Total</td>
-            <td>--</td>
-        </tr>
+    <table class="shoppingTable">
+        <tbody>
+            <tr>
+                <th width="38%">Artículo</th>
+                <th width="13%">Cantidad</th>
+                <th width="23%">Precio</th>
+                <th width="18%">Total</th>
+                <th>--</th>
+            </tr>
 
-        <tr>
-            <td><h3>Total</h3></td>
-            <td><h3> €<?php echo number_format(200,2); ?> </h3></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+            <tr>
+                <td width="38%">
+                    <div class="cardArticle">Descripción</div>
+                </td>
+                <td width="13%">
+                    <div class="cardArticle">Cantidad</div>
+                </td>
+                <td width="23%">
+                    <div class="cardArticle">Precio</div>
+                </td>
+                <td width="18%">
+                    <div class="cardArticle">Total</div>
+                </td>
+                <td>--</td>
+            </tr>
 
-<?php #} else { ?>
+            <tr>
+                <td colspan="2">
+                    <h3 float="rigth">Total</h3>
+                </td>
+                <td>
+                    <h3 float="rigth"> €<?php echo number_format(200, 2); ?> </h3>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <?php } else { 
+    ?>
     <div class="">
         No hay productos en el carrito.
     </div>
-    <?php #} ?>
-
-    <?php
-
-    include('templates/footer.php');
-
+    <?php } 
     ?>
+
+</div>
+
+<?php
+
+include('templates/footer.php');
+
+?>

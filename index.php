@@ -19,38 +19,41 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
         <div class="galery">
             <div class="card">
                 <figure class="card_thumb">
-                    <img class="img-box" src="assets/img/tienda-bytestore.jpg" alt="">
+                    <img class="img-box" src="<?php echo $url_base; ?>assets/img/tienda-bytestore.jpg" alt="">
                     <figurecaption class="content">
                         <p class="card_snippet">Visita nuestras instalaciones </p>
                     </figurecaption>
                 </figure>
             </div>
-            
+
             <div class="card">
-                <div class="img-box">
-                    <img  src="assets/img/tienda3.jpg" alt="">
-                </div>
-                <div class="content">
-                    <p>Cuenta con atención personalizada en todo momento</p>
-                </div>
+                <figure class="card_thumb">
+                    <img class="img-box" src="<?php echo $url_base; ?>assets/img/tienda3.jpg" alt="">
+                    <figurecaption class="content">
+                        <p class="card_snippet"> Cuenta con atención personalizada en todo momento </p>
+                    </figurecaption>
+                </figure>
             </div>
+
             <div class="card">
-                <div class="img-box">
-                    <img src="assets/img/tienda2.jpg" alt="">
-                </div>
-                <div class="content">
-                    <p>Encontrarás los productos más acertados a tus necesidades</p>
-                </div>
+                <figure class="card_thumb">
+                    <img class="img-box" src="<?php echo $url_base; ?>assets/img/tienda2.jpg" alt="">
+                    <figurecaption class="content">
+                        <p class="card_snippet"> Encontrarás los productos más acertados a tus necesidades </p>
+                    </figurecaption>
+                </figure>
             </div>
+
         </div>
     </section>
 
     <div class="description">
         <div class="text">
-            <h2>Lorem Ipsum</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum dolore, <br>hic tempore dignissimos
-                nisi, <br>molestiae itaque explicabo excepturi harum cum rem, <br>iste ducimus eos voluptatum numquam
-                modi tenetur iure praesentium?</p>
+            <h2>ByteStore</h2>
+            <p>Tu tienda informática donde encontrarás lo último en hardware, software<br> y accesorios con el mejor asesoramiento.
+                Descubre las mejores ofertas en<br> tecnología y equipa tu vida con lo último en informática. <br>
+                Calidad, precio y servicio excepcional en un solo lugar.
+            </p>
 
         </div>
         <div class="description-img">
@@ -135,10 +138,7 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
 
     <div class="scroll">
         <a href="#logotipo">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
-            </svg>
+            Subir
         </a>
     </div>
 

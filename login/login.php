@@ -30,8 +30,6 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     } else {
         $message = 'Lo siento, los datos no coinciden';
     }
-
-    
 }
 
 ?>
@@ -50,7 +48,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 <body>
 
     <header>
-        <a href="../index.php">
+        <a href="<?php echo $url_base; ?>index.php">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
             </svg>
@@ -66,11 +64,11 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
             <h2>
                 Inicia sesión
             </h2>
-            <span>o <a href="signup.php">Regístrate</a></span>
+            <span>o <a href="<?php echo $url_base; ?>/login/signup.php">Regístrate</a></span>
         </div>
 
-        <div class="verifyUser">
-            <?php if (!empty($message)) : ?>
+        <?php if (!empty($message)) : ?>
+            <div class="verifyUser">
                 <p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
@@ -78,8 +76,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
                     <?= $message ?>
                 </p>
-            <?php endif; ?>
-        </div>
+            </div>
+        <?php endif; ?>
 
         <div class="signupCard">
             <div class="signupImg">
