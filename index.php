@@ -19,7 +19,7 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
         <div class="galery">
             <div class="card">
                 <figure class="card_thumb">
-                    <img class="img-box" src="<?php echo $url_base; ?>assets/img/tienda-bytestore.jpg" alt="">
+                    <img class="img-box" src="/assets/img/tienda-bytestore.jpg" alt="">
                     <figurecaption class="content">
                         <p class="card_snippet">Visita nuestras instalaciones </p>
                     </figurecaption>
@@ -28,7 +28,7 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
 
             <div class="card">
                 <figure class="card_thumb">
-                    <img class="img-box" src="<?php echo $url_base; ?>assets/img/tienda3.jpg" alt="">
+                    <img class="img-box" src="/assets/img/tienda3.jpg" alt="">
                     <figurecaption class="content">
                         <p class="card_snippet"> Cuenta con atención personalizada en todo momento </p>
                     </figurecaption>
@@ -37,7 +37,7 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
 
             <div class="card">
                 <figure class="card_thumb">
-                    <img class="img-box" src="<?php echo $url_base; ?>assets/img/tienda2.jpg" alt="">
+                    <img class="img-box" src="/assets/img/tienda2.jpg" alt="">
                     <figurecaption class="content">
                         <p class="card_snippet"> Encontrarás los productos más acertados a tus necesidades </p>
                     </figurecaption>
