@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2024 a las 23:49:58
+-- Tiempo de generación: 09-06-2024 a las 20:11:58
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -56,20 +56,39 @@ CREATE TABLE `clientes` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `escaner`
+-- Estructura de tabla para la tabla `detalleventas`
 --
 
-CREATE TABLE `escaner` (
+CREATE TABLE `detalleventas` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(255) DEFAULT NULL,
-  `foto` varchar(255) DEFAULT NULL,
-  `lectura` varchar(10) DEFAULT NULL,
-  `uso` varchar(10) DEFAULT NULL,
-  `escaneado` varchar(10) DEFAULT NULL,
-  `interface` varchar(10) DEFAULT NULL,
-  `tecnologia` varchar(10) DEFAULT NULL,
-  `soporte` varchar(20) DEFAULT NULL
+  `idVenta` int(11) NOT NULL,
+  `idProducto` int(11) NOT NULL,
+  `PrecioUnitario` decimal(20,0) NOT NULL,
+  `Cantidad` int(11) NOT NULL,
+  `Descargado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `detalleventas`
+--
+
+INSERT INTO `detalleventas` (`id`, `idVenta`, `idProducto`, `PrecioUnitario`, `Cantidad`, `Descargado`) VALUES
+(1, 8, 3, 250, 1, 0),
+(2, 8, 5, 16, 1, 0),
+(3, 8, 4, 21, 1, 0),
+(4, 9, 3, 250, 1, 0),
+(5, 9, 5, 16, 1, 0),
+(6, 9, 4, 21, 1, 0),
+(7, 11, 3, 250, 1, 0),
+(8, 11, 5, 16, 1, 0),
+(9, 11, 4, 21, 1, 0),
+(10, 12, 3, 250, 1, 0),
+(11, 12, 5, 16, 1, 0),
+(12, 12, 4, 21, 1, 0),
+(13, 13, 3, 250, 1, 0),
+(14, 13, 5, 16, 1, 0),
+(15, 13, 4, 21, 1, 0),
+(16, 14, 4, 21, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -88,70 +107,9 @@ CREATE TABLE `familias` (
 --
 
 INSERT INTO `familias` (`id`, `name`, `Imagen`) VALUES
-(15, 'Hardware', ''),
-(16, 'Software', ''),
-(23, 'Periféricos', ''),
-(27, 'piezas segunda', '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `impresora_termica`
---
-
-CREATE TABLE `impresora_termica` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(255) DEFAULT NULL,
-  `foto` varchar(255) DEFAULT NULL,
-  `peso` varchar(20) DEFAULT NULL,
-  `dimensiones` varchar(50) DEFAULT NULL,
-  `alimentacion` varchar(20) DEFAULT NULL,
-  `resolucion` varchar(20) DEFAULT NULL,
-  `velocidad` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `monitores`
---
-
-CREATE TABLE `monitores` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(255) DEFAULT NULL,
-  `foto` varchar(255) DEFAULT NULL,
-  `procesador` varchar(100) DEFAULT NULL,
-  `memoria` varchar(100) DEFAULT NULL,
-  `disco` varchar(100) DEFAULT NULL,
-  `pantalla` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `monitores`
---
-
-INSERT INTO `monitores` (`id`, `nombre`, `foto`, `procesador`, `memoria`, `disco`, `pantalla`) VALUES
-(6, 'Posiflex366 PS-3316E TPV ', '1716833405_a29.jpg', 'Intel3 J190066 Quad Core (Cache 2Mb)', ' DDR3 de 4 GB', 'SSD366 de GB', ''),
-(7, 'Posiflex36688 PS-3316E TPV ', '1716833825_a29.jpg', 'Intel J190000 Quad Core (Cache 2Mb)', ' DDR300 de 4 GB', 'SSD36600 de GB', '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `portamonedas`
---
-
-CREATE TABLE `portamonedas` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(255) DEFAULT NULL,
-  `foto` varchar(255) DEFAULT NULL,
-  `medidas` varchar(20) DEFAULT NULL,
-  `conexiones` varchar(20) DEFAULT NULL,
-  `billetera` int(10) DEFAULT NULL,
-  `monedero` int(10) DEFAULT NULL,
-  `profundidad` varchar(10) DEFAULT NULL,
-  `anchura` varchar(10) DEFAULT NULL,
-  `altura` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(9, 'sofware', ''),
+(10, 'Hardware', ''),
+(11, 'perifericos', '');
 
 -- --------------------------------------------------------
 
@@ -163,21 +121,21 @@ CREATE TABLE `productos` (
   `idId` int(11) NOT NULL,
   `Nombre` varchar(25) DEFAULT NULL,
   `Descripccion` varchar(255) DEFAULT NULL,
+  `familias_id` int(11) NOT NULL,
   `Precio` double DEFAULT NULL,
   `Imagen1` varchar(255) DEFAULT NULL,
   `Imagen2` varchar(255) DEFAULT NULL,
-  `Imagen3` varchar(255) DEFAULT NULL,
-  `familias_id` int(11) NOT NULL
+  `Imagen3` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Tabla de Productos';
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`idId`, `Nombre`, `Descripccion`, `Precio`, `Imagen1`, `Imagen2`, `Imagen3`, `familias_id`) VALUES
-(15, 'teclado', '', 30, '', NULL, NULL, 23),
-(16, 'teclado inalámbrico', '', 30, '', '', '', 15),
-(17, 'Canvas free', '', 150, '', '', '', 15);
+INSERT INTO `productos` (`idId`, `Nombre`, `Descripccion`, `familias_id`, `Precio`, `Imagen1`, `Imagen2`, `Imagen3`) VALUES
+(3, 'Monitor', 'Monitor táctil TPV', 10, 250, '', '', ''),
+(4, 'Teclado', 'Teclado con cable', 11, 20.95, '', '', ''),
+(5, 'Ratón', 'Ratón con cable', 11, 15.5, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -190,7 +148,7 @@ CREATE TABLE `users` (
   `usuario` varchar(255) DEFAULT NULL,
   `email` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `rol` varchar(255) DEFAULT 'Usuario'
+  `rol` varchar(255) DEFAULT `usuario`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -198,10 +156,46 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `usuario`, `email`, `password`, `rol`) VALUES
-(2, 'Admin2', 'admin2@bytestore.com', '$2y$10$7aY3FCOQggScbM9IKKfOye6Vc1s/AlQ5R6WC0TBRkMMHf9TP/uKsG', 'Usuario'),
-(5, 'usuario6', 'usuario6@bytestore.com', '$2y$10$hhGV2CtZXaeoTfw2aJiyiOyyvbdg8bBD4dNNXN/204ITKRZxLv/mC', 'Usuario'),
-(8, 'Usuario 10', 'usuario8@bytestore.com', '$2y$10$vwc7BqN0nBwQh3Y6wujkkumGwPQLSpu2MIdlgPLNoJgpbuM83ArG.', 'Usuario'),
-(9, 'usuario15', 'usuario15@bytestore.com', '$2y$10$GV5zhkBh5ddF32CNPqBSBejVF6Ki6c1I/X7H3XqH8eAIN6yoQ.6lW', 'Administrador');
+(1, 'Admin', 'admin1@bytestore.com', '$2y$10$/h8T6ITraZYxEw83GmGpAufvspDOJLRjRuHsf77V2j38k7ewgYaNa', 'Administrador'),
+(2, 'Usuario', 'usuario1@bytestore.com', '$2y$10$Pzv7zaS5JGyYspYIl6a9wOxoUP42NlCysmUm4A4PoW3VzXxodwWjq', 'Usuario'),
+(3, 'Usuario2', 'usuario2@bytestore.com', '$2y$10$gP2/L1fpQwgdxopaPGZvme2bsCEVvM3vKkguUmNYJao7Qkps5SL1W', 'Usuario'),
+(4, 'Usuario3', 'usuario3@bytestore.com', '$2y$10$ATK/zOi/c8Mr5TrOEeCRVeFFy0fyTdpDq.AeLE5FrjMXV3ZC4OkXS', 'Usuario3');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ventas`
+--
+
+CREATE TABLE `ventas` (
+  `id` int(11) NOT NULL,
+  `ClaveTransaccion` varchar(255) NOT NULL,
+  `PaypalDatos` text NOT NULL,
+  `Fecha` datetime NOT NULL,
+  `Correo` varchar(5000) NOT NULL,
+  `Total` decimal(60,0) NOT NULL,
+  `Status` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`id`, `ClaveTransaccion`, `PaypalDatos`, `Fecha`, `Correo`, `Total`, `Status`) VALUES
+(1, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 11:49:32', 'usuario2@bytestore.com', 250, ''),
+(2, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 11:49:32', 'usuario2@bytestore.com', 266, ''),
+(3, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 12:45:22', 'usuario2@bytestore.com', 286, ''),
+(4, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 12:52:50', 'usuario2@bytestore.com', 286, ''),
+(5, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 12:53:01', 'usuario2@bytestore.com', 286, ''),
+(6, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 12:55:03', 'usuario2@bytestore.com', 286, ''),
+(7, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 12:59:25', 'usuario2@bytestore.com', 286, 'pendiente'),
+(8, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:00:01', 'usuario2@bytestore.com', 286, 'pendiente'),
+(9, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:12:08', 'usuario2@bytestore.com', 286, 'pendiente'),
+(10, '', '', '2024-06-08 13:12:53', 'usuario2@bytestore.com', 0, 'pendiente'),
+(11, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:13:15', 'usuario2@bytestore.com', 286, 'pendiente'),
+(12, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:49:09', 'usuario2@bytestore.com', 286, 'pendiente'),
+(13, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:58:35', 'usuario2@bytestore.com', 286, 'pendiente'),
+(14, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 14:24:15', 'usuario2@bytestore.com', 21, 'pendiente');
 
 --
 -- Índices para tablas volcadas
@@ -220,10 +214,12 @@ ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `escaner`
+-- Indices de la tabla `detalleventas`
 --
-ALTER TABLE `escaner`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `detalleventas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idVenta` (`idVenta`),
+  ADD KEY `idProducto` (`idProducto`);
 
 --
 -- Indices de la tabla `familias`
@@ -232,34 +228,22 @@ ALTER TABLE `familias`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `impresora_termica`
---
-ALTER TABLE `impresora_termica`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `monitores`
---
-ALTER TABLE `monitores`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `portamonedas`
---
-ALTER TABLE `portamonedas`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`idId`),
-  ADD KEY `fk_productos_familias_idx` (`familias_id`);
+  ADD KEY `id_familias` (`familias_id`) USING BTREE;
 
 --
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `ventas`
+--
+ALTER TABLE `ventas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -279,56 +263,51 @@ ALTER TABLE `clientes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `escaner`
+-- AUTO_INCREMENT de la tabla `detalleventas`
 --
-ALTER TABLE `escaner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `detalleventas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `familias`
 --
 ALTER TABLE `familias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=28;
-
---
--- AUTO_INCREMENT de la tabla `impresora_termica`
---
-ALTER TABLE `impresora_termica`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `monitores`
---
-ALTER TABLE `monitores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de la tabla `portamonedas`
---
-ALTER TABLE `portamonedas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
+-- Filtros para la tabla `detalleventas`
+--
+ALTER TABLE `detalleventas`
+  ADD CONSTRAINT `detalleventas_ibfk_1` FOREIGN KEY (`idVenta`) REFERENCES `ventas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `detalleventas_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`idId`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD CONSTRAINT `fk_productos_familias` FOREIGN KEY (`familias_id`) REFERENCES `familias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`familias_id`) REFERENCES `familias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
