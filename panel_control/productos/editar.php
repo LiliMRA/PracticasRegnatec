@@ -48,10 +48,7 @@ if ($_POST) {
     Nombre = :Nombre,
     Descripccion = :Descripccion,
     familias_id = :familias_id,
-    Precio = :Precio,
-    Imagen1 = :Imagen1,
-    Imagen2 = :Imagen2,
-    Imagen3 = :Imagen3
+    Precio = :Precio
     WHERE idId = :idId");
 
     # Asignamos parámetros
@@ -59,9 +56,6 @@ if ($_POST) {
     $sentencia->bindParam(":Descripccion", $Descripccion);
     $sentencia->bindParam(":familias_id", $familias_id);
     $sentencia->bindParam(":Precio", $Precio);
-    $sentencia->bindParam(":Imagen1", $Imagen1);
-    $sentencia->bindParam(":Imagen2", $Imagen2);
-    $sentencia->bindParam(":Imagen3", $Imagen3);
     $sentencia->bindParam(":idId", $txtID);
     $sentencia->execute();
 
@@ -78,8 +72,8 @@ if ($_POST) {
     $tmp_Imagen2 = $_FILES["Imagen2"]['tmp_name'];
     $tmp_Imagen3 = $_FILES["Imagen3"]['tmp_name'];
 
-    if ($tmp_Imagen1 != '') {
-        move_uploaded_file($tmp_Imagen1, "./" . $nombreArchivo_Imagen1);
+    if ($tmp_Imagen1 != '' && $_FILES['Imagen1']['size'] > 0) {
+        move_uploaded_file($tmp_Imagen1, "../../assets/img/productos/" . $nombreArchivo_Imagen1);
 
         #Buscamos el archivo relacionado con el id del producto
         $sentencia = $conexion->prepare("SELECT Imagen1 FROM productos WHERE idId=:idId");
@@ -89,8 +83,8 @@ if ($_POST) {
 
         #Si existe el archivo Imagen1, lo borramos
         if (isset($registro_recuperado["Imagen1"]) && $registro_recuperado["Imagen1"] != "") {
-            if (file_exists("./" . $registro_recuperado["Imagen1"])) {
-                unlink("./" . $registro_recuperado["Imagen1"]);
+            if (file_exists("../../assets/img/productos/" . $registro_recuperado["Imagen1"])) {
+                unlink("../../assets/img/productos/" . $registro_recuperado["Imagen1"]);
             }
         }
 
@@ -101,8 +95,8 @@ if ($_POST) {
         $sentencia->execute();
     }
 
-    if ($tmp_Imagen2 != '') {
-        move_uploaded_file($tmp_Imagen2, "./" . $nombreArchivo_Imagen2);
+    if ($tmp_Imagen2 != '' && $_FILES['Imagen2']['size'] > 0) {
+        move_uploaded_file($tmp_Imagen2, "../../assets/img/productos/" . $nombreArchivo_Imagen2);
 
         #Buscamos el archivo relacionado con el id del producto
         $sentencia = $conexion->prepare("SELECT Imagen2 FROM productos WHERE idId=:idId");
@@ -112,8 +106,8 @@ if ($_POST) {
 
         #Si existe el archivo Imagen2, lo borramos
         if (isset($registro_recuperado["Imagen2"]) && $registro_recuperado["Imagen2"] != "") {
-            if (file_exists("./" . $registro_recuperado["Imagen2"])) {
-                unlink("./" . $registro_recuperado["Imagen2"]);
+            if (file_exists("../../assets/img/productos/" . $registro_recuperado["Imagen2"])) {
+                unlink("../../assets/img/productos/" . $registro_recuperado["Imagen2"]);
             }
         }
 
@@ -124,8 +118,8 @@ if ($_POST) {
         $sentencia->execute();
     }
     
-    if ($tmp_Imagen3 != '') {
-        move_uploaded_file($tmp_Imagen3, "./" . $nombreArchivo_Imagen3);
+    if ($tmp_Imagen3 != '' && $_FILES['Imagen3']['size'] > 0) {
+        move_uploaded_file($tmp_Imagen3, "../../assets/img/productos/" . $nombreArchivo_Imagen3);
 
         #Buscamos el archivo relacionado con el id del producto
         $sentencia = $conexion->prepare("SELECT Imagen3 FROM productos WHERE idId=:idId");
@@ -135,8 +129,8 @@ if ($_POST) {
 
         #Si existe el archivo FOTO, lo borramos
         if (isset($registro_recuperado["Imagen3"]) && $registro_recuperado["Imagen3"] != "") {
-            if (file_exists("./" . $registro_recuperado["Imagen3"])) {
-                unlink("./" . $registro_recuperado["Imagen3"]);
+            if (file_exists("../../assets/img/productos/" . $registro_recuperado["Imagen3"])) {
+                unlink("../../assets/img/productos/" . $registro_recuperado["Imagen3"]);
             }
         }
 

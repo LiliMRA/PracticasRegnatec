@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+ob_start(); #Inicia el almacenamiento en el búfer de salida
+
 include ('../../bd.php');
 
 include ('../../templates/header.php');
@@ -20,20 +22,20 @@ if (isset($_GET['txtID'])) {
 
     //Seleccionamos el archivo que se va a borrar
     if (isset($registro_recuperado["Imagen1"]) && $registro_recuperado["Imagen1"] != "") {
-        if (file_exists("./" . $registro_recuperado["Imagen1"])) {
-            unlink("./" . $registro_recuperado["Imagen1"]);
+        if (file_exists("../../assets/img/productos/" . $registro_recuperado["Imagen1"])) {
+            unlink("../../assets/img/productos/" . $registro_recuperado["Imagen1"]);
         }
     }
 
     if (isset($registro_recuperado["Imagen2"]) && $registro_recuperado["Imagen2"] != "") {
-        if (file_exists("./" . $registro_recuperado["Imagen2"])) {
-            unlink("./" . $registro_recuperado["Imagen2"]);
+        if (file_exists("../../assets/img/productos/" . $registro_recuperado["Imagen2"])) {
+            unlink("../../assets/img/productos/" . $registro_recuperado["Imagen2"]);
         }
     }
 
     if (isset($registro_recuperado["Imagen3"]) && $registro_recuperado["Imagen3"] != "") {
-        if (file_exists("./" . $registro_recuperado["Imagen3"])) {
-            unlink("./" . $registro_recuperado["Imagen3"]);
+        if (file_exists("../../assets/img/productos/" . $registro_recuperado["Imagen3"])) {
+            unlink("../../assets/img/productos/" . $registro_recuperado["Imagen3"]);
         }
     }
 
@@ -59,9 +61,9 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 <div class="second-menu">
     <div class="second-nav">
         <ul class="second-menu">
-            <li><a href="../familias/index.php" class="btn-secondMenu">Familias</a></li>
-            <li><a href="index.php" class="btn-secondMenu">Productos</a></li>
-            <li><a href="../usuarios/index.php" class="btn-secondMenu">Usuarios</a></li>
+            <li><a href="<?php echo $url_base; ?>/familias/index.php" class="btn-secondMenu">Familias</a></li>
+            <li><a href="<?php echo $url_base; ?>/productos/index.php" class="btn-secondMenu">Productos</a></li>
+            <li><a href="<?php echo $url_base; ?>/usuarios//index.php" class="btn-secondMenu">Usuarios</a></li>
             <li><a href="#" class="btn-secondMenu">#####</a></li>
         </ul>
     </div>
@@ -104,12 +106,12 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <td> <?php echo $registro['Categoría']; ?> </td>
                                 <td> <?php echo $registro['Precio']; ?> </td>
                                 <td>
-                                    <img width="50" src="<?php echo $registro['Imagen1']; ?>" alt="Imagen-producto1">
+                                    <img width="50" src="<?php echo $url_base; ?>/assets/img/productos/<?php echo $registro['Imagen1']; ?>" alt="Imagen-producto1">
                                 <td>
-                                    <img width="50" src="<?php echo $registro['Imagen2']; ?>" alt="Imagen-producto2">
+                                    <img width="50" src="<?php echo $url_base; ?>/assets/img/productos/<?php echo $registro['Imagen2']; ?>" alt="Imagen-producto2">
                                 </td>
                                 <td>
-                                    <img width="50" src="<?php echo $registro['Imagen3']; ?>" alt="Imagen-producto3">
+                                    <img width="50" src="<?php echo $url_base; ?>/assets/img/productos/<?php echo $registro['Imagen3']; ?>" alt="Imagen-producto3">
                                 </td>
                                 <td>
                                     <a class="btn-info" href="editar.php?txtID=<?php echo $registro['idId']; ?>">Editar</a>
@@ -126,5 +128,8 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 </section>
 
 <?php
+
+ob_end_flush(); //Envía el contenido almacenado en el búfer y desactiva el almacenamiento en el búfer de salida
+
 include ('../../templates/footer.php');
 ?>

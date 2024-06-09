@@ -78,7 +78,7 @@ include ('carrito.php');
                     <td colspan="5">
                         <form action="pagar.php" method="post">
                             <label for="pagar"> Procesar pago </label>
-                            <input type="email" name="email" id="email" required placeholder="Escribe tu correo">
+                            <!--<input type="email" name="email" id="email" required placeholder="Escribe tu correo">-->
                             <button type="submit" name="btnAccion" value="pagar"> Pagar >> </button>
                         </form>
                     </td>

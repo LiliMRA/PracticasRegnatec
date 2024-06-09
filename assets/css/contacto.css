@@ -50,6 +50,12 @@
     font-size: 18px;
 }
 
+@media (max-width: 1840px) {
+    .tarjeta-contacto .content-contact {
+        left: 8.5%;
+    }
+}
+
 @media (max-width: 1828px) {
     .tarjeta-contacto .content-contact {
         left: 8%;
@@ -62,15 +68,27 @@
     }
 }
 
-@media (max-width: 1695) {
+@media (max-width: 1760px) {
     .tarjeta-contacto .content-contact {
-        left: 4.5%;
+        left: 6.5%;
+    }
+}
+
+@media (max-width: 1700px) {
+    .tarjeta-contacto .content-contact {
+        left: 5%;
     }
 }
 
 @media (max-width: 1695) {
     .tarjeta-contacto .content-contact {
         left: 4.5%;
+    }
+}
+
+@media (max-width: 1630px) {
+    .tarjeta-contacto .content-contact {
+        left: 3%;
     }
 }
 
@@ -80,22 +98,92 @@
     }
 }
 
+@media (max-width: 1570px) {
+    .tarjeta-contacto .content-contact {
+        left: 1%;
+    }
+}
+
 @media (max-width: 1536) {
     .tarjeta-contacto .content-contact {
         left: 0%;
     }
 }
 
-@media (max-width: 1482) {
+@media (max-width: 1500px) {
+    .tarjeta-contacto .content-contact {
+        left: -1%;
+    }
+}
+
+@media (max-width: 1450) {
+
+    .main-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 1430px) {
     .tarjeta-contacto .content-contact {
         left: -2%;
     }
 }
 
 @media (max-width: 1400px) {
+
+    .main-section {
+        display: flex;
+        justify-content: center;
+        align-items: self-start;
+    }
+
+    .tarjeta-contacto {
+        height: 330px;
+        width: 50vw;
+        background-image: none;
+        background-position: center;
+    }
+
     .tarjeta-contacto .content-contact {
-        height: 213px;
-        width: 327px;
-        rotate: -0.8deg;
+        rotate: none;
+    }
+
+}
+
+@media (max-width: 770px) {
+
+    .main-section {
+        margin-top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 630px) {
+    .tarjeta-contacto .content-contact {
+        left: -11%;
+    }
+}
+
+@media (max-width: 560px) {
+    .tarjeta-contacto .content-contact {
+        left: -17%;
+    }
+}
+
+@media (max-width: 480px) {
+    .tarjeta-contacto .content-contact {
+        left: -28%;
+    }
+}
+
+@media (max-width: 420px) {
+    .tarjeta-contacto .content-contact {
+        left: -40%;
     }
 }

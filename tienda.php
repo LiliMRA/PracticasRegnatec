@@ -24,7 +24,7 @@ $lista_productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($lista_productos as $producto) { ?>
                 <div class="card-menu">
                     <div class="face1">
-                        <img src="<?php echo htmlspecialchars($producto['Imagen1']); ?>"
+                        <img src="/assets/img/productos/<?php echo htmlspecialchars($producto['Imagen1']); ?>"
                             alt="<?php echo $producto['Nombre'] ?>">
                     </div>
                     <div class="face2">

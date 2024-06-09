@@ -1,19 +1,24 @@
 <?php
 
-include('bd.php');
+session_start();
 
-include('tienda.php');
+include ('bd.php');
+
+include ('templates/header.php');
+
+require_once ('config.php');
 
 ?>
 
 <?php
 
-if ($_POST) {
+$total = 0;
 
-    $total = 0;
+if (isset($_POST) && isset($_SESSION['user_id']) && isset($_SESSION['CARRITO'])) {
 
-    $Sid = session_id();
-    $Correo = $_POST['email'];
+
+    echo "hola";
+    $Sid = $_SESSION['user_id'];
     $Status = 'pendiente';
 
     #Calcular el prcio total del carrito
@@ -22,33 +27,33 @@ if ($_POST) {
         $total = $total + ($producto['Precio'] * $producto['Cantidad']);
     }
 
-    $stmt = $conexion->prepare("INSERT INTO `ventas`
-        (`ClaveTransaccion`, `Fecha`, `Correo`, `Total`, `Status`) VALUES
-        (:ClaveTransaccion, NOW(), :Correo, :Total, :Status);");
+    #$stmt = $conexion->prepare("INSERT INTO `ventas`
+        #(`ClaveTransaccion`, `Fecha`, `Correo`, `Total`, `Status`) VALUES
+        #(:ClaveTransaccion, NOW(), :Correo, :Total, :Status);");
 
-    $stmt->bindParam(":ClaveTransaccion", $Sid);
-    $stmt->bindParam(":Correo", $Correo);
-    $stmt->bindParam(":Total", $total);
-    $stmt->bindParam(":Status", $Status);
+    #$stmt->bindParam(":ClaveTransaccion", $Sid);
+    #$stmt->bindParam(":Correo", $Correo);
+    #$stmt->bindParam(":Total", $total);
+    #$stmt->bindParam(":Status", $Status);
 
-    $stmt->execute();
+    #$stmt->execute();
 
     #Obtenemos el Id de la última venta
-    $idVenta = $conexion->lastInsertId();
+    #$idVenta = $conexion->lastInsertId();
 
-    foreach ($_SESSION['CARRITO'] as $indice => $producto) {
+    #foreach ($_SESSION['CARRITO'] as $indice => $producto) {
 
-        $stmt = $conexion->prepare("INSERT INTO `detalleventas`
-            (`idVenta`, `idProducto`, `PrecioUnitario`, `Cantidad`, `Descargado`) VALUES 
-            (:idVenta, :idProducto, :PrecioUnitario, :Cantidad, '0');");
+        #$stmt = $conexion->prepare("INSERT INTO `detalleventas`
+            #(`idVenta`, `idProducto`, `PrecioUnitario`, `Cantidad`, `Descargado`) VALUES 
+           # (:idVenta, :idProducto, :PrecioUnitario, :Cantidad, '0');");
 
-        $stmt->bindParam(":idVenta", $idVenta);
-        $stmt->bindParam(":idProducto", $producto['idId']);
-        $stmt->bindParam(":PrecioUnitario", $producto['Precio']);
-        $stmt->bindParam(":Cantidad", $producto['Cantidad']);
+        #$stmt->bindParam(":idVenta", $idVenta);
+        #$stmt->bindParam(":idProducto", $producto['idId']);
+        #$stmt->bindParam(":PrecioUnitario", $producto['Precio']);
+        #$stmt->bindParam(":Cantidad", $producto['Cantidad']);
 
-        $stmt->execute();
-    }
+        #$stmt->execute();
+    #}
 
     echo "<h3>" . $total . "</h3>";
 }
@@ -94,23 +99,23 @@ if ($_POST) {
     // Render the PayPal button into #paypal-button-container
     paypal.Buttons({
         // Call your server to set up the transaction
-        createOrder: function(data, actions) {
+        createOrder: function (data, actions) {
             return fetch('/demo/checkout/api/paypal/order/create/', {
                 method: 'post'
-            }).then(function(res) {
+            }).then(function (res) {
                 return res.json();
-            }).then(function(orderData) {
+            }).then(function (orderData) {
                 return orderData.id;
             });
         },
 
         // Call your server to finalize the transaction
-        onApprove: function(data, actions) {
+        onApprove: function (data, actions) {
             return fetch('/demo/checkout/api/paypal/order/' + data.orderID + '/capture/', {
                 method: 'post'
-            }).then(function(res) {
+            }).then(function (res) {
                 return res.json();
-            }).then(function(orderData) {
+            }).then(function (orderData) {
                 // Three cases to handle:
                 //   (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
                 //   (2) Other non-recoverable errors -> Show a failure message

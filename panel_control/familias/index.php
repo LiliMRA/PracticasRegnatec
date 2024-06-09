@@ -13,6 +13,20 @@ include ('../../bd.php');
 #Código para eliminar una familia 
 if (isset($_GET['txtID'])) {
     $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
+
+    //Buscamos la imagen relacionado con el producto
+    $sentencia = $conexion->prepare("SELECT Imagen FROM familias WHERE idId=:idId");
+    $sentencia->bindParam(":idId", $txtID);
+    $sentencia->execute();
+    $registro_recuperado = $sentencia->fetch(PDO::FETCH_LAZY);
+
+    //Seleccionamos el archivo que se va a borrar
+    if (isset($registro_recuperado["Imagen"]) && $registro_recuperado["Imagen"] != "") {
+        if (file_exists("../../assets/img/" . $registro_recuperado["Imagen"])) {
+            unlink("../../assets/img/" . $registro_recuperado["Imagen"]);
+        }
+    }
+    
     $sentencia = $conexion->prepare("DELETE FROM familias WHERE id = :id");
     $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
@@ -69,7 +83,9 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                             <tr>
                                 <td> <?php echo $registro['id']; ?> </td>
                                 <td> <?php echo $registro['name']; ?> </td>
-                                <td> <?php echo $registro['Imagen']; ?> </td>
+                                <td>
+                                    <img width="150px" src="/assets/img/<?php echo $registro['Imagen']; ?>" alt="">  
+                                </td>
                                 <td>
                                     <a class="btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>">Editar</a>
                                     <a class="btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>">Eliminar</a>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2024 a las 20:11:58
+-- Tiempo de generación: 09-06-2024 a las 23:39:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -73,22 +73,18 @@ CREATE TABLE `detalleventas` (
 --
 
 INSERT INTO `detalleventas` (`id`, `idVenta`, `idProducto`, `PrecioUnitario`, `Cantidad`, `Descargado`) VALUES
-(1, 8, 3, 250, 1, 0),
-(2, 8, 5, 16, 1, 0),
-(3, 8, 4, 21, 1, 0),
-(4, 9, 3, 250, 1, 0),
-(5, 9, 5, 16, 1, 0),
-(6, 9, 4, 21, 1, 0),
-(7, 11, 3, 250, 1, 0),
-(8, 11, 5, 16, 1, 0),
-(9, 11, 4, 21, 1, 0),
-(10, 12, 3, 250, 1, 0),
-(11, 12, 5, 16, 1, 0),
-(12, 12, 4, 21, 1, 0),
-(13, 13, 3, 250, 1, 0),
-(14, 13, 5, 16, 1, 0),
-(15, 13, 4, 21, 1, 0),
-(16, 14, 4, 21, 1, 0);
+(17, 15, 7, 90, 1, 0),
+(18, 15, 8, 200, 1, 0),
+(19, 15, 8, 200, 1, 0),
+(20, 18, 7, 90, 1, 0),
+(21, 18, 8, 200, 1, 0),
+(22, 18, 8, 200, 1, 0),
+(23, 19, 7, 90, 1, 0),
+(24, 19, 8, 200, 1, 0),
+(25, 19, 8, 200, 1, 0),
+(26, 20, 7, 90, 1, 0),
+(27, 20, 8, 200, 1, 0),
+(28, 20, 8, 200, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -133,9 +129,8 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`idId`, `Nombre`, `Descripccion`, `familias_id`, `Precio`, `Imagen1`, `Imagen2`, `Imagen3`) VALUES
-(3, 'Monitor', 'Monitor táctil TPV', 10, 250, '', '', ''),
-(4, 'Teclado', 'Teclado con cable', 11, 20.95, '', '', ''),
-(5, 'Ratón', 'Ratón con cable', 11, 15.5, '', '', '');
+(7, 'Monitor', 'Monitor 5 táctil', 9, 90, '1717958276_1717697646_producto.jpg', '1717959297_1717958436_1717697646_producto.jpg', '1717958436_1717697646_producto.jpg'),
+(8, 'Monitor', 'Monitor 5 táctil', 11, 200, '1717959156_producto.jpg', '1717959156_raton.jpg', '1717959156_teclado.jpg');
 
 -- --------------------------------------------------------
 
@@ -195,7 +190,13 @@ INSERT INTO `ventas` (`id`, `ClaveTransaccion`, `PaypalDatos`, `Fecha`, `Correo`
 (11, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:13:15', 'usuario2@bytestore.com', 286, 'pendiente'),
 (12, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:49:09', 'usuario2@bytestore.com', 286, 'pendiente'),
 (13, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:58:35', 'usuario2@bytestore.com', 286, 'pendiente'),
-(14, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 14:24:15', 'usuario2@bytestore.com', 21, 'pendiente');
+(14, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 14:24:15', 'usuario2@bytestore.com', 21, 'pendiente'),
+(15, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 20:57:00', 'usuario15@bytestore.com', 490, 'pendiente'),
+(16, '', '', '2024-06-09 20:58:30', 'usuario15@bytestore.com', 0, 'pendiente'),
+(17, '', '', '2024-06-09 20:58:49', 'usuario15@bytestore.com', 0, 'pendiente'),
+(18, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 20:59:25', 'usuario15@bytestore.com', 490, 'pendiente'),
+(19, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 20:59:33', 'usuario15@bytestore.com', 490, 'pendiente'),
+(20, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 21:00:00', 'usuario15@bytestore.com', 490, 'pendiente');
 
 --
 -- Índices para tablas volcadas
@@ -266,7 +267,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `detalleventas`
 --
 ALTER TABLE `detalleventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `familias`
@@ -278,7 +279,7 @@ ALTER TABLE `familias`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
@@ -290,7 +291,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restricciones para tablas volcadas

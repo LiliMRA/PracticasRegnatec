@@ -16,9 +16,9 @@ $url_base = "http://localhost/practicasregnatec/";
     <div class="second-menu">
         <div class="second-nav">
             <ul class="second-menu">
-                <li><a href="/panel_control/familias/index.php" class="btn-secondMenu">Familias</a></li>
-                <li><a href="/panel_control/productos/index.php" class="btn-secondMenu">Productos</a></li>
-                <li><a href="/panel_control/usuarios/index.php" class="btn-secondMenu">Usuarios</a></li>
+                <li><a href="<?php echo $url_base; ?>/panel_control/familias/index.php" class="btn-secondMenu">Familias</a></li>
+                <li><a href="<?php echo $url_base; ?>/panel_control/productos/index.php" class="btn-secondMenu">Productos</a></li>
+                <li><a href="<?php echo $url_base; ?>/panel_control/usuarios/index.php" class="btn-secondMenu">Usuarios</a></li>
                 <li><a href="#" class="btn-secondMenu">####</a></li>
 
                 
@@ -28,7 +28,7 @@ $url_base = "http://localhost/practicasregnatec/";
     </div>
 
     <div class="img-control">
-        <img src="/assets/img/undraw.svg" alt="Imagen-corporativa">
+        <img src="<?php echo $url_base; ?>/assets/img/undraw.svg" alt="Imagen-corporativa">
     </div>
 
     <?php include ('templates/footer.php'); ?>

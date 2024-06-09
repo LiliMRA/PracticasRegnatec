@@ -25,13 +25,13 @@
 
 header {
     width: 100%;
-    height: 150px;
+    height: 200px;
     border-bottom: 2px solid orangered;
 }
 
 .wrap {
     width: 100%;
-    height: 150px;
+    height: 225px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -50,14 +50,18 @@ header {
 
 .nav {
     transition: max-height .5s ease-out;
+    float: right;
+    text-decoration: none;
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 86px;
 }
 
 .menu {
     display: flex;
-    /*float: right;*/
     flex-direction: column;
     align-items: center;
-    transform: translateY(-100%);
+    transform: translateY(-140%);
 }
 
 .nav li {
@@ -95,7 +99,7 @@ header {
 /* Menú hamburguesa */
 
 .menu--show {
-    transform: translateY(125px);
+    transform: translateY(-18%);
 }
 
 .hamb {
@@ -161,15 +165,21 @@ header {
 }
 
 @media screen and (min-width: 770px) {
+
+    header {
+        height: 208px;
+    }
+
     .wrap {
+        width: 100%;
+        height: 208px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
     }
 
     .menu {
         flex-direction: row;
-        transform: translateY(0);
+        transform: translateY(-135%);
     }
 
     .nav ul li {
@@ -638,12 +648,7 @@ footer {
     }
 
     .card-products img {
-        width: 300px;}
-}
-
-@media (max-width: 885px) {
-    .nav ul {
-        transform: none;
+        width: 300px;
     }
 }
 

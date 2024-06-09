@@ -16,17 +16,22 @@
     <div class="social-media">
         <ul>
             <li>
-                <a href="#"> <img src="assets/img/twitterx.png" alt="Icono-TwitterX"> </a>
+                <a href="#"> <img src="/assets/img/twitterx.png" alt="Icono-TwitterX"> </a>
             </li>
             <li>
-                <a href="#"> <img src="assets/img/linkedin.png" alt="Icono-LinkedIn"> </a>
+                <a href="#"> <img src="/assets/img/linkedin.png" alt="Icono-LinkedIn"> </a>
             </li>
             <li>
-                <a href="#"> <img src="assets/img/message.png" alt="Icono-mensaje"> </a>
+                <a href="#"> <img src="/assets/img/message.png" alt="Icono-mensaje"> </a>
             </li>
         </ul>
     </div>
 </footer>
+
+<!-- JS -->
+<script src="/assets/js/toggle-menu.js"></script>
+
 </body>
+
 
 </html>

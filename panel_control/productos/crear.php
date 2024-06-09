@@ -33,27 +33,27 @@ if ($_POST) {
     $fecha_ = new DateTime();
 
     #IMAGEN 1
-    $nombreArchivo_Imagen1 = (isset($_FILES["$Imagen1"]) && $_FILES["Imagen1"]["name"] != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen1"]['name'] : "";
+    $nombreArchivo_Imagen1 = (isset($_FILES["Imagen1"]) && $_FILES["Imagen1"]["name"] != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen1"]['name'] : "";
     $tmp_Imagen1 = $_FILES["Imagen1"]['tmp_name'];
 
     if ($tmp_Imagen1 != '') {
-        move_uploaded_file($tmp_Imagen1, "./" . $nombreArchivo_Imagen1);
+        move_uploaded_file($tmp_Imagen1, "../../assets/img/productos/" . $nombreArchivo_Imagen1);
     }
 
     #IMAGEN 2
-    $nombreArchivo_Imagen2 = (isset($_FILES["$Imagen2"]) && $_FILES["Imagen2"]["name"] != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen2"]['name'] : "";
+    $nombreArchivo_Imagen2 = (isset($_FILES["Imagen2"]) && $_FILES["Imagen2"]["name"] != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen2"]['name'] : "";
     $tmp_Imagen2 = $_FILES["Imagen2"]['tmp_name'];
 
     if ($tmp_Imagen2 != '') {
-        move_uploaded_file($tmp_Imagen2, "./" . $nombreArchivo_Imagen2);
+        move_uploaded_file($tmp_Imagen2, "../../assets/img/productos/" . $nombreArchivo_Imagen2);
     }
 
     #IMAGEN 3
-    $nombreArchivo_Imagen3 = (isset($_FILES["$Imagen3"]) && $_FILES["Imagen3"]["name"] != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen3"]['name'] : "";
+    $nombreArchivo_Imagen3 = (isset($_FILES["Imagen3"]) && $_FILES["Imagen3"]["name"] != '') ? $fecha_->getTimestamp() . "_" . $_FILES["Imagen3"]['name'] : "";
     $tmp_Imagen3 = $_FILES["Imagen3"]['tmp_name'];
 
     if ($tmp_Imagen3 != '') {
-        move_uploaded_file($tmp_Imagen3, "./" . $nombreArchivo_Imagen3);
+        move_uploaded_file($tmp_Imagen3, "../../assets/img/productos/" . $nombreArchivo_Imagen3);
     }
 
     # Asignamos parámetros
