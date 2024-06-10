@@ -41,8 +41,10 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) { #Si los campos NO e
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByteStore - Inicio sesión</title>
-    <link rel="icon" href="assets/img/logotipo.png">
-    <link rel="stylesheet" type="text/css" href="../assets/css/index_Login.css">
+    <link rel="icon" href="<?php echo $url_base; ?>assets/img/logotipo.png">
+    <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/index_Login.css">
+    <!--<link rel="icon" href="assets/img/logotipo.png">
+    <link rel="stylesheet" type="text/css" href="../assets/css/index_Login.css">-->
 </head>
 
 <body>
@@ -50,19 +52,19 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) { #Si los campos NO e
     <div class="main-login">
 
         <header>
-            <!--<a href="<?php echo $url_base; ?>/index.php">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
-                </svg>
-                Volver a ByteStore
-            </a>-->
-
-            <a href="../index.php">
+            <a href="<?php echo $url_base; ?>/index.php">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                 </svg>
                 Volver a ByteStore
             </a>
+
+            <!--<a href="../index.php">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                </svg>
+                Volver a ByteStore
+            </a>-->
         </header>
 
         <div class="clr"></div>
@@ -82,19 +84,19 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) { #Si los campos NO e
             <h2>
                 Regístrate
             </h2>
-            <!--<span>o <a href="<?php echo $url_base; ?>/login/login.php">Inicia sesión</a></span>-->
-            <span>o <a href="/login/login.php">Inicia sesión</a></span>
+            <span>o <a href="<?php echo $url_base; ?>/login/login.php">Inicia sesión</a></span>
+            <!--<span>o <a href="/login/login.php">Inicia sesión</a></span>-->
         </div>
 
         <div class="singupCard-box">
             <div class="signupCard">
-                <!--<div class="signupImg">
-                    <img src="<?php echo $url_base; ?>assets/img/logotipo.png" alt="Imagen-logotipo">
-                </div>-->
-
                 <div class="signupImg">
-                    <img src="../assets/img/logotipo.png" alt="Imagen-logotipo">
+                    <img src="<?php echo $url_base; ?>assets/img/logotipo.png" alt="Imagen-logotipo">
                 </div>
+
+                <!--<div class="signupImg">
+                    <img src="../assets/img/logotipo.png" alt="Imagen-logotipo">
+                </div>-->
 
                 <form action="signup.php" method="post">
                     <div class="formContent">

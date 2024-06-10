@@ -31,11 +31,11 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByteStore - Inicio sesión</title>
-    <!--<link rel="icon" href="<?php echo $url_base; ?>/assets/img/logotipo.png">
-    <link rel="stylesheet" href="<?php echo $url_base; ?>/assets/css/index_Login.css">-->
+    <link rel="icon" href="<?php echo $url_base; ?>/assets/img/logotipo.png">
+    <link rel="stylesheet" href="<?php echo $url_base; ?>/assets/css/index_Login.css">
 
-    <link rel="icon" href="../assets/img/logotipo.png">
-    <link rel="stylesheet" href="../assets/css/index_Login.css">
+    <!--<link rel="icon" href="../assets/img/logotipo.png">
+    <link rel="stylesheet" href="../assets/css/index_Login.css">-->
 </head>
 
 <body>
@@ -43,17 +43,17 @@ if (isset($_SESSION['user_id'])) {
     <div class="main-login">
 
         <header>
-            <!--<a href="<?php echo $url_base; ?>/index.php">
+            <a href="<?php echo $url_base; ?>/index.php">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                 </svg>Volver a ByteStore
-            </a>-->
-            <a href="../index.php">
+            </a>
+            <!--<a href="../index.php">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                     stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                 </svg>Volver a ByteStore
-            </a>
+            </a>-->
         </header>
         <!--
         <div class="alertContainer">
@@ -73,26 +73,26 @@ if (isset($_SESSION['user_id'])) {
                     Inicia sesión o Registrate
                 </h2>
             </div>
-            <!--
+            
             <div class="shortcutContent">
                 <a href="<?php echo $url_base; ?>/login/login.php"> Iniciar sesión</a>
                 |
                 <a href="<?php echo $url_base; ?>/login/signup.php"> Regístrate </a>
-            </div>-->
+            </div>
 
-            <div class="shortcutContent">
+            <!--<div class="shortcutContent">
                 <a href="/login/login.php"> Iniciar sesión</a>
                 |
                 <a href="/login/signup.php"> Regístrate </a>
-            </div>
+            </div>-->
 
-            <div class="loginImg">
+            <!--<div class="loginImg">
                 <img src="/assets/img/MacBook.png" alt="Imagen-portátil">
-            </div>
-            <!--
+            </div>-->
+            
             <div class="loginImg">
                 <img src="<?php echo $url_base; ?>/assets/img/MacBook.png" alt="Imagen-portátil">
-            </div> -->
+            </div> 
         </div>
 
 
