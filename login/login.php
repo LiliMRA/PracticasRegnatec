@@ -48,7 +48,14 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 <body>
 
     <header>
-        <a href="<?php echo $url_base; ?>/index.php">
+        <!--<a href="<?php echo $url_base; ?>/index.php">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+            </svg>
+            Volver a ByteStore
+        </a>-->
+
+        <a href="/index.php">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
             </svg>
@@ -64,7 +71,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
             <h2>
                 Inicia sesión
             </h2>
-            <span>o <a href="<?php echo $url_base; ?>login/signup.php">Regístrate</a></span>
+            <!--<span>o <a href="<?php echo $url_base; ?>login/signup.php">Regístrate</a></span>-->
+            <span>o <a href="signup.php">Regístrate</a></span>
         </div>
 
         <?php if (!empty($message)) : ?>
@@ -80,8 +88,11 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         <?php endif; ?>
 
         <div class="signupCard">
-            <div class="signupImg">
+            <!--<div class="signupImg">
                 <img src="<?php echo $url_base; ?>assets/img/logotipo.png" alt="Imagen-logotipo">
+            </div>-->
+            <div class="signupImg">
+                <img src="../assets/img/logotipo.png" alt="Imagen-logotipo">
             </div>
 
 

@@ -31,6 +31,7 @@ include ('carrito.php');
                     <tr>
                         <td width="40%">
                             <div class="cardArticle">
+                                <img src="/assets/img/productos/<?php echo $producto['Imagen1'] ?>">
                                 <?php echo $producto['Nombre'] ?>
                             </div>
                         </td>

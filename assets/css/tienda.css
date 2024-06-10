@@ -21,9 +21,11 @@
 
 .Shop--products-menu .card-menu {
     display: flex;
-    justify-content: space-around;
-    max-width: 22vw;
-    height: 40vh;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    max-width: 50vw;
+    height: 43vh;
     margin: 20px;
     grid-column: span 2;
     overflow: hidden;
@@ -33,25 +35,34 @@
     border-radius: 5px;
 }
 
-.Shop--products-menu .face1 {
-    position: relative;
+.cardFaces {
+    display: flex;
+}
+
+.Shop--products-menu .shop--face1 {
+    /* position: relative; */
     top: -24%;
     width: 35%;
-    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
+    height: 41vh;
+    /*filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));*/
+    padding: 10px;
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
+    background-color: white;
+    box-shadow:  inset 0px 2px 10px rgba(0, 0, 0, 0.5)
+    
 }
 
 .face1Img {
     position: relative;
-    top: -36%;
-    width: 170px;
-
+    top: -25%;
+    width: 244px;
+    
 }
 
 .face1Img Img {
-    width: 170px;
+    width: 95%;
     background: transparent;
     /*filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));*/
     border-radius: 16px;
@@ -69,14 +80,14 @@
     border: none;
 }
 
-.Shop--products-menu .face2 {
-    
+.Shop--products-menu .shop--face2 {
+    box-shadow:  inset 10px 10px 15px rgba(0, 0, 0, 0.5);
     display: flex;
     text-align: end;
     flex-direction: column;
     justify-content: space-between;
     width: 65%;
-    padding-right: 5px;
+    
 }
 
 .Shop--products-menu .title-ofert {
@@ -88,9 +99,11 @@
     height: 35vh;
     display: flex;
     text-align: end;
+    padding: 10px;
     flex-direction: column;
     justify-content: space-between;
     background-color: orangered;
+    
 }
 
 .ofert-contentUp p {
@@ -132,6 +145,16 @@
 .variants img {
     width: 40px;
     bottom: -135px;
+}
+
+.boton {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: -14%;
+    box-shadow:  inset 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .btn--add {

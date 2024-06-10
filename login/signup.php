@@ -50,7 +50,14 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) { #Si los campos NO e
     <div class="main-login">
 
         <header>
-            <a href="<?php echo $url_base; ?>/index.php">
+            <!--<a href="<?php echo $url_base; ?>/index.php">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                </svg>
+                Volver a ByteStore
+            </a>-->
+
+            <a href="../index.php">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                 </svg>
@@ -75,13 +82,18 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) { #Si los campos NO e
             <h2>
                 Regístrate
             </h2>
-            <span>o <a href="<?php echo $url_base; ?>/login/login.php">Inicia sesión</a></span>
+            <!--<span>o <a href="<?php echo $url_base; ?>/login/login.php">Inicia sesión</a></span>-->
+            <span>o <a href="/login/login.php">Inicia sesión</a></span>
         </div>
 
         <div class="singupCard-box">
             <div class="signupCard">
-                <div class="signupImg">
+                <!--<div class="signupImg">
                     <img src="<?php echo $url_base; ?>assets/img/logotipo.png" alt="Imagen-logotipo">
+                </div>-->
+
+                <div class="signupImg">
+                    <img src="../assets/img/logotipo.png" alt="Imagen-logotipo">
                 </div>
 
                 <form action="signup.php" method="post">

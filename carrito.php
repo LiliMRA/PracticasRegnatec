@@ -15,36 +15,29 @@ if (isset($_POST['btnAccion'])) {
 
             if (is_numeric(openssl_decrypt($_POST['idId'], COD, KEY))) {
                 $idId = openssl_decrypt($_POST['idId'], COD, KEY);
-                $mensaje = "Ok idId Correcto" . $idId;
-            } else {
-                $mensaje = "Uppss... idId incorrecto";
             }
 
             if (is_string(openssl_decrypt($_POST['Nombre'], COD, KEY))) {
                 $Nombre = openssl_decrypt($_POST['Nombre'], COD, KEY);
-            } else {
-                $mensaje = "Uppss... Nombre incorrecto";
-                break;
+            } 
+
+            if (is_string(openssl_decrypt($_POST['Imagen1'], COD, KEY))) {
+                $Imagen1 = openssl_decrypt($_POST['Imagen1'], COD, KEY);
             }
 
             if (is_numeric(openssl_decrypt($_POST['Precio'], COD, KEY))) {
                 $Precio = openssl_decrypt($_POST['Precio'], COD, KEY);
-            } else {
-                $mensaje = "Uppss... Precio incorrecto";
-                break;
             }
 
             if (is_numeric(openssl_decrypt($_POST['Cantidad'], COD, KEY))) {
                 $Cantidad = openssl_decrypt($_POST['Cantidad'], COD, KEY);
-            } else {
-                $mensaje = "Uppss... Cantidad incorrecto";
-                break;
-            }
+            } 
 
             if (!isset($_SESSION['CARRITO'])) {
 
                 $producto = array(
                     'idId' => $idId,
+                    'Imagen1' => $Imagen1,
                     'Nombre' => $Nombre,
                     'Cantidad' => $Cantidad,
                     'Precio' => $Precio
@@ -56,6 +49,7 @@ if (isset($_POST['btnAccion'])) {
                 $NumProductos = count($_SESSION['CARRITO']);
                 $producto = array(
                     'idId' => $idId,
+                    'Imagen1' => $Imagen1,
                     'Nombre' => $Nombre,
                     'Cantidad' => $Cantidad,
                     'Precio' => $Precio
@@ -80,9 +74,7 @@ if (isset($_POST['btnAccion'])) {
                     }
                 }
                 
-            } else {
-                $mensaje = "Uppss... idId incorrecto";
-            }
+            } 
             break;
     }
 }

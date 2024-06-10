@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2024 a las 23:39:23
+-- Tiempo de generación: 10-06-2024 a las 23:46:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -84,7 +84,10 @@ INSERT INTO `detalleventas` (`id`, `idVenta`, `idProducto`, `PrecioUnitario`, `C
 (25, 19, 8, 200, 1, 0),
 (26, 20, 7, 90, 1, 0),
 (27, 20, 8, 200, 1, 0),
-(28, 20, 8, 200, 1, 0);
+(28, 20, 8, 200, 1, 0),
+(29, 21, 7, 90, 1, 0),
+(30, 21, 7, 90, 1, 0),
+(31, 21, 9, 600, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -105,7 +108,9 @@ CREATE TABLE `familias` (
 INSERT INTO `familias` (`id`, `name`, `Imagen`) VALUES
 (9, 'sofware', ''),
 (10, 'Hardware', ''),
-(11, 'perifericos', '');
+(11, 'perifericos', ''),
+(13, 'piezas sueltas', ''),
+(14, 'piezas sueltas', '1717969954_hardware.png');
 
 -- --------------------------------------------------------
 
@@ -129,8 +134,10 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`idId`, `Nombre`, `Descripccion`, `familias_id`, `Precio`, `Imagen1`, `Imagen2`, `Imagen3`) VALUES
-(7, 'Monitor', 'Monitor 5 táctil', 9, 90, '1717958276_1717697646_producto.jpg', '1717959297_1717958436_1717697646_producto.jpg', '1717958436_1717697646_producto.jpg'),
-(8, 'Monitor', 'Monitor 5 táctil', 11, 200, '1717959156_producto.jpg', '1717959156_raton.jpg', '1717959156_teclado.jpg');
+(7, 'Monitor', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae gravida sapien, in scelerisque purus. Aliquam tristique sagittis nulla et eleifend.', 9, 90, '1717958276_1717697646_producto.jpg', '1718039962_1717696728_tienda-bytestore.jpg', '1717958436_1717697646_producto.jpg'),
+(8, 'Monitor', 'Monitor 5 táctil', 11, 200, '1717959156_producto.jpg', '1717959156_raton.jpg', '1717959156_teclado.jpg'),
+(9, 'teclado', 'teclado inal;ambrico', 11, 600, '1717969753_teclado.jpg', '1717969753_teclado.jpg', '1717969753_teclado.jpg'),
+(10, 'Monitor 10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae gravida sapien, in scelerisque purus. Aliquam tristique sagittis nulla et eleifend.', 9, 750, '1718043462_teclado.jpg', '1718043462_teclado.jpg', '1718043462_teclado.jpg');
 
 -- --------------------------------------------------------
 
@@ -196,7 +203,8 @@ INSERT INTO `ventas` (`id`, `ClaveTransaccion`, `PaypalDatos`, `Fecha`, `Correo`
 (17, '', '', '2024-06-09 20:58:49', 'usuario15@bytestore.com', 0, 'pendiente'),
 (18, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 20:59:25', 'usuario15@bytestore.com', 490, 'pendiente'),
 (19, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 20:59:33', 'usuario15@bytestore.com', 490, 'pendiente'),
-(20, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 21:00:00', 'usuario15@bytestore.com', 490, 'pendiente');
+(20, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 21:00:00', 'usuario15@bytestore.com', 490, 'pendiente'),
+(21, '1', '', '2024-06-10 22:32:36', '', 780, 'pendiente');
 
 --
 -- Índices para tablas volcadas
@@ -267,19 +275,19 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `detalleventas`
 --
 ALTER TABLE `detalleventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `familias`
 --
 ALTER TABLE `familias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
@@ -291,7 +299,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Restricciones para tablas volcadas

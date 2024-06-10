@@ -46,4 +46,9 @@
     min-width: 150px;
     margin: 10px;
     box-shadow: 1px 1px 3px black;
+    text-align: center;
+}
+
+.cardArticle img {
+    width: 200px;
 }

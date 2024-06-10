@@ -19,7 +19,8 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
         <div class="galery">
             <div class="card">
                 <figure class="card_thumb">
-                    <img class="img-box" src="<?php echo $url_base; ?>/assets/img/tienda-bytestore.jpg" alt="">
+                    <!--<img class="img-box" src="<?php echo $url_base; ?>/assets/img/tienda-bytestore.jpg" alt="">-->
+                    <img class="img-box" src="assets/img/tienda-bytestore.jpg" alt="">
                     <figurecaption class="content">
                         <p class="card_snippet">Visita nuestras instalaciones </p>
                     </figurecaption>
@@ -28,7 +29,8 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
 
             <div class="card">
                 <figure class="card_thumb">
-                    <img class="img-box" src="<?php echo $url_base; ?>/assets/img/tienda3.jpg" alt="">
+                    <!--<img class="img-box" src="<?php echo $url_base; ?>/assets/img/tienda3.jpg" alt="">-->
+                    <img class="img-box" src="assets/img/tienda3.jpg" alt="">
                     <figurecaption class="content">
                         <p class="card_snippet"> Cuenta con atención personalizada en todo momento </p>
                     </figurecaption>
@@ -37,7 +39,8 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
 
             <div class="card">
                 <figure class="card_thumb">
-                    <img class="img-box" src="<?php echo $url_base; ?>/assets/img/tienda2.jpg" alt="">
+                    <!--<img class="img-box" src="<?php echo $url_base; ?>/assets/img/tienda2.jpg" alt="">-->
+                    <img class="img-box" src="assets/img/tienda2.jpg" alt="">
                     <figurecaption class="content">
                         <p class="card_snippet"> Encontrarás los productos más acertados a tus necesidades </p>
                     </figurecaption>
@@ -57,7 +60,8 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
 
         </div>
         <div class="description-img">
-            <img src="<?php echo $url_base; ?>assets/img/working.jpg" alt="">
+            <!--<img src="<?php echo $url_base; ?>assets/img/working.jpg" alt="">-->
+            <img src="assets/img/working.jpg" alt="">
         </div>
     </div>
 
@@ -66,7 +70,8 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
             <div class="card-products">
 
                 <div class="face1">
-                    <img src="<?php echo $url_base; ?>assets/img/27002.jpg" alt="">
+                    <!--<img src="<?php echo $url_base; ?>assets/img/27002.jpg" alt="">-->
+                    <img src="assets/img/27002.jpg" alt="">
                 </div>
                 <div class="face2">
                     <div class="ofert-content">
@@ -85,7 +90,8 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
             <div class="card-products">
 
                 <div class="face1">
-                    <img src="<?php echo $url_base; ?>assets/img/27002.jpg" alt="">
+                    <!--<img src="<?php echo $url_base; ?>assets/img/27002.jpg" alt="">-->
+                    <img src="assets/img/27002.jpg" alt="">
                 </div>
                 <div class="face2">
                     <p>Lorem ipsu dolor sit amet <br>consectetur adipisicing elit.</p>
@@ -98,7 +104,8 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
             <div class="card-products">
 
                 <div class="face1">
-                    <img src="<?php echo $url_base; ?>assets/img/27002.jpg" alt="">
+                    <!--<img src="<?php echo $url_base; ?>assets/img/27002.jpg" alt="">-->
+                    <img src="assets/img/27002.jpg" alt="">
                 </div>
                 <div class="face2">
                     <p>Lorem ipsum dolor sit amet <br>consectetur adipisicing elit.</p>

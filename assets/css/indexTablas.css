@@ -7,8 +7,6 @@ h4 {
 }
 
 .main-Tablas {
-    display: flex;
-    justify-content: center;
     position: relative;
     min-height: 100vh;
     z-index: 2;
