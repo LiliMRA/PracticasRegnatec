@@ -1,0 +1,54 @@
+/* Generales */
+
+@font-face {
+    font-family: 'JetBrains';
+    src: url(../fonts/JetBrains/static/JetBrainsMono-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.main-perfil {
+    padding: 20px;
+}
+
+.perfil-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alertContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: orangered;
+    color: white;
+    font-family: 'JetBrains';
+    font-size: 20px;
+    border-radius: 16px;
+    width: 80%;
+    height: 40px;
+}
+
+.alertContainer span {
+    text-decoration: underline;
+}
+
+.alertContainer a {
+    color: white;
+}
+
+.alertContainer a:hover {
+    color: orangered;
+    background-color: white;
+    padding: 3px;
+    border-radius: 10px;
+    transform: scale(1,1);
+}

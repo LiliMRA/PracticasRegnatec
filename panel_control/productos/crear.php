@@ -37,7 +37,7 @@ if ($_POST) {
     $tmp_Imagen1 = $_FILES["Imagen1"]['tmp_name'];
 
     if ($tmp_Imagen1 != '') {
-        move_uploaded_file($tmp_Imagen1, "../../assets/img/productos/" . $nombreArchivo_Imagen1);
+        move_uploaded_file($tmp_Imagen1, "../../assets/img/" . $nombreArchivo_Imagen1);
     }
 
     #IMAGEN 2
@@ -45,7 +45,7 @@ if ($_POST) {
     $tmp_Imagen2 = $_FILES["Imagen2"]['tmp_name'];
 
     if ($tmp_Imagen2 != '') {
-        move_uploaded_file($tmp_Imagen2, "../../assets/img/productos/" . $nombreArchivo_Imagen2);
+        move_uploaded_file($tmp_Imagen2, "../../assets/img/" . $nombreArchivo_Imagen2);
     }
 
     #IMAGEN 3
@@ -53,7 +53,7 @@ if ($_POST) {
     $tmp_Imagen3 = $_FILES["Imagen3"]['tmp_name'];
 
     if ($tmp_Imagen3 != '') {
-        move_uploaded_file($tmp_Imagen3, "../../assets/img/productos/" . $nombreArchivo_Imagen3);
+        move_uploaded_file($tmp_Imagen3, "../../assets/img/" . $nombreArchivo_Imagen3);
     }
 
     # Asignamos parámetros

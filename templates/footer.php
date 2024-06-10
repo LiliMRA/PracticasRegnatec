@@ -16,13 +16,13 @@
     <div class="social-media">
         <ul>
             <li>
-                <a href="#"> <img src="/assets/img/twitterx.png" alt="Icono-TwitterX"> </a>
+                <a href="#"> <img src="<?php echo $url_base; ?>/assets/img/twitterx.png" alt="Icono-TwitterX"> </a>
             </li>
             <li>
-                <a href="#"> <img src="/assets/img/linkedin.png" alt="Icono-LinkedIn"> </a>
+                <a href="#"> <img src="<?php echo $url_base; ?>/assets/img/linkedin.png" alt="Icono-LinkedIn"> </a>
             </li>
             <li>
-                <a href="#"> <img src="/assets/img/message.png" alt="Icono-mensaje"> </a>
+                <a href="#"> <img src="<?php echo $url_base; ?>/assets/img/message.png" alt="Icono-mensaje"> </a>
             </li>
         </ul>
     </div>

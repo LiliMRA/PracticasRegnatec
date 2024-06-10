@@ -17,6 +17,7 @@ $url_base = "http://localhost/practicasregnatec/";
     <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/tienda.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/contacto.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/llamar.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/perfil.css">
     <!--Css Panel de control-->
     <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/index_Control.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/indexTablas.css">
@@ -25,9 +26,6 @@ $url_base = "http://localhost/practicasregnatec/";
     <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/carrito.css">
     <!--Css Switch Usuario-->
     <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/switchUsuarios.css">
-
-    <!-- JS -->
-    <script src="<?php echo $url_base; ?>assets/js/toggle-menu.js"></script>
 <!--
     <link rel="icon" href="/assets/img/logotipo.png">
     <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
@@ -42,8 +40,6 @@ $url_base = "http://localhost/practicasregnatec/";
     <!--<link rel="stylesheet" type="text/css" href="/assets/css/carrito.css">-->
     <!--Css Switch Usuario-->
     <!--<link rel="stylesheet" type="text/css" href="/assets/css/switchUsuarios.css">-->
-    <!-- JS -->
-    <!--<script src="assets/js/toggle-menu.js"></script>-->
     
 
 </head>
@@ -86,7 +82,7 @@ $url_base = "http://localhost/practicasregnatec/";
                     <?php } ?>
                     <?php if (isset($_SESSION['user_id'])) { ?>
                         <li>
-                            <a href="<?php echo $url_base; ?>/login/index.php" id="login">
+                            <a href="<?php echo $url_base; ?>/login/perfil.php" id="login">
                                 <img class="social-icon" src="<?php echo $url_base; ?>assets/img/user.png" alt="Icono-social">
                             </a>
                         </li>
