@@ -14,13 +14,19 @@
 
 .main-mostrarCarrito {
     position: relative;
+    min-height: 60vh;
+}
+
+/*
+.main-mostrarCarrito {
+    position: relative;
     min-height: 66vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
-
+*/
 .main-mostrarCarrito h3 {
     font-family: 'JetBrains';
     font-size: 25px;
@@ -29,26 +35,158 @@
 
 /* Tabla del carrito */
 
-.shoppingTable {
-    border: 2px solid black;
-    border-collapse: collapse;
+.shoppingBag {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    min-height: 250px;
+    margin: 50px;
+    /* border-radius: 16px; */
+}
+
+.shoppingBag-Card {
+    overflow: hidden;
+    transition: transform 0.2s;
+    /* background-color: orangered; */
+    /* border-radius: 10%; */
+    /* border: 2px solid darkorange; */
+}
+
+.shoppingBag-Card:hover {
+    transform: translate(-5px);
+}
+
+.shoppingBag-head {
+    border: 1px solid slategrey;
+    height: 18vh;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    overflow: hidden;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shoppingBag-head img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.shoppingBag-body {
+    background-color: #70809014;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding: 5px;
     text-align: center;
-    max-width: 80%;
+    border: 1px solid slategrey;
 }
 
-.shoppingTable th {
-    font-family: 'JetBrains';
+/* Botón para eliminar un artículo */
+
+.shoppingActions form {
+    display: flex;
+    justify-content: center;
 }
 
-.cardArticle {
+.button {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #cc0000;
+    background-color: #e50000;
+    overflow: hidden;
+}
+
+.button,
+.button__icon,
+.button__text {
+    transition: all 0.3s;
+}
+
+.button .button__text {
+    transform: translateX(35px);
+    color: #fff;
+    font-weight: 600;
+}
+
+.button .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: #cc0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button .svg {
+    width: 20px;
+}
+
+.button:hover {
+    background: #cc0000;
+}
+
+.button:hover .button__text {
+    color: transparent;
+}
+
+.button:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.button:active .button__icon {
+    background-color: #b20000;
+}
+
+.button:active {
+    border: 1px solid #b20000;
+}
+
+/* Div para procesar el pago */
+
+.finalPrice {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid slategrey;
+    align-items: center;
+    height: 90px;
+}
+
+.arrowsDirections img {
+    filter: invert(0.5)
+}
+
+.payBtn {
+    cursor: pointer;
+}
+
+.payBtn form {
     background-color: orangered;
-    min-height: 200px;
-    min-width: 150px;
+    border-radius: 30px;
     margin: 10px;
-    box-shadow: 1px 1px 3px black;
-    text-align: center;
 }
 
-.cardArticle img {
-    width: 200px;
+.payBtn form:hover {
+    background-color: white;
+    color: orangered;
+    transition: 0.2s;
+    border: 2px solid orangered
+}
+
+.btn--Pay {
+    background: transparent;
+    border: none;
+}
+
+.btn--Pay svg {
+    width: 30px;
 }

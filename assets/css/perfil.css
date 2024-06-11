@@ -16,25 +16,30 @@
 
 .main-perfil {
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .perfil-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    /* border: 1px solid orangered; */
 }
 
 .alertContainer {
+    grid-column: 1 / span 3;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
     background-color: orangered;
     color: white;
     font-family: 'JetBrains';
     font-size: 20px;
-    border-radius: 16px;
-    width: 80%;
-    height: 40px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 
 .alertContainer span {
@@ -51,4 +56,22 @@
     padding: 3px;
     border-radius: 10px;
     transform: scale(1,1);
+}
+
+/* Aside Izq */ 
+
+.asideIzq {
+    padding: 15px;
+    border: 1px solid orangered;
+    height: 50vh;
+}
+
+.profileMenu li{
+    margin: 10px;
+}
+
+.profileInfo {
+    grid-column: span 2;
+    border: 1px solid orangered;
+    width: 99.7%;
 }

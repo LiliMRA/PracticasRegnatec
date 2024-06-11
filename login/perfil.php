@@ -54,6 +54,21 @@ if (isset($_SESSION['user_id'])) {
             <?php endif; ?>
         </div>
 
+        <aside class="asideIzq">
+            
+                <ul class="profileMenu">
+                    <li><button>Perfil</li></button>
+                    <li><button>Pedidos</li></button>
+                    <li><button>Notificaciones</li></button>
+                    <li><button>Configuración</li></button>
+                </ul>
+            
+        </aside>
+
+        <div class="profileInfo">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque pellentesque hendrerit. Aliquam velit urna, molestie nec molestie mollis, ultricies placerat magna. Duis vel est sit amet quam pellentesque bibendum a et nulla. Vivamus tristique porta nunc id fermentum. Pellentesque pretium ut nisi ac cursus. Fusce vehicula vel enim et porttitor. Sed ultrices congue ligula, ut gravida nisi vulputate vel. Proin auctor tincidunt sagittis.
+        </div>
+
     </div>
 
 </section>

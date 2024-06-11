@@ -27,32 +27,32 @@ if (isset($_POST) && isset($_SESSION['user_id']) && isset($_SESSION['CARRITO']))
         $total = $total + ($producto['Precio'] * $producto['Cantidad']);
     }
 
-    $stmt = $conexion->prepare("INSERT INTO `ventas`
-    (`ClaveTransaccion`, `Fecha`, `Total`, `Status`) VALUES
-    (:ClaveTransaccion, NOW(), :Total, :Status);");
+    #$stmt = $conexion->prepare("INSERT INTO `ventas`
+    #(`ClaveTransaccion`, `Fecha`, `Total`, `Status`) VALUES
+    #(:ClaveTransaccion, NOW(), :Total, :Status);");
 
-    $stmt->bindParam(":ClaveTransaccion", $Sid);
-    $stmt->bindParam(":Total", $total);
-    $stmt->bindParam(":Status", $Status);
+    #$stmt->bindParam(":ClaveTransaccion", $Sid);
+    #$stmt->bindParam(":Total", $total);
+    #$stmt->bindParam(":Status", $Status);
 
-    $stmt->execute();
+    #$stmt->execute();
 
     #Obtenemos el Id de la última venta
-    $idVenta = $conexion->lastInsertId();
+    #$idVenta = $conexion->lastInsertId();
 
-    foreach ($_SESSION['CARRITO'] as $indice => $producto) {
+    #foreach ($_SESSION['CARRITO'] as $indice => $producto) {
 
-        $stmt = $conexion->prepare("INSERT INTO `detalleventas`
-    (`idVenta`, `idProducto`, `PrecioUnitario`, `Cantidad`, `Descargado`) VALUES 
-     (:idVenta, :idProducto, :PrecioUnitario, :Cantidad, '0');");
+       # $stmt = $conexion->prepare("INSERT INTO `detalleventas`
+    #(`idVenta`, `idProducto`, `PrecioUnitario`, `Cantidad`, `Descargado`) VALUES 
+     #(:idVenta, :idProducto, :PrecioUnitario, :Cantidad, '0');");
 
-        $stmt->bindParam(":idVenta", $idVenta);
-        $stmt->bindParam(":idProducto", $producto['idId']);
-        $stmt->bindParam(":PrecioUnitario", $producto['Precio']);
-        $stmt->bindParam(":Cantidad", $producto['Cantidad']);
+        #$stmt->bindParam(":idVenta", $idVenta);
+       # $stmt->bindParam(":idProducto", $producto['idId']);
+        #$stmt->bindParam(":PrecioUnitario", $producto['Precio']);
+       # $stmt->bindParam(":Cantidad", $producto['Cantidad']);
 
-        $stmt->execute();
-    }
+       # $stmt->execute();
+   # }
 
     echo "<h3>" . $total . "</h3>";
 }

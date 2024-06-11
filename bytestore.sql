@@ -150,7 +150,7 @@ CREATE TABLE `users` (
   `usuario` varchar(255) DEFAULT NULL,
   `email` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `rol` varchar(255) DEFAULT `usuario`
+  `rol` varchar(255) DEFAULT 'usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
