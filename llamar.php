@@ -7,7 +7,8 @@ include('templates/header.php');
 
 <div class="main-contact">
     <div class="description-img">
-        <img src="assets/img/call-center.jpg">
+    <img src="<?php echo $url_base; ?>assets/img/call-center.jpg">
+        <!--<img src="assets/img/call-center.jpg">-->
     </div>
 
 

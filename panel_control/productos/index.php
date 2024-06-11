@@ -109,23 +109,32 @@ $lista_productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <td> <?php echo $registro['Descripccion']; ?> </td>
                                 <td> <?php echo $registro['Categoría']; ?> </td>
                                 <td> <?php echo $registro['Precio']; ?> </td>
+                                <!--<td>
+                                    <img width="50" src="/assets/img/<?php echo $registro['Imagen1']; ?>"
+                                        alt="Imagen-producto1">
                                 <td>
-                                    <img width="50" src="/assets/img/productos/<?php echo $registro['Imagen1']; ?>" alt="Imagen-producto1">
-                                <td>
-                                    <img width="50" src="/assets/img/productos/<?php echo $registro['Imagen2']; ?>" alt="Imagen-producto2">
+                                    <img width="50" src="/assets/img/<?php echo $registro['Imagen2']; ?>"
+                                        alt="Imagen-producto2">
                                 </td>
                                 <td>
-                                    <img width="50" src="/assets/img/productos/<?php echo $registro['Imagen3']; ?>" alt="Imagen-producto3">
+                                    <img width="50" src="/assets/img/<?php echo $registro['Imagen3']; ?>"
+                                        alt="Imagen-producto3">
+                                </td>-->
+                                <td>
+                                    <img width="50"
+                                        src="<?php echo $url_base; ?>/assets/img/productos/<?php echo $registro['Imagen1']; ?>"
+                                        alt="Imagen-producto1">
+                                <td>
+                                    <img width="50"
+                                        src="<?php echo $url_base; ?>/assets/img/productos/<?php echo $registro['Imagen2']; ?>"
+                                        alt="Imagen-producto2">
                                 </td>
-                        <!-- <td>
-                                    <img width="50" src="<?php echo $url_base; ?>/assets/img/productos/<?php echo $registro['Imagen1']; ?>" alt="Imagen-producto1">
                                 <td>
-                                    <img width="50" src="<?php echo $url_base; ?>/assets/img/productos/<?php echo $registro['Imagen2']; ?>" alt="Imagen-producto2">
+                                    <img width="50"
+                                        src="<?php echo $url_base; ?>/assets/img/productos/<?php echo $registro['Imagen3']; ?>"
+                                        alt="Imagen-producto3">
                                 </td>
-                                <td>
-                                    <img width="50" src="<?php echo $url_base; ?>/assets/img/productos/<?php echo $registro['Imagen3']; ?>" alt="Imagen-producto3">
-                                </td> -->
-                                <td>
+                                <td class="tdAcciones">
                                     <a class="btn-info" href="editar.php?txtID=<?php echo $registro['idId']; ?>">Editar</a>
                                     <a class="btn-danger"
                                         href="index.php?txtID=<?php echo $registro['idId']; ?>">Eliminar</a>

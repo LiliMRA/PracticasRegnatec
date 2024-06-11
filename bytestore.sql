@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-06-2024 a las 23:46:47
+-- Tiempo de generación: 11-06-2024 a las 22:48:44
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -68,27 +68,6 @@ CREATE TABLE `detalleventas` (
   `Descargado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `detalleventas`
---
-
-INSERT INTO `detalleventas` (`id`, `idVenta`, `idProducto`, `PrecioUnitario`, `Cantidad`, `Descargado`) VALUES
-(17, 15, 7, 90, 1, 0),
-(18, 15, 8, 200, 1, 0),
-(19, 15, 8, 200, 1, 0),
-(20, 18, 7, 90, 1, 0),
-(21, 18, 8, 200, 1, 0),
-(22, 18, 8, 200, 1, 0),
-(23, 19, 7, 90, 1, 0),
-(24, 19, 8, 200, 1, 0),
-(25, 19, 8, 200, 1, 0),
-(26, 20, 7, 90, 1, 0),
-(27, 20, 8, 200, 1, 0),
-(28, 20, 8, 200, 1, 0),
-(29, 21, 7, 90, 1, 0),
-(30, 21, 7, 90, 1, 0),
-(31, 21, 9, 600, 1, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -106,11 +85,9 @@ CREATE TABLE `familias` (
 --
 
 INSERT INTO `familias` (`id`, `name`, `Imagen`) VALUES
-(9, 'sofware', ''),
-(10, 'Hardware', ''),
-(11, 'perifericos', ''),
-(13, 'piezas sueltas', ''),
-(14, 'piezas sueltas', '1717969954_hardware.png');
+(1, 'Software', '1718129625_software1.jpg'),
+(2, 'Periféricos', '1718129641_perifericos.webp'),
+(3, 'Hardware', '1718129686_hardware.png');
 
 -- --------------------------------------------------------
 
@@ -134,10 +111,8 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`idId`, `Nombre`, `Descripccion`, `familias_id`, `Precio`, `Imagen1`, `Imagen2`, `Imagen3`) VALUES
-(7, 'Monitor', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae gravida sapien, in scelerisque purus. Aliquam tristique sagittis nulla et eleifend.', 9, 90, '1717958276_1717697646_producto.jpg', '1718039962_1717696728_tienda-bytestore.jpg', '1717958436_1717697646_producto.jpg'),
-(8, 'Monitor', 'Monitor 5 táctil', 11, 200, '1717959156_producto.jpg', '1717959156_raton.jpg', '1717959156_teclado.jpg'),
-(9, 'teclado', 'teclado inal;ambrico', 11, 600, '1717969753_teclado.jpg', '1717969753_teclado.jpg', '1717969753_teclado.jpg'),
-(10, 'Monitor 10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae gravida sapien, in scelerisque purus. Aliquam tristique sagittis nulla et eleifend.', 9, 750, '1718043462_teclado.jpg', '1718043462_teclado.jpg', '1718043462_teclado.jpg');
+(1, 'Neon Viper GX', 'Sensor óptico UltraPrecision 20,000 DPI Tecnología inalámbrica HyperLink 9 botones programables Peso ligero de 70 gramos Vida de la batería de hasta 75 horas Iluminación RGB NeoGlow Diseño ambidiestro', 2, 149.99, '1718129915_raton3.jpg', '1718129915_raton3.jpg', '1718129915_raton3.jpg'),
+(2, 'Green Strike Pro', 'Sensor HERO Xtreme 25K, hasta 25,600 DPI Tecnología inalámbrica FastConnect 6 botones programables Peso ligero de 85 gramos Vida de la batería de hasta 65 horas Iluminación RGB SyncPulse Diseño ergonómico para diestros', 2, 139.99, '1718132020_raton5.jpg', '1718132020_raton5.jpg', '1718132020_raton5.jpg');
 
 -- --------------------------------------------------------
 
@@ -150,7 +125,7 @@ CREATE TABLE `users` (
   `usuario` varchar(255) DEFAULT NULL,
   `email` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `rol` varchar(255) DEFAULT 'usuario'
+  `rol` varchar(255) DEFAULT `usuario`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -158,10 +133,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `usuario`, `email`, `password`, `rol`) VALUES
-(1, 'Admin', 'admin1@bytestore.com', '$2y$10$/h8T6ITraZYxEw83GmGpAufvspDOJLRjRuHsf77V2j38k7ewgYaNa', 'Administrador'),
-(2, 'Usuario', 'usuario1@bytestore.com', '$2y$10$Pzv7zaS5JGyYspYIl6a9wOxoUP42NlCysmUm4A4PoW3VzXxodwWjq', 'Usuario'),
-(3, 'Usuario2', 'usuario2@bytestore.com', '$2y$10$gP2/L1fpQwgdxopaPGZvme2bsCEVvM3vKkguUmNYJao7Qkps5SL1W', 'Usuario'),
-(4, 'Usuario3', 'usuario3@bytestore.com', '$2y$10$ATK/zOi/c8Mr5TrOEeCRVeFFy0fyTdpDq.AeLE5FrjMXV3ZC4OkXS', 'Usuario3');
+(1, 'Admin', 'admin1@bytestore.com', '$2y$10$2z5mi92k3J8t3A6l2AHZjOr1oGOWUieXi36GyXFLQTU1dxLuwIFz2', 'Administrador'),
+(4, 'Usuario 1', 'usuario1@bytestore.com', '$2y$10$Ga9QCl4pyRQmyEVqjHSGlO1WRUfys3R9gI3FzjZrsERqaWEhEUAxu', 'Usuario 1');
 
 -- --------------------------------------------------------
 
@@ -178,33 +151,6 @@ CREATE TABLE `ventas` (
   `Total` decimal(60,0) NOT NULL,
   `Status` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `ventas`
---
-
-INSERT INTO `ventas` (`id`, `ClaveTransaccion`, `PaypalDatos`, `Fecha`, `Correo`, `Total`, `Status`) VALUES
-(1, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 11:49:32', 'usuario2@bytestore.com', 250, ''),
-(2, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 11:49:32', 'usuario2@bytestore.com', 266, ''),
-(3, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 12:45:22', 'usuario2@bytestore.com', 286, ''),
-(4, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 12:52:50', 'usuario2@bytestore.com', 286, ''),
-(5, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 12:53:01', 'usuario2@bytestore.com', 286, ''),
-(6, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 12:55:03', 'usuario2@bytestore.com', 286, ''),
-(7, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 12:59:25', 'usuario2@bytestore.com', 286, 'pendiente'),
-(8, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:00:01', 'usuario2@bytestore.com', 286, 'pendiente'),
-(9, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:12:08', 'usuario2@bytestore.com', 286, 'pendiente'),
-(10, '', '', '2024-06-08 13:12:53', 'usuario2@bytestore.com', 0, 'pendiente'),
-(11, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:13:15', 'usuario2@bytestore.com', 286, 'pendiente'),
-(12, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:49:09', 'usuario2@bytestore.com', 286, 'pendiente'),
-(13, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 13:58:35', 'usuario2@bytestore.com', 286, 'pendiente'),
-(14, 'ipoj350tm4ebe6dcrkrueh658j', '', '2024-06-08 14:24:15', 'usuario2@bytestore.com', 21, 'pendiente'),
-(15, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 20:57:00', 'usuario15@bytestore.com', 490, 'pendiente'),
-(16, '', '', '2024-06-09 20:58:30', 'usuario15@bytestore.com', 0, 'pendiente'),
-(17, '', '', '2024-06-09 20:58:49', 'usuario15@bytestore.com', 0, 'pendiente'),
-(18, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 20:59:25', 'usuario15@bytestore.com', 490, 'pendiente'),
-(19, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 20:59:33', 'usuario15@bytestore.com', 490, 'pendiente'),
-(20, 'luid0692qvdlu62omvmm9bf7v2', '', '2024-06-09 21:00:00', 'usuario15@bytestore.com', 490, 'pendiente'),
-(21, '1', '', '2024-06-10 22:32:36', '', 780, 'pendiente');
 
 --
 -- Índices para tablas volcadas
@@ -275,19 +221,19 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `detalleventas`
 --
 ALTER TABLE `detalleventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `familias`
 --
 ALTER TABLE `familias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
@@ -299,7 +245,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas

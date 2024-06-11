@@ -24,8 +24,10 @@ $url_base = "http://localhost/practicasregnatec/";
     <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/crearTablas.css">
     <!--Css Carrito -->
     <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/carrito.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/pagar.css">
     <!--Css Switch Usuario-->
-    <link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/switchUsuarios.css">
+    <!--<link rel="stylesheet" type="text/css" href="<?php echo $url_base; ?>assets/css/switchUsuarios.css">-->
+    
 
     <!--<link rel="icon" href="/assets/img/logotipo.png">
     <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
@@ -38,10 +40,10 @@ $url_base = "http://localhost/practicasregnatec/";
     <link rel="stylesheet" type="text/css" href="/assets/css/indexTablas.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/crearTablas.css">-->
     <!--Css Carrito -->
-    <!--<link rel="stylesheet" type="text/css" href="/assets/css/carrito.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="/assets/css/carrito.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/pagar.css">-->
     <!--Css Switch Usuario-->
     <!--<link rel="stylesheet" type="text/css" href="/assets/css/switchUsuarios.css">-->
-    
 
 </head>
 

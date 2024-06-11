@@ -15,8 +15,8 @@ if (isset($_GET['txtID'])) {
     $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
 
     //Buscamos la imagen relacionado con el producto
-    $sentencia = $conexion->prepare("SELECT Imagen FROM familias WHERE idId=:idId");
-    $sentencia->bindParam(":idId", $txtID);
+    $sentencia = $conexion->prepare("SELECT Imagen FROM familias WHERE id=:id");
+    $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
     $registro_recuperado = $sentencia->fetch(PDO::FETCH_LAZY);
 
@@ -77,6 +77,7 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Imagen</th>
+                            <th></th>
                         </tr>
                     </thead>
 
@@ -84,13 +85,14 @@ $lista_familias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <?php
                         foreach ($lista_familias as $registro) {
                             ?>
-                            <tr>
+                            <tr >
                                 <td> <?php echo $registro['id']; ?> </td>
                                 <td> <?php echo $registro['name']; ?> </td>
                                 <td>
-                                    <img width="150px" src="/assets/img/<?php echo $registro['Imagen']; ?>" alt="">  
+                                    <img width="150px" src="/assets/img/<?php echo $registro['Imagen']; ?>" alt=""> 
+                                    <!--<img width="150px" src="/assets/img/<?php echo $registro['Imagen']; ?>" alt="">-->   
                                 </td>
-                                <td>
+                                <td class="tdAcciones">
                                     <a class="btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>">Editar</a>
                                     <a class="btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>">Eliminar</a>
                                 </td>

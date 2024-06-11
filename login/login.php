@@ -88,12 +88,12 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         <?php endif; ?>
 
         <div class="signupCard">
-            <!--<div class="signupImg">
-                <img src="<?php echo $url_base; ?>assets/img/logotipo.png" alt="Imagen-logotipo">
-            </div>-->
             <div class="signupImg">
-                <img src="../assets/img/logotipo.png" alt="Imagen-logotipo">
+                <img src="<?php echo $url_base; ?>assets/img/logotipo.png" alt="Imagen-logotipo">
             </div>
+            <!--<div class="signupImg">
+                <img src="../assets/img/logotipo.png" alt="Imagen-logotipo">
+            </div>-->
 
 
 

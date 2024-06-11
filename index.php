@@ -50,8 +50,8 @@ $url_base = "http://localhost/practicasregnatec/"; ?>
         </div>
     </section>
 
-    <div class="description">
-        <div class="text">
+    <div class="description-Info">
+        <div class="text-Info">
             <h2>ByteStore</h2>
             <p>Tu tienda informática donde encontrarás lo último en hardware, software<br> y accesorios con el mejor asesoramiento.
                 Descubre las mejores ofertas en<br> tecnología y equipa tu vida con lo último en informática. <br>

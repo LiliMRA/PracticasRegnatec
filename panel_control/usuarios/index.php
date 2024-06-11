@@ -75,7 +75,7 @@ $lista_usuarios = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
                                 <td> <?php echo $registro['email']; ?> </td>
                                 <td> <?php echo $registro['password']; ?> </td>
                                 <td> <?php echo $registro['rol']; ?> </td>
-                                <td>
+                                <td class="tdAcciones">
                                     <a class="btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>">Editar</a>
                                     <a class="btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>">Eliminar</a>
                                 </td>

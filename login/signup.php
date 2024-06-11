@@ -1,5 +1,5 @@
 <?php
-require('../bd.php');
+require ('../bd.php');
 
 $url_base = "http://localhost/practicasregnatec/";
 
@@ -24,7 +24,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) { #Si los campos NO e
 
 
     if ($sentencia->execute()) {
-        $message = "Usuario creado correctamente";
+        $message = "Usuario creado correctamente. Por favor, inicie sesión.";
     } else {
         $message = "Lo siento, ha habido un error al crear el usuario";
     }
@@ -53,14 +53,15 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) { #Si los campos NO e
 
         <header>
             <a href="<?php echo $url_base; ?>/index.php">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                    stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                 </svg>
                 Volver a ByteStore
             </a>
 
-            <!--<a href="../index.php">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <!-- <a href="../index.php">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                 </svg>
                 Volver a ByteStore
@@ -76,7 +77,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) { #Si los campos NO e
     <div class="signup">
 
         <?php
-        if (!empty($message)) : ?>
+        if (!empty($message)): ?>
             <p> <?= $message ?> </p>
         <?php endif ?>
 
@@ -89,6 +90,21 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) { #Si los campos NO e
         </div>
 
         <div class="singupCard-box">
+
+            <?php if (!empty($message)): ?>
+                <div class="verifyUser">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                        </svg>
+
+                        <?= $message ?>
+                    </p>
+                </div>
+            <?php endif; ?>
+
             <div class="signupCard">
                 <div class="signupImg">
                     <img src="<?php echo $url_base; ?>assets/img/logotipo.png" alt="Imagen-logotipo">
@@ -110,7 +126,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) { #Si los campos NO e
                         <input type="password" name="password" id="password" placeholder="Contraseña">
 
                         <label for="confirm_password">Confirmar contraseña</label>
-                        <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar contraseña">
+                        <input type="password" name="confirm_password" id="confirm_password"
+                            placeholder="Confirmar contraseña">
                         <button type="submit" id="signup-Button" value="Enviar">Enviar</button>
                     </div>
 
